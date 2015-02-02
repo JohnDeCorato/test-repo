@@ -1,0 +1,30 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Related Work}{2}
+\contentsline {subsection}{\numberline {2.1}2-D Drawing}{2}
+\contentsline {subsection}{\numberline {2.2}3-D Modeling in CAD}{2}
+\contentsline {subsection}{\numberline {2.3}3-D Sketching in CAD}{2}
+\contentsline {subsection}{\numberline {2.4}Other Work in 3-D Sketching}{2}
+\contentsline {subsection}{\numberline {2.5}3-D Media Interaction}{2}
+\contentsline {subsection}{\numberline {2.6}Touch Based User Interfaces}{2}
+\contentsline {subsection}{\numberline {2.7}Pen Based User Interfaces}{3}
+\contentsline {subsection}{\numberline {2.8}Splines}{3}
+\contentsline {section}{\numberline {3}The Design Process}{3}
+\contentsline {subsection}{\numberline {3.1}Conceptual Design}{3}
+\contentsline {subsection}{\numberline {3.2}Computer Aided Design}{3}
+\contentsline {subsection}{\numberline {3.3}Computer Aided, Early Phase Design}{3}
+\contentsline {section}{\numberline {4}Input}{3}
+\contentsline {subsection}{\numberline {4.1}Pen}{3}
+\contentsline {subsection}{\numberline {4.2}Touch}{3}
+\contentsline {subsection}{\numberline {4.3}Gesture}{3}
+\contentsline {section}{\numberline {5}Splines}{3}
+\contentsline {subsection}{\numberline {5.1}Definition of Splines}{4}
+\contentsline {subsection}{\numberline {5.2}Construction}{4}
+\contentsline {subsection}{\numberline {5.3}Inverse Spline Calculation}{4}
+\contentsline {section}{\numberline {6}Sketching in 3-D}{4}
+\contentsline {subsection}{\numberline {6.1}Ray Casting}{4}
+\contentsline {subsection}{\numberline {6.2}User Input}{4}
+\contentsline {section}{\numberline {7}Usability and Feel: Bringing Physical Tools to the Virtual World}{4}
+\contentsline {subsection}{\numberline {7.1}Interacting with the 3D environment}{4}
+\contentsline {subsection}{\numberline {7.2}Connecting 2-D and 3-D}{4}
+\contentsline {subsection}{\numberline {7.3}Combining Pen and Touch}{4}
+\contentsline {subsection}{\numberline {7.4}Recreating the Feel of the Real World}{4}
