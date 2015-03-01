@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.4)  2 FEB 2015 16:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  1 MAR 2015 16:40
 entering extended mode
 **main.tex
 (C:\Users\jd537\Documents\Thesis\test-repo\main.tex
@@ -6,10 +6,10 @@ LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
 ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
  lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
@@ -247,27 +247,97 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(C:\Users\jd537\Documents\Thesis\test-repo\main.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 10.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 10.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 10.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\jd537\Documents\Thesis\test-repo\main.toc
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen105
+\captionmargin@=\dimen106
+\captionwidth=\dimen107
+\caption@tempdima=\dimen108
+\caption@indent=\dimen109
+\caption@parindent=\dimen110
+\caption@hangindent=\dimen111
+)
+\c@ContinuedFloat=\count88
+)
+\c@subfigure=\count89
+\c@subtable=\count90
+)
+(C:\Users\jd537\Documents\Thesis\test-repo\main.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count91
+\scratchdimen=\dimen112
+\scratchbox=\box26
+\nofMPsegments=\count92
+\nofMParguments=\count93
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count94
+\MPscratchDim=\dimen113
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
+\everyMPtoPDFconversion=\toks18
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 13.
+ (C:\Users\jd537\Documents\Thesis\test-repo\main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -277,280 +347,101 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}])
 \tf@toc=\write3
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.37 ...ks.com/2014/English/SolidWorks/sldworks/c_
-                                                  3D_Sketching_Capabilities.htm
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.38 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (87.34236pt too wide) in paragraph at lines 37--38
-[]\OT1/cmr/m/n/10 http://help.solidworks.com/2014/English/SolidWorks/sldworks/c
-$[]\OML/cmm/m/it/10 D[]ketching[]apabilities:htm$ 
+Overfull \hbox (61.612pt too wide) in paragraph at lines 27--28
+[]\OT1/cmr/m/n/10 Sketchbook Pro http://www.autodesk.com/products/sketchbook-pr
+o/features/all/gallery-
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.46 ...creativemachines.cornell.edu/papers/IUI09_
-                                                  Yee.pdf
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+[2] <Images/Hyve3D1.png, id=13, 550.30594pt x 261.22594pt>
+File: Images/Hyve3D1.png Graphic file (type png)
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.47 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+<use Images/Hyve3D1.png>
+Package pdftex.def Info: Images/Hyve3D1.png used on input line 62.
+(pdftex.def)             Requested size: 310.4979pt x 147.39362pt.
 
+<Images/Hyve3D2.png, id=15, 552.56438pt x 261.97874pt>
+File: Images/Hyve3D2.png Graphic file (type png)
 
-Overfull \hbox (168.99922pt too wide) in paragraph at lines 46--47
+<use Images/Hyve3D2.png>
+Package pdftex.def Info: Images/Hyve3D2.png used on input line 66.
+(pdftex.def)             Requested size: 310.4979pt x 147.21077pt.
+ [3 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Hyve3D1.png> <C:/Users/jd
+537/Documents/Thesis/test-repo/Images/Hyve3D2.png>]
+Overfull \hbox (185.6292pt too wide) in paragraph at lines 79--80
 \OT1/cmr/m/n/10 Augmented Re-al-ity In-Situ 3D Sketch-ing of Phys-i-cal Ob-ject
-s http://creativemachines.cornell.edu/papers/IUI09$[]\OML/cmm/m/it/10 ee:pdf$ 
+s $\OML/cmm/m/it/10 http \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 ==creativemachines:
+cornell:edu=papers=IUI\OT1/cmr/m/n/10 09[]\OML/cmm/m/it/10 ee:pdf$ 
  []
 
 
-Overfull \hbox (10.05527pt too wide) in paragraph at lines 48--49
-[]\OT1/cmr/m/n/10 Hyve 3D http://www.hybridlab.umontreal.ca/documents/37-siggra
-ph2014.pdf 
- []
-
-
-Overfull \hbox (15.44519pt too wide) in paragraph at lines 54--55
+Overfull \hbox (15.44519pt too wide) in paragraph at lines 87--88
 []\OT1/cmr/m/n/10 Polyes Q1 Pen http://technabob.com/blog/2014/12/29/polyes-q1-
 3d-sketching-
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.58 ...bias.isenberg.cc/personal/papers/Isenberg_
-                                                  2012_GPG.pdf
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.59 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (250.86041pt too wide) in paragraph at lines 58--59
-\OT1/cmr/m/n/10 Gestures vs. Pos-tures: `Ges-tu-ral' Touch In-ter-ac-tion in 3D
- En-vi-ron-ments http://tobias.isenberg.cc/personal/papers/Isenberg$[]012[]\OML
-/cmm/m/it/10 PG:pdf$ 
+Overfull \hbox (25.83176pt too wide) in paragraph at lines 96--97
+\OT1/cmr/m/n/10 A Sur-vey of In-ter-ac-tion Tech-niques for In-ter-ac-tive 3D E
+n-vi-ron-ments http://www.grey-
  []
 
 
-Overfull \hbox (40.83176pt too wide) in paragraph at lines 60--61
-[]\OT1/cmr/m/n/10 A Sur-vey of In-ter-ac-tion Tech-niques for In-ter-ac-tive 3D
- En-vi-ron-ments http://www.grey-
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.62 ...ww.researchgate.net/publication/236304194_
-                                                  Interaction_with_3D_Enviro...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.63 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (365.25664pt too wide) in paragraph at lines 62--63
+Overfull \hbox (375.43152pt too wide) in paragraph at lines 98--99
 []\OT1/cmr/m/n/10 Interaction with 3-D en-vi-ron-ments us-ing Mul-ti-touch Scre
-ens http://www.researchgate.net/publication/236304194$[]\OML/cmm/m/it/10 nterac
-tion[]ith[]D[]nvironments[]sing[]ulti \OMS/cmsy/m/n/10  $
- []
-
-! Misplaced alignment tab character &.
-l.67 ....scholar.serialssolutions.com/?sid=google&
-                                                  auinit=N&aulast=Matsushita...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-l.67 ...serialssolutions.com/?sid=google&auinit=N&
-                                                  aulast=Matsushita&atitle=D...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-l.67 ...om/?sid=google&auinit=N&aulast=Matsushita&
-                                                  atitle=Dual+touch:+a+two-h...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-l.67 ...a+two-handed+interface+for+pen-based+PDAs&
-                                                  id=doi:10.1145/354401.354774
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-
-Overfull \hbox (408.22383pt too wide) in paragraph at lines 66--68
-\OT1/cmr/m/n/10 Dual touch: a two-handed in-ter-face for pen-based PDAs http://
-vp5qw4uf5x.scholar.serialssolutions.com/?sid=googleauinit=Naulast=Matsushitaati
-tle=Dual+touch:+a+two-
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.71 ...http://www.academia.edu/2236260/Pen-based_
-                                                  Interaction_-_Next_Generat...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Double subscript.
-l.71 ...demia.edu/2236260/Pen-based_Interaction_-_
-                                                  Next_Generation_User_Inter...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-! Missing { inserted.
-<to be read again> 
-                   \par 
-l.72 
-     
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.72 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.72 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (179.58131pt too wide) in paragraph at lines 71--72
-\OT1/cmr/m/n/10 Pen Based In-ter-ac-tion http://www.academia.edu/2236260/Pen-ba
-sed$[]\OML/cmm/m/it/10 nteraction[][]ext[]eneration[]ser[]nterfaces[]E \OMS/cms
-y/m/n/10  $
- []
-
-[2]
-! Misplaced alignment tab character &.
-l.73 ...//ieeexplore.ieee.org/stamp/stamp.jsp?tp=&
-                                                  arnumber=1349146
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-
-Overfull \hbox (74.47304pt too wide) in paragraph at lines 73--74
-[]\OT1/cmr/m/n/10 Pen-based User In-ter-face http://ieeexplore.ieee.org/stamp/s
-tamp.jsp?tp=arnumber=1349146 
+ens $\OML/cmm/m/it/10 http \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 ==www:researchgat
+e:net=publication=\OT1/cmr/m/n/10 236304194[]\OML/cmm/m/it/10 nteraction[]ith[]
+D[]nvironments[]sing[]ulti \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (60.43135pt too wide) in paragraph at lines 79--80
+Overfull \hbox (584.2419pt too wide) in paragraph at lines 105--105
+[]\OT1/cmtt/m/n/10 $http://vp5qw4uf5x.scholar.serialssolutions.com/?sid=google&
+auinit=N&aulast=Matsushita&atitle=Dual+touch:+a+two-handed+interface+for+pen-ba
+sed+PDAs&id=doi:10.1145/354401.354774$[] 
+ []
+
+
+Overfull \hbox (200.99524pt too wide) in paragraph at lines 111--111
+[]\OT1/cmtt/m/n/10 $http://www.academia.edu/2236260/Pen-based_Interaction_-_Nex
+t_Generation_User_Interfaces_WE-DINF-15756_$[] 
+ []
+
+
+Overfull \hbox (60.43135pt too wide) in paragraph at lines 136--137
 \OT1/cmr/m/n/10 Curve Global In-ter-po-la-tion http://www.cs.mtu.edu/ shene/COU
 RSES/cs3621/NOTES/INT-
  []
 
-
-Overfull \hbox (47.80629pt too wide) in paragraph at lines 81--82
+[4]
+Overfull \hbox (47.80629pt too wide) in paragraph at lines 138--139
 []\OT1/cmr/m/n/10 Smooth Spline Through Pre-scribed Points https://www.particle
 incell.com/2012/bezier-
  []
 
-
-Overfull \hbox (43.36201pt too wide) in paragraph at lines 83--84
-[]\OT1/cmr/m/n/10 Spline In-ter-po-la-tion http://scaledinnovation.com/analytic
-s/splines/aboutSplines.html 
- []
-
-
-Overfull \hbox (60.43135pt too wide) in paragraph at lines 103--104
-\OT1/cmr/m/n/10 Curve Global In-ter-po-la-tion http://www.cs.mtu.edu/ shene/COU
-RSES/cs3621/NOTES/INT-
- []
-
-
-Overfull \hbox (47.80629pt too wide) in paragraph at lines 105--106
-[]\OT1/cmr/m/n/10 Smooth Spline Through Pre-scribed Points https://www.particle
-incell.com/2012/bezier-
- []
-
-[3] [4] (C:\Users\jd537\Documents\Thesis\test-repo\main.aux) ) 
+[5] (C:\Users\jd537\Documents\Thesis\test-repo\main.aux) ) 
 Here is how much of TeX's memory you used:
- 443 strings out of 493921
- 4727 string characters out of 3144876
- 56277 words of memory out of 3000000
- 3792 multiletter control sequences out of 15000+200000
- 7895 words of font info for 28 fonts, out of 3000000 for 9000
+ 2457 strings out of 493921
+ 37091 string characters out of 3144877
+ 98921 words of memory out of 3000000
+ 5760 multiletter control sequences out of 15000+200000
+ 8362 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 23i,6n,18p,187b,187s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (4 pages, 129534 bytes).
+ 42i,7n,40p,662b,414s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (5 pages, 940171 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
