@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  1 MAR 2015 16:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  1 MAR 2015 17:32
 entering extended mode
 **main.tex
 (C:\Users\jd537\Documents\Thesis\test-repo\main.tex
@@ -352,41 +352,55 @@ Overfull \hbox (61.612pt too wide) in paragraph at lines 27--28
 o/features/all/gallery-
  []
 
-[2] <Images/Hyve3D1.png, id=13, 550.30594pt x 261.22594pt>
+<Images/CATIA1.png, id=10, 959.08313pt x 537.50812pt>
+File: Images/CATIA1.png Graphic file (type png)
+ <use Images/CATIA1.png>
+Package pdftex.def Info: Images/CATIA1.png used on input line 54.
+(pdftex.def)             Requested size: 345.0pt x 193.35513pt.
+
+<Images/CATIA2.png, id=12, 961.34157pt x 539.76656pt>
+File: Images/CATIA2.png Graphic file (type png)
+ <use Images/CATIA2.png>
+Package pdftex.def Info: Images/CATIA2.png used on input line 58.
+(pdftex.def)             Requested size: 345.0pt x 193.70633pt.
+
+[2] [3 <C:/Users/jd537/Documents/Thesis/test-repo/Images/CATIA1.png> <C:/Users/
+jd537/Documents/Thesis/test-repo/Images/CATIA2.png>]
+<Images/Hyve3D1.png, id=22, 550.30594pt x 261.22594pt>
 File: Images/Hyve3D1.png Graphic file (type png)
 
 <use Images/Hyve3D1.png>
-Package pdftex.def Info: Images/Hyve3D1.png used on input line 62.
+Package pdftex.def Info: Images/Hyve3D1.png used on input line 74.
 (pdftex.def)             Requested size: 310.4979pt x 147.39362pt.
 
-<Images/Hyve3D2.png, id=15, 552.56438pt x 261.97874pt>
+<Images/Hyve3D2.png, id=23, 552.56438pt x 261.97874pt>
 File: Images/Hyve3D2.png Graphic file (type png)
 
 <use Images/Hyve3D2.png>
-Package pdftex.def Info: Images/Hyve3D2.png used on input line 66.
+Package pdftex.def Info: Images/Hyve3D2.png used on input line 78.
 (pdftex.def)             Requested size: 310.4979pt x 147.21077pt.
- [3 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Hyve3D1.png> <C:/Users/jd
+ [4 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Hyve3D1.png> <C:/Users/jd
 537/Documents/Thesis/test-repo/Images/Hyve3D2.png>]
-Overfull \hbox (185.6292pt too wide) in paragraph at lines 79--80
+Overfull \hbox (185.6292pt too wide) in paragraph at lines 91--92
 \OT1/cmr/m/n/10 Augmented Re-al-ity In-Situ 3D Sketch-ing of Phys-i-cal Ob-ject
 s $\OML/cmm/m/it/10 http \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 ==creativemachines:
 cornell:edu=papers=IUI\OT1/cmr/m/n/10 09[]\OML/cmm/m/it/10 ee:pdf$ 
  []
 
 
-Overfull \hbox (15.44519pt too wide) in paragraph at lines 87--88
+Overfull \hbox (15.44519pt too wide) in paragraph at lines 99--100
 []\OT1/cmr/m/n/10 Polyes Q1 Pen http://technabob.com/blog/2014/12/29/polyes-q1-
 3d-sketching-
  []
 
 
-Overfull \hbox (25.83176pt too wide) in paragraph at lines 96--97
+Overfull \hbox (25.83176pt too wide) in paragraph at lines 108--109
 \OT1/cmr/m/n/10 A Sur-vey of In-ter-ac-tion Tech-niques for In-ter-ac-tive 3D E
 n-vi-ron-ments http://www.grey-
  []
 
 
-Overfull \hbox (375.43152pt too wide) in paragraph at lines 98--99
+Overfull \hbox (375.43152pt too wide) in paragraph at lines 110--111
 []\OT1/cmr/m/n/10 Interaction with 3-D en-vi-ron-ments us-ing Mul-ti-touch Scre
 ens $\OML/cmm/m/it/10 http \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 ==www:researchgat
 e:net=publication=\OT1/cmr/m/n/10 236304194[]\OML/cmm/m/it/10 nteraction[]ith[]
@@ -394,54 +408,54 @@ D[]nvironments[]sing[]ulti \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (584.2419pt too wide) in paragraph at lines 105--105
+Overfull \hbox (584.2419pt too wide) in paragraph at lines 117--117
 []\OT1/cmtt/m/n/10 $http://vp5qw4uf5x.scholar.serialssolutions.com/?sid=google&
 auinit=N&aulast=Matsushita&atitle=Dual+touch:+a+two-handed+interface+for+pen-ba
 sed+PDAs&id=doi:10.1145/354401.354774$[] 
  []
 
 
-Overfull \hbox (200.99524pt too wide) in paragraph at lines 111--111
+Overfull \hbox (200.99524pt too wide) in paragraph at lines 123--123
 []\OT1/cmtt/m/n/10 $http://www.academia.edu/2236260/Pen-based_Interaction_-_Nex
 t_Generation_User_Interfaces_WE-DINF-15756_$[] 
  []
 
-
-Overfull \hbox (60.43135pt too wide) in paragraph at lines 136--137
+[5]
+Overfull \hbox (60.43135pt too wide) in paragraph at lines 148--149
 \OT1/cmr/m/n/10 Curve Global In-ter-po-la-tion http://www.cs.mtu.edu/ shene/COU
 RSES/cs3621/NOTES/INT-
  []
 
-[4]
-Overfull \hbox (47.80629pt too wide) in paragraph at lines 138--139
+
+Overfull \hbox (47.80629pt too wide) in paragraph at lines 150--151
 []\OT1/cmr/m/n/10 Smooth Spline Through Pre-scribed Points https://www.particle
 incell.com/2012/bezier-
  []
 
-[5] (C:\Users\jd537\Documents\Thesis\test-repo\main.aux) ) 
+[6] [7] (C:\Users\jd537\Documents\Thesis\test-repo\main.aux) ) 
 Here is how much of TeX's memory you used:
- 2457 strings out of 493921
- 37091 string characters out of 3144877
+ 2467 strings out of 493921
+ 37285 string characters out of 3144877
  98921 words of memory out of 3000000
- 5760 multiletter control sequences out of 15000+200000
+ 5768 multiletter control sequences out of 15000+200000
  8362 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 42i,7n,40p,662b,414s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (5 pages, 940171 bytes).
+ 42i,7n,40p,662b,410s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (7 pages, 1421395 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
+ 79 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

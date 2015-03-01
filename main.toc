@@ -4,29 +4,29 @@
 \contentsline {subsection}{\numberline {2.2}3-D Modeling in CAD}{2}
 \contentsline {subsection}{\numberline {2.3}3-D Sketching in CAD}{2}
 \contentsline {subsubsection}{\numberline {2.3.1}CATIA Natural Sketch}{2}
-\contentsline {subsubsection}{\numberline {2.3.2}ILoveSketch / EverybodyLovesSketch}{3}
-\contentsline {subsubsection}{\numberline {2.3.3}Hyve 3D}{3}
-\contentsline {subsection}{\numberline {2.4}Other Work in 3-D Sketching}{4}
-\contentsline {subsection}{\numberline {2.5}3-D Media Interaction}{4}
-\contentsline {subsection}{\numberline {2.6}Touch Based User Interfaces}{4}
-\contentsline {subsection}{\numberline {2.7}Pen Based User Interfaces}{4}
-\contentsline {section}{\numberline {3}The Design Process}{5}
-\contentsline {subsection}{\numberline {3.1}Conceptual Design}{5}
-\contentsline {subsection}{\numberline {3.2}Computer Aided Design}{5}
-\contentsline {subsection}{\numberline {3.3}Computer Aided, Early Phase Design}{5}
-\contentsline {section}{\numberline {4}Input}{5}
-\contentsline {subsection}{\numberline {4.1}Pen}{5}
-\contentsline {subsection}{\numberline {4.2}Touch}{5}
-\contentsline {subsection}{\numberline {4.3}Gesture}{5}
-\contentsline {section}{\numberline {5}Splines}{5}
-\contentsline {subsection}{\numberline {5.1}Definition of Splines}{5}
-\contentsline {subsection}{\numberline {5.2}Construction}{5}
-\contentsline {subsection}{\numberline {5.3}Inverse Spline Calculation}{5}
-\contentsline {section}{\numberline {6}Sketching in 3-D}{5}
-\contentsline {subsection}{\numberline {6.1}Ray Casting}{5}
-\contentsline {subsection}{\numberline {6.2}User Input}{5}
-\contentsline {section}{\numberline {7}Usability and Feel: Bringing Physical Tools to the Virtual World}{5}
-\contentsline {subsection}{\numberline {7.1}Interacting with the 3D environment}{5}
-\contentsline {subsection}{\numberline {7.2}Connecting 2-D and 3-D}{5}
-\contentsline {subsection}{\numberline {7.3}Combining Pen and Touch}{5}
-\contentsline {subsection}{\numberline {7.4}Recreating the Feel of the Real World}{5}
+\contentsline {subsubsection}{\numberline {2.3.2}ILoveSketch / EverybodyLovesSketch}{4}
+\contentsline {subsubsection}{\numberline {2.3.3}Hyve 3D}{5}
+\contentsline {subsection}{\numberline {2.4}Other Work in 3-D Sketching}{5}
+\contentsline {subsection}{\numberline {2.5}3-D Media Interaction}{5}
+\contentsline {subsection}{\numberline {2.6}Touch Based User Interfaces}{5}
+\contentsline {subsection}{\numberline {2.7}Pen Based User Interfaces}{5}
+\contentsline {section}{\numberline {3}The Design Process}{6}
+\contentsline {subsection}{\numberline {3.1}Conceptual Design}{6}
+\contentsline {subsection}{\numberline {3.2}Computer Aided Design}{6}
+\contentsline {subsection}{\numberline {3.3}Computer Aided, Early Phase Design}{6}
+\contentsline {section}{\numberline {4}Input}{6}
+\contentsline {subsection}{\numberline {4.1}Pen}{6}
+\contentsline {subsection}{\numberline {4.2}Touch}{6}
+\contentsline {subsection}{\numberline {4.3}Gesture}{6}
+\contentsline {section}{\numberline {5}Splines}{6}
+\contentsline {subsection}{\numberline {5.1}Definition of Splines}{7}
+\contentsline {subsection}{\numberline {5.2}Construction}{7}
+\contentsline {subsection}{\numberline {5.3}Inverse Spline Calculation}{7}
+\contentsline {section}{\numberline {6}Sketching in 3-D}{7}
+\contentsline {subsection}{\numberline {6.1}Ray Casting}{7}
+\contentsline {subsection}{\numberline {6.2}User Input}{7}
+\contentsline {section}{\numberline {7}Usability and Feel: Bringing Physical Tools to the Virtual World}{7}
+\contentsline {subsection}{\numberline {7.1}Interacting with the 3D environment}{7}
+\contentsline {subsection}{\numberline {7.2}Connecting 2-D and 3-D}{7}
+\contentsline {subsection}{\numberline {7.3}Combining Pen and Touch}{7}
+\contentsline {subsection}{\numberline {7.4}Recreating the Feel of the Real World}{7}
