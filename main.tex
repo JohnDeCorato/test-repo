@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{subcaption}
@@ -18,7 +18,7 @@
 \tableofcontents
 
 \pagebreak
-\section{Introduction}
+\chapter{Introduction}
 
 \begin{itemize}
 	\item My project is 3-D sketching
@@ -28,9 +28,9 @@
 \end{itemize}
 
 \pagebreak
-\section{Background / Related Work}
+\chapter{Background / Related Work}
 
-\subsection{Two-Dimensional Image Creation}
+\section{Two-Dimensional Image Creation}
 
 Traditional artistic techniques have lead to the creation of many fields of work, such as technical drawing and typography. 
 In the shift to digitization, methods needed to be created to allow for the same type of control and creative freedom that older methods of painting and drawing allowed while leveraging the power of the computer to enhance an artists tool set.
@@ -38,7 +38,7 @@ While we see many uses of three-dimensional computer graphics to create two-dime
 These tools mostly rely on either raster graphics or vector graphics, both of which are methods to represent a two dimensional image. 
 
 \pagebreak
-\subsubsection{Raster Graphics}
+\subsection{Raster Graphics}
 
 Raster graphics is an image format that uses a two-dimensional grid to represent each pixel in the image. 
 A raster image is characterized by its width and height in pixels and by its color depth, the number of bits per pixel, which determines the colors each pixel can represent. 
@@ -67,17 +67,19 @@ Pixel editing also makes creating different tools for raster graphics easier, si
 
 Examples of popular raster graphics software are Corel Painter, Adobe Photoshop, Microsoft's Paint.NET and MSPaint, the open-source GIMP software, and Autodesk's Sketchbook.
 
+\subsubsection{Sketchbook Pro} http://www.autodesk.com/products/sketchbook-pro/features/all/gallery-view
+
+Sketchbook Pro is a pixel drawing software application. It was originally made by Alias Systems Corporation, but is now owned and produced by Autodesk. Sketchbook is intended to simulate real-world art techniques such as pencil sketching, airbrushing, and painting. The work is saved as a bitmap where the color of each pixel in the image is stored. 
+
 \pagebreak
 
-\subsubsection{Vector Graphics}
+\subsection{Vector Graphics}
 
 Vector graphics is the representation of an image by the use of geometrical primitives such as points, lines, curves, shapes and polygons. 
 Vector graphics are based on leading vectors though series of control points. Each of these points has a defined xy coordinate of the work space and determines the direction of the vector. 
 Vectors can also be assigned a variety of properties such as its color, thickness, and fill. 
 
-\subsubsection{Sketchbook Pro} http://www.autodesk.com/products/sketchbook-pro/features/all/gallery-view
 
-Sketchbook Pro is a pixel drawing software application. It was originally made by Alias Systems Corporation, but is now owned and produced by Autodesk. Sketchbook is intended to simulate real-world art techniques such as pencil sketching, airbrushing, and painting. The work is saved as a bitmap where the color of each pixel in the image is stored. 
 
 \subsubsection{Illustrator} http://www.adobe.com/products/illustrator.html
 
@@ -88,7 +90,7 @@ Illustrator is a vector graphics editor made by Adobe Software. It uses geometri
 Mischief is another vector graphics editor created by Made With Mischief, now owned by The Foundry. Although it uses vector graphics, it does not allow for the precise editing of curves as seen in Illustrator. Instead it attempts to use vector graphics to simulate real world art techniques, like Sketchbook does. It features an infinite canvas for a free-form and dynamic sketching environment. This is allowed by using a data-structure called Adaptive Distance Fields, which allows them to greatly reduce the storage size of the vectors that the user creates at the cost of the ability to edit the vectors. This allows for incredibly detailed and large scale art withing the same file.
 
 
-\subsection{3-D Modeling in CAD}
+\section{3-D Modeling in CAD}
 
 Rhino
 
@@ -98,11 +100,11 @@ Maya / 3DMAX
 
 Sketchup
 
-\subsection{3-D Sketching in CAD}
+\section{3-D Sketching in CAD}
 
 Talk abouw how people have tried to bring 3-D sketching to computers
 
-\subsubsection{CATIA Natural Sketch}
+\subsection{CATIA Natural Sketch}
 
 Natural Sketch is a feature inside of the CATIA modeling software by Dassault Systemes. Natural Sketch allows the user to draw on a virtual plane, a 3-D model, and the plane where the screen lies in the 3D environment. It features the abilities to alter the pen style, alter the number of control points used to make the post sketch curve, automatically change the camera view to align with the drawing plane if one is being used, copy and alter individual strokes, and generate models from the 3-D sketch.
 
@@ -121,11 +123,11 @@ Natural Sketch is a feature inside of the CATIA modeling software by Dassault Sy
 \end{figure}
 
 
-\subsubsection{ILoveSketch / EverybodyLovesSketch}
+\subsection{ILoveSketch / EverybodyLovesSketch}
 
 EverybodyLovesSketch is a 3D curve sketching system from the University of Toronto's Dynamic Graphics Project Lab. It features a pen based gesture system, allowing the user to execute functions using rapid strokes, circles, and other defined gestures. Other features include dynamic sketch plane selection, single view definition of arbitrary extrusion vectors, multiple extruded surface sketching, copy-and-project of 3D curves, free-form surface sketching, and an interactive perspective grid. This project is based off of previous work by the same lab, ILoveSketch, which is the base 3D sketching functionality of the EverybodyLovesSketch project.
 
-\subsubsection{Hyve 3D}
+\subsection{Hyve 3D}
 
 \begin{figure}
 
@@ -145,13 +147,13 @@ Hyve 3D is an infinite virtual sketching environment from the University of Mont
 
 
 
-\subsection{Other Work in 3-D Sketching}
+\section{Other Work in 3-D Sketching}
 
 Other forms of 3D content creation
 
 Augmented Reality In-Situ 3D Sketching of Physical Objects $http://creativemachines.cornell.edu/papers/IUI09_Yee.pdf$
 
-\subsubsection{Gravity} http://gravitysketch.com/
+\subsection{Gravity} http://gravitysketch.com/
 
 Gravity is an augmented reality 3D sketching tool using a tablet as the sketch base and a wearable screen to show the sketch. The tablet acts as a drawing plane, while the sketch can be moved via a set of controls on the tablet. The main idea is similar to Hyve 3D, in that you always draw in 2-D while you use your own sense of depth and position to understand what you are drawing, allowing for 3-D sketching without the use of perspective drawing. The difference is that this system allows you to use real world depth cues to augment your understanding of the virtual 3-D environment.
 
@@ -207,7 +209,7 @@ Experimental Analysis of Mode Switching Techniques in Pen-based User Interfaces 
 
 \pagebreak
 
-\section{Strokes, the Base of the Sketch}
+\chapter{Strokes, the Base of the Sketch}
 
 \begin{itemize}
 \item Spline talk chapter
@@ -224,22 +226,22 @@ Curve Global Interpolation http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/INT
 
 Smooth Spline Through Prescribed Points https://www.particleincell.com/2012/bezier-splines/
 
-\subsection{Creating a Stroke}
+\section{Creating a Stroke}
 \begin{itemize}
 \item user inputs a series of points on the screen
 \item storing all points too expensive, need to optimize
 \item solution: create a curve based on the points that is defined by a smaller set of control points
 \end{itemize}
 
-\subsection{Definition of Splines}
+\section{Definition of Splines}
 
 Math goes here
 
-\subsection{Inverse Spline Calculation}
+\section{Inverse Spline Calculation}
 Math goes here
 
 \pagebreak
-\section{Sketching in 3-D}
+\chapter{Sketching in 3-D}
 
 \begin{itemize}
 \item Discuss how we get from the last chapter to 3-D sketching
@@ -252,7 +254,7 @@ Math goes here
 \caption{Rough Diagram of Projecting Stroke onto Drawing Surface}
 \end{figure}
 
-\subsection{Ray Casting}
+\section{Ray Casting}
 
 \subsubsection{Acceleration Structure}
 \begin{figure}[h]
@@ -268,7 +270,7 @@ Math goes here (Ray triangle intersection, Ray plane intersection, More in appen
 \end{itemize}
 
 \pagebreak
-\section{Displaying Strokes}
+\chapter{Displaying Strokes}
 Pen Styles section. This is getting complicated to the point that I think it needs it's own chapter
 \begin{itemize}
 \item Discuss reprojection of strokes into 2 space
@@ -276,21 +278,21 @@ Pen Styles section. This is getting complicated to the point that I think it nee
 \item Discuss the what the actual styles are and the math behind them (possible appendix material after discussing one or two)
 \end{itemize}
 \pagebreak
-\section{Usability and Feel: Bringing Physical Tools to the Virtual World}
+\chapter{Usability and Feel: Bringing Physical Tools to the Virtual World}
 \begin{itemize}
 \item UX chapter
 \item talk about how people actually use the system tools
 \item talk about random quality of life features (page turning between layers, whatever else we come up with)
 \end{itemize}
-\subsection{Interacting with the 3D environment}
+\section{Interacting with the 3D environment}
 How do you move around the environment? How do you control things?
-\subsection{Combining Pen and Touch}
+\section{Combining Pen and Touch}
 Discus modality of system
 \begin{figure}[h]
 \includegraphics[width=0.9\linewidth]{Duality}
 \caption{System Duality}
 \end{figure}
-\subsection{Turning the Page}
+\section{Turning the Page}
 \begin{figure}[h]
 \includegraphics[width=0.9\linewidth]{TurningThePage}
 \caption{Rough Diagram of math behind page turn}
@@ -303,6 +305,6 @@ Discus modality of system
 
 \pagebreak
 
-\section{Conclusion}
+\chapter{Conclusion}
 Summary of everything goes here. More images of the system in use and example use cases.
 \end{document}
