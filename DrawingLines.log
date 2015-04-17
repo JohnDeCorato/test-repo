@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  16 MAR 2015 15:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  5 APR 2015 17:11
 entering extended mode
 **DrawingLines.tex
 (C:\Users\jd537\Documents\Thesis\test-repo\DrawingLines.tex
@@ -426,17 +426,17 @@ Underfull \hbox (badness 1052) in paragraph at lines 89--89
  []
 
 [5 <C:/Users/jd537/Documents/Thesis/test-repo/Images/miterpolys.jpg>]
-Underfull \hbox (badness 2293) in paragraph at lines 92--97
+Underfull \hbox (badness 2293) in paragraph at lines 92--102
 [][]\OT1/cmr/m/n/12 The sys-tem can now dis-
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 92--97
+Underfull \hbox (badness 1983) in paragraph at lines 92--102
 \OT1/cmr/m/n/12 play polyg-o-nal-ized, three di-men-
  []
 
 [6 <C:/Users/jd537/Documents/Thesis/test-repo/Images/trianglestrip.png>]
-(C:\Users\jd537\Documents\Thesis\test-repo\DrawingLines.aux) ) 
+[7] (C:\Users\jd537\Documents\Thesis\test-repo\DrawingLines.aux) ) 
 Here is how much of TeX's memory you used:
  2875 strings out of 493921
  42755 string characters out of 3144877
@@ -445,16 +445,16 @@ Here is how much of TeX's memory you used:
  8503 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  42i,5n,40p,273b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on DrawingLines.pdf (6 pages, 651341 bytes).
+<C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on DrawingLines.pdf (7 pages, 652834 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
+ 59 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

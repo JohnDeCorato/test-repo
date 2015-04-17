@@ -90,10 +90,15 @@ Then, using a vertex shader, the vertex positions are transformed appropriately 
 \end{wrapfigure}
 
 The system can now display polygonalized, three dimensional lines and does so efficiently.
-There is still one problem, the lines still only exist in the plane they are drawn in.
+However, there are two problems with this approach.
+First, lines only exist in the plane they are drawn in.
 This means if the camera were to rotate such that it is perpendicular to the plane the lines were drawn on, the lines would disappear from our rendering.
-This happens because we currently expand the lines in world space, based on the line normals and the plane the line was drawn on, instead of based on the current position of the camera.
-We can solve this by instead doing a screen space projection of the points that form our lines, and then expand them in the "two-dimensional" screen space.
+This happens because we currently expand the lines in world space, based on the  plane the line was drawn on, instead of based on the current position of the camera.
+Second, this approach assumes we expand our lines on a plane, limiting the sketching surfaces available.
+Expanding the lines if the sketch was done on a sphere becomes a significantly harder problem. how is line width defined on curved geometry? 
+How do we create them without creating too many polygons and running out of memory?
+Luckily, we can avoid both of these problems by instead doing a screen space projection of the points that form our lines, and then expand them in the "two-dimensional" screen space.
+This means that no matter how the line is drawn in the 3-D environment, their definition doesn't change.
 
 \noindent \textbf{TODO}: Describe algorithm for projection and add code here
 
