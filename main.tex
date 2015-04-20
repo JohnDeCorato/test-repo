@@ -128,11 +128,18 @@ Not sure if this section is necessary on its own or if it should be absolved int
 
 \section{3-D Sketching in CAD}
 
-Not sure how to start this section. Probably need to clear out descriptions more before writing the intro. 
+There have been other attempts to utilize 3-D sketching in the design process. In this section, we will go over some methods others have implemented either in research or in industry.
 
 \subsection{CATIA Natural Sketch}
 
-Natural Sketch is a feature inside of the CATIA modeling software by Dassault Systemes. Natural Sketch allows the user to draw on a virtual plane, a 3-D model, and the plane where the screen lies in the 3D environment. It features the abilities to alter the pen style, alter the number of control points used to make the post sketch curve, automatically change the camera view to align with the drawing plane if one is being used, copy and alter individual strokes, and generate models from the 3-D sketch.
+Natural Sketch is a feature inside of the CATIA modeling software by Dassault Systemes. 
+Natural Sketch allows the user to draw on a virtual plane, a 3-D model, and the plane where the screen lies in the 3D environment. 
+It features the abilities to alter the pen style, alter the number of control points used to make the post sketch curve, automatically change the camera view to align with the drawing plane if one is being used, copy and alter individual strokes, and generate models from the 3-D sketch.
+
+Natural Sketch uses a two-phase design system. First, the user does a "rough sketch", where lines are rendered exactly as drawn. 
+Afterwards, the user can trace over their already drawn lines to produce smooth curves from the initial sketch.
+The traced curves are stored as Catmull-Clark splines.
+While this system closely resembles something we would like to implement, it is currently only available in a solid modeling environment, making it incompatible with many tools most architects use to create 3-D models.
 
 \begin{figure}
 
@@ -197,10 +204,11 @@ An example of an augmented reality approach to 3-D sketching is Gravity Sketch, 
 
 \subsection{3-D Printing}
 
-So far, we have focus on the transition from 2-D physical, to 2-D virtual, to 3-D digital. 
+So far, we have only explored the idea that 3-D sketching is only possible in virtual environments, due to the inherent two dimensional techniques artists have used for centuries.  
 However, groups have experimented with using 3-D printing to create pens that can sketch simple 3-D models; examples being the Polyes Q1 Pen and the 3Doodler.
 These pens work similarly to hot glue guns, except instead of glue, the pens secrete ABS plastic that quickly hardens as it exits the tip of the pen.
 Like the digital approaches, these pens lack tactile feedback, and rely purely on the user's sight to sketch.
+Unfortunately, between the apparent structural instability of even small models created by the pen, as well as the lack of flexibility in the way the pen can be used, it appears that this route is impractical for creating the types of large and intricate structures seen in modern design, and is at best a toy.
 
 \pagebreak
 
