@@ -7,28 +7,29 @@
 \contentsline {section}{\numberline {2.2}3-D Modeling in CAD}{11}
 \contentsline {section}{\numberline {2.3}3-D Sketching in CAD}{12}
 \contentsline {subsection}{\numberline {2.3.1}CATIA Natural Sketch}{12}
-\contentsline {subsection}{\numberline {2.3.2}ILoveSketch / EverybodyLovesSketch}{12}
-\contentsline {subsection}{\numberline {2.3.3}Hyve 3D}{14}
+\contentsline {subsection}{\numberline {2.3.2}ILoveSketch / EverybodyLovesSketch}{13}
+\contentsline {subsection}{\numberline {2.3.3}Hyve 3D}{13}
 \contentsline {section}{\numberline {2.4}3-D Sketching in 3-D}{16}
 \contentsline {subsection}{\numberline {2.4.1}Virtual Reality / Augmented Reality}{16}
-\contentsline {subsection}{\numberline {2.4.2}3-D Printing}{18}
-\contentsline {section}{\numberline {2.5}3-D Media Interaction}{19}
-\contentsline {section}{\numberline {2.6}Input}{20}
-\contentsline {subsection}{\numberline {2.6.1}Pen}{20}
-\contentsline {subsection}{\numberline {2.6.2}Touch}{21}
-\contentsline {subsection}{\numberline {2.6.3}Gesture}{21}
-\contentsline {chapter}{\numberline {3}Strokes, the Base of the Sketch}{24}
-\contentsline {section}{\numberline {3.1}Creating a Stroke}{25}
-\contentsline {section}{\numberline {3.2}Definition of Splines}{25}
-\contentsline {section}{\numberline {3.3}Inverse Spline Calculation}{25}
-\contentsline {chapter}{\numberline {4}Sketching in 3-D}{26}
-\contentsline {section}{\numberline {4.1}Ray Casting}{27}
-\contentsline {subsubsection}{Acceleration Structure}{27}
-\contentsline {subsubsection}{Intersection}{27}
-\contentsline {subsection}{\numberline {4.1.1}Implementation}{27}
-\contentsline {chapter}{\numberline {5}Displaying Strokes}{28}
-\contentsline {chapter}{\numberline {6}Usability and Feel: Bringing Physical Tools to the Virtual World}{29}
-\contentsline {section}{\numberline {6.1}Interacting with the 3D environment}{30}
-\contentsline {section}{\numberline {6.2}Combining Pen and Touch}{30}
-\contentsline {section}{\numberline {6.3}Turning the Page}{30}
-\contentsline {chapter}{\numberline {7}Conclusion}{32}
+\contentsline {subsection}{\numberline {2.4.2}3-D Printing}{17}
+\contentsline {section}{\numberline {2.5}3-D Media Interaction}{20}
+\contentsline {chapter}{\numberline {3}Input}{21}
+\contentsline {section}{\numberline {3.1}Pen}{21}
+\contentsline {section}{\numberline {3.2}Touch}{22}
+\contentsline {section}{\numberline {3.3}Gesture}{22}
+\contentsline {chapter}{\numberline {4}Strokes, the Base of the Sketch}{25}
+\contentsline {section}{\numberline {4.1}Creating a Stroke}{26}
+\contentsline {section}{\numberline {4.2}Definition of Splines}{26}
+\contentsline {section}{\numberline {4.3}Inverse Spline Calculation}{26}
+\contentsline {chapter}{\numberline {5}Sketching in 3-D}{27}
+\contentsline {section}{\numberline {5.1}Ray Casting}{28}
+\contentsline {subsubsection}{Acceleration Structure}{28}
+\contentsline {subsubsection}{Intersection}{28}
+\contentsline {subsection}{\numberline {5.1.1}Implementation}{28}
+\contentsline {chapter}{\numberline {6}Displaying Strokes}{29}
+\contentsline {chapter}{\numberline {7}Usability and Feel: Bringing Physical Tools to the Virtual World}{30}
+\contentsline {section}{\numberline {7.1}Various Pen Types}{31}
+\contentsline {section}{\numberline {7.2}Interacting with the 3D environment}{31}
+\contentsline {section}{\numberline {7.3}Combining Pen and Touch}{31}
+\contentsline {section}{\numberline {7.4}Turning the Page}{32}
+\contentsline {chapter}{\numberline {8}Conclusion}{33}

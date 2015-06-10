@@ -1,11 +1,25 @@
 #ifndef STROKE_H
 #define STROKE_H
 
+#include <QOpenGLFunctions>
+#include <QOpenGLShaderProgram>
+#include <QOpenGLBuffer>
 
-class stroke
+class Stroke : protected QOpenGLFunctions
 {
 public:
-    stroke();
+    Stroke();
+    virtual ~Stroke();
+
+    void drawStroke(QOpenGLShaderProgram *program);
+    void addPoint(QVector3D point);
+    void endStroke();
+
+private:
+
+    QOpenGLBuffer arrayBuf;
+    QOpenGLBuffer indexBuf;
+    QVector<QVector3D> points;
 };
 
 #endif // STROKE_H

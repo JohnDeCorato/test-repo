@@ -23,11 +23,19 @@
 
 Drawing lines on a computer is an easy problem to solve. 
 However, drawing lines well is significantly more difficult.
-OpenGL comes with native support for rendering lines, as well as methods to alter the width and color of the drawn line.
-First, this is not enough control over the line rendering that we will need for this project, since the lines drawn with this method are just simple, solid lines.
-We would like to have a wide variety of line styles for the user to draw with, for example: lines with feathered edges, variable width, and end caps.
+While OpenGL is known for it's GPU rendering capabilities with many different types of triangle primitives, it's line rendering capabilities are rather weak.
+The GL\_LINES drawing mode does not support line joins, line caps, non-integer line widths, widths greater than 10px, or varying widths in a single pass.
+Because of these limitations, it is unsuitable for line rendering for high quality sketching applications.
+Additionally, OpenGL's line anti-aliasing is both inconsistant in it's device support and poor in quality.
+
+We would like to have a wide variety of line styles for the user to draw with, for example.
 The common approach for making production quality lines is to transform the lines into triangles. 
 Using triangles gives a much higher level of control over how the line is drawn because we are not bound to the original definition of the line.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{opengllines}
+\caption{An example of native line rendering in OpenGL using GL\_LINES. Notice the poor anti-aliasing and holes from no joins.}
+\end{figure}
 
 \section{Creating Geometry From the Line Definition}
 
@@ -82,12 +90,12 @@ Then, using a vertex shader, the vertex positions are transformed appropriately 
 	\caption{Polygonization of a line with miter joins using only two vertices per control point}
 \end{figure}
 
-\begin{wrapfigure}{l}{0.5\textwidth}
+\begin{figure}
 	\begin{center}
-		\includegraphics[width=0.40\textwidth]{trianglestrip.png}
+		\includegraphics[width=\textwidth]{trianglestrip.png}
 	\end{center}
 	\caption{A standard triangle strip. Note how the definition matches our polygonalization}
-\end{wrapfigure}
+\end{figure}
 
 The system can now display polygonalized, three dimensional lines and does so efficiently.
 However, there are two problems with this approach.
@@ -100,11 +108,15 @@ How do we create them without creating too many polygons and running out of memo
 Luckily, we can avoid both of these problems by instead doing a screen space projection of the points that form our lines, and then expand them in the "two-dimensional" screen space.
 This means that no matter how the line is drawn in the 3-D environment, their definition doesn't change.
 
-\noindent \textbf{TODO}: Describe algorithm for projection and add code here
-
-\section{Various Pen Types}
-
- 
+The basic algorithm is:
+\begin{enumerate}
+\item Begin with three points, the current, previous, and next points along the polyline.
+\item Use the Model-View-Projection matrix to project these points into clip space
+\item Convert from clip space into normalized device coordinates
+\item Compute the normal for each of the line segments
+\item Expand along the screen space normal, and compute a join
+\end{enumerate}
+For the beginning and the ends of the line, we duplicate the second and second-to-last points on the polyline to avoid branching in the vertex shader. 
 
 
 \end{document}

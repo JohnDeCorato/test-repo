@@ -1,2 +1,6 @@
-<RCC/>
-
+<RCC>
+    <qresource prefix="/">
+        <file>shaders/simple.fs</file>
+        <file>shaders/simple.vs</file>
+    </qresource>
+</RCC>
