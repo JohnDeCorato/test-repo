@@ -44,9 +44,10 @@ private:
     QOpenGLShaderProgram program;
 
     QMatrix4x4 projection;
+    QMatrix4x4 rasterProj;
 
     QVector2D mousePressPosition;
-    Camera mCamera;
+    Camera *mCamera;
     RayCaster rayCaster;
     QVector<QVector3D> triangles;
 

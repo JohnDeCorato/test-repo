@@ -13,7 +13,7 @@ class RayCaster
 public:
     RayCaster();
 
-    QVector3D generateRayDirection(QVector2D screenPos, float width, float height, Camera mCamera);
+    QVector3D generateRayDirection(QVector2D screenPos, float width, float height, QMatrix4x4 projection, Camera* mCamera);
 
     float rayTri(QVector3D& origin, QVector3D& direction, QVector3D& A,
                 QVector3D& B, QVector3D& C, float t0, float t1);

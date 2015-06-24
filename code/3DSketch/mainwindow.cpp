@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     mLayer = mLayer1;
     stroking = false;
+
+    mCamera = new Camera(QVector3D(0,0,0), QVector3D(0,0,-1),0,0);
 }
 
 MainWindow::~MainWindow()
@@ -27,13 +29,14 @@ void MainWindow::mousePressEvent(QMouseEvent *e)
     // Save mouse press position
     mousePressPosition = QVector2D(e->localPos());
     QVector3D d = rayCaster.generateRayDirection(mousePressPosition, (float)this->width(),
-                                                 (float)this->height(), mCamera);
-    QVector3D* intersect = rayCaster.findIntersection(mCamera.toMatrix()*QVector3D(0.0,0.0,0.0), d, triangles);
+                                                 (float)this->height(), projection, mCamera);
+    QVector3D* intersect = rayCaster.findIntersection(mCamera->position(), d, triangles);
     if (intersect != NULL)
     {
         qDebug() << "Beginning Stroke";
         stroking = true;
         currentStroke = mLayer->createNewStroke();
+        currentStroke->addPoint(*intersect);
     }
     else
     {
@@ -47,29 +50,31 @@ void MainWindow::mouseMoveEvent(QMouseEvent *e)
     {
         mousePressPosition = QVector2D(e->localPos());
         QVector3D d = rayCaster.generateRayDirection(mousePressPosition, (float)this->width(),
-                                                     (float)this->height(), mCamera);
-        QVector3D* intersect = rayCaster.findIntersection(mCamera.toMatrix()*QVector3D(0.0,0.0,0.0), d, triangles);
+                                                     (float)this->height(),projection, mCamera);
+        QVector3D* intersect = rayCaster.findIntersection(mCamera->toMatrix()*QVector3D(0.0,0.0,0.0), d, triangles);
         if (intersect != NULL)
         {
-            qDebug() << intersect->x() << "," << intersect->y() << "," << intersect->z();
             currentStroke->addPoint(*intersect);
         }
         else
         {
+            currentStroke->endStroke();
             qDebug() << "Ending Stroke";
             stroking = false;
             currentStroke = NULL;
         }
+        update();
     }
 
 }
 
 void MainWindow::mouseReleaseEvent(QMouseEvent *e)
 {
-    qDebug() << "Ending Stroke";
-    qDebug() << "Stroke Count = " << mLayer->getStrokeCount();
     if (stroking)
     {
+        qDebug() << "Ending Stroke";
+        qDebug() << "Stroke Count = " << mLayer->getStrokeCount();
+        currentStroke->endStroke();
         stroking = false;
         currentStroke = NULL;
     }
@@ -85,6 +90,7 @@ void MainWindow::keyPressEvent(QKeyEvent *k)
             mLayer = mLayer2;
         else
             mLayer = mLayer1;
+        update();
     }
 }
 
@@ -97,7 +103,7 @@ void MainWindow::initializeGL()
 {
     initializeOpenGLFunctions();
 
-    glClearColor(0,0,0,1);
+    glClearColor(1,1,1,1);
 
     initShaders();
     initGeometry();
@@ -138,22 +144,23 @@ void MainWindow::resizeGL(int w, int h)
     // Calculate aspect ratio
     qreal aspect = qreal(w) / qreal(h ? h : 1);
 
-    // Set near plane to 3.0, far plane to 7.0, field of view 60 degrees
-    const qreal zNear = 1.0, zFar = 100.0, fov = 60.0;
+
+    const qreal zNear = 1.0, zFar = 100.0, fov =  60.0;
 
     // Reset projection
     projection.setToIdentity();
 
     // Set perspective projection
     projection.perspective(fov, aspect, zNear, zFar);
+    //projection = mCamera->fovToPerspective(fov, aspect, zNear, zFar);
 }
 
 void MainWindow::paintGL()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    program.setUniformValue("mvp_matrix", projection * mCamera.toMatrix());
-    program.setUniformValue("color", QVector4D(1,1,1,1));
+    program.setUniformValue("mvp_matrix", projection * mCamera->toMatrix());
+    program.setUniformValue("color", QVector4D(0,0,0,1));
     mLayer->drawLayer(&program);
 
 }

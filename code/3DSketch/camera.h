@@ -15,7 +15,7 @@ public:
     static const QVector3D LocalRight;
 
     // Constructors
-    Camera();
+    Camera(QVector3D position, QVector3D center, float width, float height);
 
     // Transform By
     void translate(const QVector3D &dt);
@@ -36,10 +36,14 @@ public:
     const QQuaternion& rotation() const;
     const QMatrix4x4& toMatrix();
 
+    // Other Camera Functions
+    QMatrix4x4 fovToPerspective(float fovy, float aspect, float zNear, float zFar);
+
     // Queries
     QVector3D forward() const;
     QVector3D right() const;
     QVector3D up() const;
+    QVector3D position();
 
 private:
     // True if camera is changed
@@ -48,9 +52,6 @@ private:
     QQuaternion m_rotation;
     QMatrix4x4 m_world;
 };
-
-// Constructors
-inline Camera::Camera() : m_dirty(true) {}
 
 // Transform By (Add/Scale)
 inline void Camera::translate(float dx, float dy,float dz) { translate(QVector3D(dx, dy, dz)); }

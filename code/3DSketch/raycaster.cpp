@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include "raycaster.h"
 
 #include <QVector2D>
@@ -13,17 +14,22 @@ RayCaster::RayCaster()
 
 }
 
-QVector3D RayCaster::generateRayDirection(QVector2D screenPos, float width, float height, Camera mCamera)
+QVector3D RayCaster::generateRayDirection(QVector2D screenPos, float width, float height, QMatrix4x4 projection, Camera* mCamera)
 {
-    float r = std::sqrtf(3.0f) / 3.0f;
-    float t = r*width/height;
+
+    float aspect = width/height;
+
+
+    float t = 1.0 * tan(60.0f * (float)M_PI / 360.0f);
+    float r = t * aspect;
+
 
     float us = -r + (2*r)*(screenPos.x()+0.5)/width;
-    float vs = -t + (2*t)*(screenPos.y()+0.5)/height;
+    float vs = t - (2*t)*(screenPos.y()+0.5)/height;
 
-    QVector3D u = mCamera.right();
-    QVector3D v = mCamera.up();
-    QVector3D w = mCamera.forward();
+    QVector3D u = mCamera->right();
+    QVector3D v = mCamera->up();
+    QVector3D w = mCamera->forward();
 
     return us*u + vs*v + w;
 }
@@ -77,6 +83,11 @@ float RayCaster::rayTri(QVector3D& origin, QVector3D& direction, QVector3D& A,
     float beta = (j*eimhf+k*gfmdi+l*dhmeg)/M;
 
     if (beta < 0 || beta > 1)
+        return -1;
+
+    float alpha = 1 - beta - gamma;
+
+    if (alpha < 0)
         return -1;
 
     return t;

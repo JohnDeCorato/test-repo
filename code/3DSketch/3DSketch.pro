@@ -4,9 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT       += core gui widgets
 
 TARGET = 3DSketch
 TEMPLATE = app
@@ -28,8 +26,8 @@ HEADERS  += mainwindow.h \
 RESOURCES += \
     resources.qrc
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../../Program Files/Intel/Embree 2.5.1/lib/ -lembree
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../../Program Files/Intel/Embree 2.5.1/lib/ -lembreed
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Embree/ -lembree
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Embree/ -lembree
 
-INCLUDEPATH += $$PWD/../../../../../../../Program Files/Intel/Embree 2.5.1/include
-DEPENDPATH += $$PWD/../../../../../../../Program Files/Intel/Embree 2.5.1/include
+INCLUDEPATH += $$PWD/../Embree/include
+DEPENDPATH += $$PWD/../Embree/include
