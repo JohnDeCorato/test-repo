@@ -15,13 +15,15 @@ SOURCES += main.cpp\
     stroke.cpp \
     raycaster.cpp \
     camera.cpp \
-    layer.cpp
+    layer.cpp \
+    lineshader.cpp
 
 HEADERS  += mainwindow.h \
     stroke.h \
     raycaster.h \
     camera.h \
-    layer.h
+    layer.h \
+    lineshader.h
 
 RESOURCES += \
     resources.qrc
