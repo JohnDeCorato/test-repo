@@ -25,6 +25,6 @@ void Layer::deleteLastStroke()
 void Layer::drawLayer(QOpenGLShaderProgram *program)
 {
     for(int i = 0; i < strokes.size(); i++)
-        strokes[i]->drawStroke(program);
+        strokes[i]->drawStroke2(program);
 }
 

@@ -32,21 +32,22 @@ Stroke::~Stroke()
 void Stroke::endStroke()
 {
     buildSpline(points);
-    qDebug() << curve.size();
+//    qDebug() << curve.size();
 
-    arrayBuf.bind();
+//    arrayBuf.bind();
 
-    arrayBuf.allocate(curve.constData(), curve.size() * sizeof(QVector3D));
+//    arrayBuf.allocate(curve.constData(), curve.size() * sizeof(QVector3D));
 
-    QVector<GLushort> indices;
-    indices.clear();
-    for (int i = 0; i < curve.size()-1; i++)
-    {
-        indices.append(i);
-        indices.append(i+1);
-    }
-    indexBuf.bind();
-    indexBuf.allocate(indices.constData(), indices.size() * sizeof(GLushort));
+//    QVector<GLushort> indices;
+//    indices.clear();
+//    for (int i = 0; i < curve.size()-1; i++)
+//    {
+//        indices.append(i);
+//        indices.append(i+1);
+//    }
+//    indexBuf.bind();
+//    indexBuf.allocate(indices.constData(), indices.size() * sizeof(GLushort));
+    bindBuffers(points);
     madeCurve = true;
 }
 
@@ -56,7 +57,7 @@ void Stroke::drawStroke(QOpenGLShaderProgram *program)
 
     indexBuf.bind();
 
-    bindAttributeBuffer(arrayBuf, "a_position", program, GL_FLOAT, sizeof(QVector3D));
+    bindAttributeBuffer(arrayBuf, "position", program, GL_FLOAT, 3, sizeof(QVector3D));
 
     //int vertexLocation = program->attributeLocation("a_position");
     //program->enableAttributeArray(vertexLocation);
@@ -73,19 +74,20 @@ void Stroke::drawStroke(QOpenGLShaderProgram *program)
 void Stroke::addPoint(QVector3D &point)
 {
     points.append(point);
-    arrayBuf.bind();
+//    arrayBuf.bind();
 
-    arrayBuf.allocate(points.constData(), points.size() * sizeof(QVector3D));
+//    arrayBuf.allocate(points.constData(), points.size() * sizeof(QVector3D));
 
-    QVector<GLushort> indices;
-    indices.clear();
-    for (int i = 0; i < points.size()-1; i++)
-    {
-        indices.append(i);
-        indices.append(i+1);
-    }
-    indexBuf.bind();
-    indexBuf.allocate(indices.constData(), indices.size() * sizeof(GLushort));
+//    QVector<GLushort> indices;
+//    indices.clear();
+//    for (int i = 0; i < points.size()-1; i++)
+//    {
+//        indices.append(i);
+//        indices.append(i+1);
+//    }
+//    indexBuf.bind();
+//    indexBuf.allocate(indices.constData(), indices.size() * sizeof(GLushort));
+    bindBuffers(points);
 }
 
 // Build a B-Spline curve from a set of control points
@@ -121,7 +123,7 @@ void Stroke::buildSpline(QVector<QVector3D> controlPoints)
 
     for (int i = 0; i < L; i++)
     {
-        subdivide(bezier, 3*i, 0.005f);
+        subdivide(bezier, 3*i, 0.0005f);
     }
     curve.append(bezier[3*L]);
     //curve = controlPoints;
@@ -211,9 +213,11 @@ void Stroke::bindBuffers(QVector<QVector3D> verts)
     QVector<QVector3D> prevVertices;
     QVector<QVector3D> nextVertices;
     QVector<float> directions;
-    QVector<GLuint> indices;
+    QVector<GLshort> indices;
 
-    for (int i = 0; i < vertices.size(); i++)
+
+
+    for (int i = 0; i < verts.size(); i++)
     {
         // First Copy
         vertices.append(verts[i]);
@@ -246,24 +250,24 @@ void Stroke::bindBuffers(QVector<QVector3D> verts)
     dirBuf.allocate(directions.constData(), numIndices * sizeof(float));
 
     indexBuf.bind();
-    indexBuf.allocate(indices.constData(), numIndices * sizeof(GLuint));
+    indexBuf.allocate(indices.constData(), numIndices * sizeof(GLshort));
 }
 
 // Utility Function to Bind and OpenGL Attribute Buffer
-void Stroke::bindAttributeBuffer(QOpenGLBuffer buffer, const char *varName, QOpenGLShaderProgram *program, GLenum type, int tupleSize)
+void Stroke::bindAttributeBuffer(QOpenGLBuffer buffer, const char *varName, QOpenGLShaderProgram *program, GLenum type, int tupleSize, int offset)
 {
     buffer.bind();
     int location = program->attributeLocation(varName);
     program->enableAttributeArray(location);
-    program->setAttributeBuffer(location, type, 0, 3, tupleSize);
+    program->setAttributeBuffer(location, type, 0, tupleSize, offset);
 }
 
 void Stroke::drawStroke2(QOpenGLShaderProgram *program)
 {
-    bindAttributeBuffer(vertBuf, "position", program, GL_FLOAT, sizeof(QVector3D));
-    bindAttributeBuffer(prevBuf, "previous", program, GL_FLOAT, sizeof(QVector3D));
-    bindAttributeBuffer(nextBuf, "next", program, GL_FLOAT, sizeof(QVector3D));
-    bindAttributeBuffer(dirBuf, "direction", program, GL_FLOAT, sizeof(float));
+    bindAttributeBuffer(vertBuf, "position", program, GL_FLOAT, 3, sizeof(QVector3D));
+    bindAttributeBuffer(prevBuf, "previous", program, GL_FLOAT, 3, sizeof(QVector3D));
+    bindAttributeBuffer(nextBuf, "next", program, GL_FLOAT, 3, sizeof(QVector3D));
+    bindAttributeBuffer(dirBuf, "direction", program, GL_FLOAT, 1, sizeof(float));
 
     indexBuf.bind();
     glDrawElements(GL_TRIANGLE_STRIP, numIndices, GL_UNSIGNED_SHORT, 0);

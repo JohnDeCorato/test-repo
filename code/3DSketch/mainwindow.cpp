@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include "mainwindow.h"
 
 #include <QMouseEvent>
@@ -8,6 +9,9 @@
 MainWindow::MainWindow(QWidget *parent) :
     QOpenGLWidget(parent)
 {
+    //setSurfaceType(OpenGLSurface);
+
+
     mLayer1 = new Layer();
     mLayer2 = new Layer();
 
@@ -37,6 +41,7 @@ void MainWindow::mousePressEvent(QMouseEvent *e)
         stroking = true;
         currentStroke = mLayer->createNewStroke();
         currentStroke->addPoint(*intersect);
+        lastMousePosition = mousePressPosition;
     }
     else
     {
@@ -49,21 +54,25 @@ void MainWindow::mouseMoveEvent(QMouseEvent *e)
     if (stroking)
     {
         mousePressPosition = QVector2D(e->localPos());
-        QVector3D d = rayCaster.generateRayDirection(mousePressPosition, (float)this->width(),
-                                                     (float)this->height(),projection, mCamera);
-        QVector3D* intersect = rayCaster.findIntersection(mCamera->toMatrix()*QVector3D(0.0,0.0,0.0), d, triangles);
-        if (intersect != NULL)
+        if (notAdjecnt(mousePressPosition, lastMousePosition, 5))
         {
-            currentStroke->addPoint(*intersect);
+            QVector3D d = rayCaster.generateRayDirection(mousePressPosition, (float)this->width(),
+                                                         (float)this->height(),projection, mCamera);
+            QVector3D* intersect = rayCaster.findIntersection(mCamera->toMatrix()*QVector3D(0.0,0.0,0.0), d, triangles);
+            if (intersect != NULL)
+            {
+                currentStroke->addPoint(*intersect);
+                lastMousePosition = mousePressPosition;
+            }
+            else
+            {
+                currentStroke->endStroke();
+                qDebug() << "Ending Stroke";
+                stroking = false;
+                currentStroke = NULL;
+            }
+            update();
         }
-        else
-        {
-            currentStroke->endStroke();
-            qDebug() << "Ending Stroke";
-            stroking = false;
-            currentStroke = NULL;
-        }
-        update();
     }
 
 }
@@ -94,14 +103,28 @@ void MainWindow::keyPressEvent(QKeyEvent *k)
     }
 }
 
+bool MainWindow::event(QEvent *e)
+{
+    return QWidget::event(e);
+}
+
 void MainWindow::timerEvent(QTimerEvent *)
 {
-    //update();
+    update();
 }
 
 void MainWindow::initializeGL()
 {
+
     initializeOpenGLFunctions();
+
+    qDebug() << "Widget OpenGl: " << format().majorVersion() << "." << format().minorVersion();
+    qDebug() << "Context valid: " << context()->isValid();
+    qDebug() << "Really used OpenGl: " << context()->format().majorVersion() << "." << context()->format().minorVersion();
+    qDebug() << "OpenGl information: VENDOR:       " << (const char*)glGetString(GL_VENDOR);
+    qDebug() << "                    RENDERDER:    " << (const char*)glGetString(GL_RENDERER);
+    qDebug() << "                    VERSION:      " << (const char*)glGetString(GL_VERSION);
+    qDebug() << "                    GLSL VERSION: " << (const char*)glGetString(GL_SHADING_LANGUAGE_VERSION);
 
     glClearColor(1,1,1,1);
 
@@ -109,6 +132,8 @@ void MainWindow::initializeGL()
     initGeometry();
 
     glEnable(GL_DEPTH_TEST);
+    glEnable(GL_MULTISAMPLE);
+    glEnable(GL_LINE_SMOOTH);
 
     timer.start(12, this);
 }
@@ -116,11 +141,11 @@ void MainWindow::initializeGL()
 void MainWindow::initShaders()
 {
     // Compile vertex shader
-    if (!program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/simple.vs"))
+    if (!program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/lines.vs"))
         close();
 
     // Compile fragment shader
-    if (!program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/simple.fs"))
+    if (!program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/lines.fs"))
         close();
 
     // Link shader pipeline
@@ -134,18 +159,17 @@ void MainWindow::initShaders()
 
 void MainWindow::initGeometry()
 {
-    triangles.append(QVector3D(2,2,-5));
-    triangles.append(QVector3D(-2,2,-5));
-    triangles.append(QVector3D(0,-2,-5));
+    triangles.append(QVector3D(3,3,-5));
+    triangles.append(QVector3D(-3,3,-5));
+    triangles.append(QVector3D(0,-3,-5));
 }
 
 void MainWindow::resizeGL(int w, int h)
 {
     // Calculate aspect ratio
-    qreal aspect = qreal(w) / qreal(h ? h : 1);
+    aspect = float(w) / float(h ? h : 1);
 
-
-    const qreal zNear = 1.0, zFar = 100.0, fov =  60.0;
+    const float zNear = 1.0f, zFar = 100.0f, fov =  60.0f;
 
     // Reset projection
     projection.setToIdentity();
@@ -161,6 +185,15 @@ void MainWindow::paintGL()
 
     program.setUniformValue("mvp_matrix", projection * mCamera->toMatrix());
     program.setUniformValue("color", QVector4D(0,0,0,1));
+    program.setUniformValue("aspect", aspect);
+
+    program.setUniformValue("thickness", 0.1f);
+    program.setUniformValue("miter", 1);
     mLayer->drawLayer(&program);
 
+}
+
+bool MainWindow::notAdjecnt(QVector2D p0, QVector2D p1, int threshhold)
+{
+    return std::abs(p1.x() - p0.x()) + std::abs(p1.y() - p0.y()) > threshhold;
 }

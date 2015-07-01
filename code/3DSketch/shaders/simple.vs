@@ -6,11 +6,11 @@ precision mediump float;
 
 uniform mat4 mvp_matrix;
 
-attribute vec3 a_position;
+attribute vec3 position;
 
 //! [0]
 void main()
 {
     // Calculate vertex position in screen space
-    gl_Position = mvp_matrix * vec4(a_position,1.0);
+    gl_Position = mvp_matrix * vec4(position,1.0);
 }

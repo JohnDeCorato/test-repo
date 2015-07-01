@@ -44,7 +44,7 @@ private:
 
     // OpenGL Utility Functions
     void bindBuffers(QVector<QVector3D> verts);
-    void bindAttributeBuffer(QOpenGLBuffer buffer, const char* varName, QOpenGLShaderProgram *program, GLenum type, int tupleSize);
+    void bindAttributeBuffer(QOpenGLBuffer buffer, const char* varName, QOpenGLShaderProgram *program, GLenum type, int tupleSize, int offset);
 };
 
 #endif // STROKE_H
