@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass[11pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{subcaption}
@@ -6,6 +6,8 @@
 \usepackage[english]{babel}
 \usepackage{wrapfig}
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage{longtable}
+\usepackage{algpseudocode, algorithm}
 
 \doublespacing
 
@@ -21,102 +23,155 @@
 
 \chapter{Line Rendering}
 
-Drawing lines on a computer is an easy problem to solve. 
-However, drawing lines well is significantly more difficult.
-While OpenGL is known for it's GPU rendering capabilities with many different types of triangle primitives, it's line rendering capabilities are rather weak.
-The GL\_LINES drawing mode does not support line joins, line caps, non-integer line widths, widths greater than 10px, or varying widths in a single pass.
-Because of these limitations, it is unsuitable for line rendering for high quality sketching applications.
-Additionally, OpenGL's line anti-aliasing is both inconsistant in it's device support and poor in quality.
+As a sketching application, it is important for curves to be rendered with high quality.
+While graphics hardware has support for line rendering, it's implementation is only suitable for line segments, with significant issues when trying to render curves.
+In this chapter, we discuss the system this project implements for curve rendering.
 
-We would like to have a wide variety of line styles for the user to draw with, for example.
-The common approach for making production quality lines is to transform the lines into triangles. 
-Using triangles gives a much higher level of control over how the line is drawn because we are not bound to the original definition of the line.
+\section{Problems With Available Line Renderers}
+OpenGL has support for a variety of line primitives: lines, line strips, and lines with adjacency data.
+However, these primitives are not suited for rendering curves at high quality.
+This is because of the method OpenGL uses to render line segments: as a rectangle between the two segment points.
+While this method is suited for common uses of lines in 3D applications, for example wire frames, it does not extend to curve rendering because of the gaps that appear between segments.
+It is reasonable to think that if we use a curve that is subdivided to a fine enough degree, then the holes will be so small that they would not be visible.
+However, in practice, even finely subdivided lines have visible holes around any curve.
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{linesegment2.png}
+	\caption{Two line segments connected together, as per default GL\_LINES implementation. Note the gap from no join.}
+\end{figure}
+
+To correct the holes, this project implements a custom line renderer that constructs a triangle mesh from the line definition.
+Constructing a mesh for the line allow allows for implementation of a wide variety of stroke types, including strokes with various end caps or variable width based on stroke direction. 
+
+Additionally, OpenGL lines have inconsistent support for anti-aliasing across all hardware.
+By switching to a triangle mesh, we leverage the native anti-aliasing support for triangles without worrying about consistency.
+As we can see in the above image, without anti-aliasing rendered lines appear jagged and poor quality.
+In order for our system to be appealing as a drafting table replacement, our system needs to render the highest quality lines possible.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{opengllines}
 \caption{An example of native line rendering in OpenGL using GL\_LINES. Notice the poor anti-aliasing and holes from no joins.}
 \end{figure}
 
-\section{Creating Geometry From the Line Definition}
+\pagebreak
+\section{Creating Joins From the Line Definition}
 
+\begin{center}
 
-Starting the line is straight forward. 
-Assuming we are given a set of points and a line width, we can start drawing the line by creating a line segment between a set of two points. We then extrude the segment along the positive and negative normal by half of the line width.
-However, a problem arises when multiple of these segments are formed along the line points.
-We begin to get gaps along the drawn line. 
-To solve this, we need to create a join between each of the line segments.
-There are three main join types commonly used to solve this problem: miter, bevel, and round joins.
+\begin{tabular}{|c|l|}
+\hline
+\textbf{Symbol} & \textbf{Description} \\ \hline
+$p_n$			& Ordered point on line in the range $[0,2]$ \\
+$n_{xy}$		& The normal to the line segment $(p_x, p_y)$ \\	
+$t_x$			& Vector from $p_1$ along $n_{x1}$ with length $line\_width/2$ \\
+\hline
+\end{tabular}
+\captionof{table}{Section Variables} \label{tab:title}
+\end{center}
 
-\begin{figure}
-	\includegraphics[width=\textwidth]{linesegment1.png}
-	\caption{Diagram for creating the line geometry}
-\end{figure}
+In order to improve the appearance of our curves relative to the native OpenGL implementation, we will need to compute joins between each of our line segments.
+For this project, we implement three types of joins: miter, bevel, and round.
+Miter and bevel joins are used in conjunction with each other, while round joins are used alone.
 
-\begin{figure}
-	\includegraphics[width=\textwidth]{linesegment2.png}
-	\caption{The gap that forms when connecting segments}
-\end{figure}
+A round join is formed by rounding out the gap such that a smooth curve is created. 
+It is calculated by forming a circle whose center is located at $p_1$, with a radius of $line\_width/2$. 
+The total angle that needs to be filled can be calculated by $t_0 \cdot t_2$, and can be filled by rotating either $t_0$ or $t_2$ about $p_1$.
 
-\begin{figure}
-	\includegraphics[width=\textwidth]{jointypes.jpg}
-	\caption{Types of joins from left to right: round, bevel, miter}
-\end{figure}
-The round join is formed by rounding out the gap such that a smooth curve is created. 
-It is calculated by forming a circle whose center is the line point at the gap, with a radius of half of the total line width. 
-From there, the part of the circle that fills in the gap is polygonalized.
-The bevel join is formed by simply filling in the triangular shaped hole with a polygon. 
-The polygon's third edge is the line segment formed from $p_1a$ and $p_1b$ (note change names when adding better diagram with labels).
-
-\noindent \textbf{TODO}: Add derivation and diagrams for miter join.
-
-Miter joins have the particular issue that artifacts can arise from exceptionally sharp points in the line segments. 
-This should be avoided with splines since the spline should subdivide in these cases.
+Miter joins are formed by extending the lines in the line geometry parallel to the original segment.
+The join is formed where these extended lines intersect, as can be seen in Figure 1.5.
+To calculate this, we take the line segments defined by $(p_0 + t_0, p_1 + t_0)$ and $(p_2 + t_2, p_1 + t_2)$ and compute their intersection. We call the vector from this intersection to $p_1$ $v$.
+We can then compute a polygon between $p_1$, $p_1 + t_0$, $p_1 + t_2$, and $p_1 + v$, which creates the miter join. 
 
 \begin{figure}
-\includegraphics[width=\textwidth]{miterartifact.jpg}
-\caption{An example of a miter join artifact from a sharp curve}
-\end{figure}
-
-\section{Implementation}
-
-Actually creating this geometry can get very expensive, especially as more and more lines are drawn. 
-To make this as cheap as possible we take advantage of the properties of both miter joins and our spline storage.
-The miter join has the advantage of being able to be added by simply translating and fusing vertices in the rectangular geometry. 
-This allows for the least complexity in forming line geometry by simply creating two vertices for each defined line point, which are used to define a triangle strip. 
-Then, using a vertex shader, the vertex positions are transformed appropriately to form the line polygon.
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{miterpolys.jpg}
-	\caption{Polygonization of a line with miter joins using only two vertices per control point}
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{miter.png}
+		\caption{Diagram of a miter join with parameter labels}
+	\end{center}
 \end{figure}
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=\textwidth]{trianglestrip.png}
+		\includegraphics[width=0.7\textwidth]{bevel.png}
+		\caption{Diagram of a bevel join with parameter labels}
 	\end{center}
-	\caption{A standard triangle strip. Note how the definition matches our polygonalization}
 \end{figure}
 
-The system can now display polygonalized, three dimensional lines and does so efficiently.
-However, there are two problems with this approach.
-First, lines only exist in the plane they are drawn in.
-This means if the camera were to rotate such that it is perpendicular to the plane the lines were drawn on, the lines would disappear from our rendering.
-This happens because we currently expand the lines in world space, based on the  plane the line was drawn on, instead of based on the current position of the camera.
-Second, this approach assumes we expand our lines on a plane, limiting the sketching surfaces available.
-Expanding the lines if the sketch was done on a sphere becomes a significantly harder problem. how is line width defined on curved geometry? 
-How do we create them without creating too many polygons and running out of memory?
-Luckily, we can avoid both of these problems by instead doing a screen space projection of the points that form our lines, and then expand them in the "two-dimensional" screen space.
-This means that no matter how the line is drawn in the 3-D environment, their definition doesn't change.
+\begin{figure}
+\includegraphics[width=\textwidth]{joinartifact.png}
+\caption{Left: An example of a miter join artifact from a sharp curve. Right: Artifact post-correction.}
+\end{figure}
 
-The basic algorithm is:
-\begin{enumerate}
-\item Begin with three points, the current, previous, and next points along the polyline.
-\item Use the Model-View-Projection matrix to project these points into clip space
-\item Convert from clip space into normalized device coordinates
-\item Compute the normal for each of the line segments
-\item Expand along the screen space normal, and compute a join
-\end{enumerate}
-For the beginning and the ends of the line, we duplicate the second and second-to-last points on the polyline to avoid branching in the vertex shader. 
+Miter joins have the particular issue that artifacts can arise from exceptionally sharp points in the line segments.
+We detect these cases by checking to see if $v$ is larger than a certain length.
+If so, we use a bevel join instead.
+The bevel join is formed by simply creating a triangle between $p_1$, $p_1 + t_0$, and $p_1 + t_2$.
+
+\pagebreak
+\section{Implementation}
+
+Actually creating this geometry can get very expensive, especially as more and more lines are drawn. 
+A simple polygonalization for a robust miter and bevel join implementation can create as many as six polygons for each pair of points on the curve.
+This does not take into account round joins, as smooth circle approximations require a large number of polygons.
+Combine this with spline subdivision, and we run the risk of running into bandwith problems when transferring polygon data between the GPU and the CPU for very large strokes.
+To solve for this, we implement these algorithms in a geometry shader using a line adjacency data structure input.
+In order to reduce the number of branch operations, we polygonalize each line segment in halves, taking care of the join calculation for each side separately.
+An example of a polygonalized line segment can be seen in Figure 1.8.
+
+\begin{figure}
+\includegraphics{linerendering}
+\caption{Left: A curve using default GL\_LINES. Right: Implemented system}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\textwidth]{lineadjacency.png}
+	\end{center}
+	\caption{The line adjacency data structure. Each instance of the geometry shader polygonalizes the line segment (p1, p2)}
+\end{figure}
+\begin{figure}
+	\includegraphics[width=\textwidth]{linepolyex.png}
+	\caption{Example polygonization of a line with miter joins.}
+\end{figure}
+
+
+
+The system can now display polygonalized, three dimensional lines and does so efficiently.
+However, we still need to decide how we are going to expand our lines.
+Approaches similar applications have taken include: 
+\begin{itemize}
+\item Creating the line geometry on the screen and projecting it onto scene objects. With this approach, lines only exist on the plane they are drawn on. Because of this, it is possible to turn the camera and not see strokes the user has already mode. This approach is only suitable for applications where a base geometry is already supplied, and therefore not suitable for early stage design applications. Other shortcomings include the requirement of a large number of ray cast operations for each line created, which puts too much work on the CPU for a real time application, as well as the lines created lacking a sense of depth.
+\item Creating 3-D geometry from the line definition. This approach makes lines look poor when viewed from the side, as the line form will not have the same shape as originally intended. The approach also requires a high number of polygons.
+\end{itemize}
+
+We would like to allow for lines to be viewed from any direction, while still retaining their original line width and quality.
+The approach this application takes is to perform all of the calculations from creating line geometry in the distorted image space.
+By working in the distorted image space, we can guarantee the geometry is always expanded in the screen's x-y plane.
+Since points in the distorted space also contain a z value, our lines will have different widths depending on depth.
+
+\begin{algorithm}[H]
+\caption{Line Rendering Algorithm}
+\begin{algorithmic}[1]
+\For{Line Adjacency data set \{$p_0$, $\cdots$, $p_3$\}}
+\State Covert world space line points \{$p_0$, $\cdots$, $p_3$\} to the distorted image space points \{$p_{0s}$, $\cdots$, $p_{3s}$\}
+\State Compute normals for each of the line segments $(p_{ns},p_{(n+1)s})$
+\State Enforce normals are pointing towards the outer arcs of segment pairs
+\State Compute join parameters using image space variables and a defined line width
+\State Triangulate for the line segment ($p_1$, $p_2$)
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{rotation.png}
+\caption{Even when rotating the drawing plane such that it is no longer visible, our lines remain visible.}
+\end{center}
+\end{figure}
+
+In this chapter we have described a method for creating geometry from a line definition.
+We have also described how we create this 2-D geometry such that it is visible from any 3-D direction.
+Similar applications create the extra line geometry on the CPU.
+By creating our geometry exclusively on the GPU, we minimize the bandwidth needed to transfer data from the CPU to the GPU, allowing extremely detailed curves using our spline calculation.
 
 
 \end{document}

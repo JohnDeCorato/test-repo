@@ -6,13 +6,18 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Line Rendering}{1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces An example of native line rendering in OpenGL using GL\_LINES. Notice the poor anti-aliasing and holes from no joins.\relax }}{2}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Creating Geometry From the Line Definition}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Diagram for creating the line geometry\relax }}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces The gap that forms when connecting segments\relax }}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Types of joins from left to right: round, bevel, miter\relax }}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces An example of a miter join artifact from a sharp curve\relax }}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Implementation}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Polygonization of a line with miter joins using only two vertices per control point\relax }}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces A standard triangle strip. Note how the definition matches our polygonalization\relax }}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Various Pen Types}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Problems With Available Line Renderers}{1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Two line segments connected together, as per default GL\_LINES implementation. Note the gap from no join.\relax }}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces An example of native line rendering in OpenGL using GL\_LINES. Notice the poor anti-aliasing and holes from no joins.\relax }}{3}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Creating Joins From the Line Definition}{4}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Section Variables\relax }}{4}}
+\newlabel{tab:title}{{1.1}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Diagram of a miter join with parameter labels\relax }}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Diagram of a bevel join with parameter labels\relax }}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Left: An example of a miter join artifact from a sharp curve. Right: Artifact post-correction.\relax }}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Implementation}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Left: A curve using default GL\_LINES. Right: Implemented system\relax }}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces The line adjacency data structure. Each instance of the geometry shader polygonalizes the line segment (p1, p2)\relax }}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces Example polygonization of a line with miter joins.\relax }}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.9}{\ignorespaces Even when rotating the drawing plane such that it is no longer visible, our lines remain visible.\relax }}{10}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Line Rendering Algorithm\relax }}{10}}

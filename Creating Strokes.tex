@@ -98,36 +98,7 @@ The curve can also be evaluated recursively, by
 \mathbf{B}(t) = \mathbf{B}_{\mathbf{P}_0\mathbf{P}_1\ldots\mathbf{P}_n}(t) = (1-t)\mathbf{B}_{\mathbf{P}_0\mathbf{P}_1\ldots\mathbf{P}_{n-1}}(t) + t\mathbf{B}_{\mathbf{P}_1\mathbf{P}_2\ldots\mathbf{P}_n}(t)
 \end{align}
 What this equation means is that a Bezier spline of order $n$ can be defined by linear interpolation between two splines of order $n - 1$.
-
-The most commonly used curves are linear, quadratic, and cubic interpolations, where n = 1 for linear, 2 for quadratic, and 3 for cubic.
-Evaluating n = 1 gives us: 
-\begin{align}
-\mathbf{B}(t)=\mathbf{P}_0 + t(\mathbf{P}_1-\mathbf{P}_0)=(1-t)\mathbf{P}_0 + t\mathbf{P}_1 \mbox{ , } 0 \le t \le 1
-\end{align}
-which is linear interpolation.
-
-
 For this project, we will use a cubic Bézier function for the spline segments.
-Four points P0, P1, P2 and P3 in the space define a cubic Bézier curve. 
-The curve starts at P0 going toward P1 and arrives at P3 coming from the direction of P2. 
-Usually, it will not pass through P1 or P2; these points are only there to provide directional information. 
-The distance between P0 and P1 determines the magnitude and velocity the curve moves towards P1 before turning towards P2.
-
-
-The cubic spline curve is explicitly defined as:
-The explicit form of the curve is:
-\begin{align}
-\mathbf{B}(t)=(1-t)^3\mathbf{P}_0+3(1-t)^2t\mathbf{P}_1+3(1-t)t^2\mathbf{P}_2+t^3\mathbf{P}_3 \mbox{ , } 0 \le t \le 1.
-\end{align}
-For some choices of P1 and P2 the curve may intersect itself, or contain a cusp.
-The derivative of the cubic Bézier curve with respect to t is
-\begin{align}
-\mathbf{B}'(t) = 3(1-t)^2(\mathbf{P}_1 - \mathbf{P}_0) + 6(1-t)t(\mathbf{P}_2 - \mathbf{P}_1) + 3t^2(\mathbf{P}_3 - \mathbf{P}_2) \,.
-\end{align}
-The second derivative of the Bézier curve with respect to t is
-\begin{align}
-\mathbf{B}''(t) = 6(1-t)(\mathbf{P}_2 - 2 \mathbf{P}_1 + \mathbf{P}_0) +  6t(\mathbf{P}_3 - 2 \mathbf{P}_2 + \mathbf{P}_1) \,.
-\end{align}
 
 If we want our spline to closely approximate the sketch, we have two options. 
 First, we can generate a spline curve that passes through our control points in order, by splitting the input set into subsets of 4 control points.
@@ -181,7 +152,9 @@ For input with less than 5 points, a Bézier curve can be generated, using a lin
 In practice, not generating a curve that is exactly the same as the input sample points is not as necessary as one would think. 
 The most important part is the curve should match the form of the original curve.
 If the detail of the curve is important, then the user will probably draw more slowly, allowing for a greater number of sample points, and generating a spline that closely resembles the shape of the detailed section.
-The simpler and more consistent shape of the recursive B-spline curve makes it a better choice than the inverse control point calculation, as seem in practice by a large number of applications implementing spline approximations, including Mischief.
+Also, matching control points perfectly is a poor decision when working with pixel grids, as extremely detailed sampling produces input in a staircase pattern.
+Matching input exactly would make diagonal straight lines impossible.
+The simpler and more consistent shape of the recursive B-spline curve makes it a better choice than the inverse control point calculation, as seen in practice by a large number of applications implementing spline approximations, including Mischief.
 
 \subsection{Algorithm}
 
@@ -201,14 +174,13 @@ Subdivision of these segments occurs as follows:
 \item Repeat steps 2 through 5 until a termination criteria is met. Possible criteria include distance between control points, and distance between control points $P_1$ and $P_2$ and the line between $P_0$ and $P_3$.
 \end{enumerate}
 If the termination criteria is small enough, then the curve will appear very smooth, even when zooming in to the curve.
-
-The complete algorithm is as follows:
-
-$TODO: bug joe about writing in algorithm format$
-
 This algorithm produces a smooth B-spline curve starting at control point 0 and ending at N-1.
 
-
+\section{Summary}
+In this section, we described how we turn user input over a set of pixel coordinates into a curve approximating the intent of the stroke.
+We believe intent is more important than perfect accuracy since in practice, replicating curves that perfectly match input data results in poor quality curves.
+This is because of the finite resolution of a pixel grid, where as in real world sketching, the concept of 'input resolution' does not exist.
+Using a B-spline algorithm with cubic Bezier components, we can calculate a smooth spline curve for our stroke input.
 
 
 

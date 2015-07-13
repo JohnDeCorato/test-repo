@@ -14,24 +14,38 @@ RayCaster::RayCaster()
 
 }
 
+bool RayCaster::unproject(QVector2D screenPos, float winZ, Camera *mCamera, float width, float height, QVector3D &worldCoords)
+{
+    QMatrix4x4 inverse = mCamera->getMVPMatrix().inverted();
+
+    float winX = screenPos.x();
+    float winY = height - screenPos.y();
+
+    QVector4D in;
+    in[0] = winX / width  * 2.0f - 1.0f;
+    in[1] = winY / height * 2.0f - 1.0f;
+    in[2] = 2.0f * winZ - 1.0f;
+    in[3] = 1;
+
+    QVector4D out = inverse * in;
+    if (out[3] == 0.0)
+    {
+        worldCoords = QVector3D(0,0,0);
+        return (false);
+    }
+
+    out[3] = 1 / out[3];
+    worldCoords = QVector3D(out.x(),out.y(),out.z()) * out[3];
+    return true;
+}
+
 QVector3D RayCaster::generateRayDirection(QVector2D screenPos, float width, float height, QMatrix4x4 projection, Camera* mCamera)
 {
+    QVector3D p0, p1;
+    unproject(screenPos, 0.0f, mCamera, width, height, p0);
+    unproject(screenPos, 1.0f, mCamera, width, height, p1);
 
-    float aspect = width/height;
-
-
-    float t = 1.0 * tan(60.0f * (float)M_PI / 360.0f);
-    float r = t * aspect;
-
-
-    float us = -r + (2*r)*(screenPos.x()+0.5)/width;
-    float vs = t - (2*t)*(screenPos.y()+0.5)/height;
-
-    QVector3D u = mCamera->right();
-    QVector3D v = mCamera->up();
-    QVector3D w = mCamera->forward();
-
-    return us*u + vs*v + w;
+    return (p1 - p0).normalized();
 }
 
 float RayCaster::rayTri(QVector3D& origin, QVector3D& direction, QVector3D& A,
@@ -90,7 +104,7 @@ float RayCaster::rayTri(QVector3D& origin, QVector3D& direction, QVector3D& A,
     if (alpha < 0)
         return -1;
 
-    return t;
+    return t - 0.05;
 }
 
 QVector3D* RayCaster::findIntersection(QVector3D& origin, QVector3D& direction,

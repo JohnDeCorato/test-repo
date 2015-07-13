@@ -1,69 +1,30 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "stroke.h"
-#include "camera.h"
-#include "raycaster.h"
-#include "layer.h"
-
 #include <QMainWindow>
-#include <QOpenGLWidget>
-#include <QOpenGLFunctions>
-#include <QMatrix4x4>
-#include <QQuaternion>
-#include <QVector2D>
-#include <QBasicTimer>
-#include <QOpenGLShaderProgram>
-#include <QOpenGLTexture>
 
+#include "sketchwidget.h"
 
-class MainWindow : public QOpenGLWidget, protected QOpenGLFunctions
+class QHBoxLayout;
+
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    MainWindow(QWidget *parent = 0);
 
-protected:
-    void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-    void keyPressEvent(QKeyEvent *k) Q_DECL_OVERRIDE;
-    void timerEvent(QTimerEvent *e) Q_DECL_OVERRIDE;
-    bool event(QEvent *e) Q_DECL_OVERRIDE;
+signals:
 
-    void initializeGL() Q_DECL_OVERRIDE;
-    void resizeGL(int w, int h) Q_DECL_OVERRIDE;
-    void paintGL() Q_DECL_OVERRIDE;
-
-    void initShaders();
-    void initGeometry();
+public slots:
 
 private:
-    // Checks if two mouse positions are not in pixels between the threshhold
-    bool notAdjecnt(QVector2D p0, QVector2D p1, int threshhold);
+    void buildMenus();
+    void buildWidgets();
 
-    QBasicTimer timer;
-    QOpenGLShaderProgram program;
+    SketchWidget *mSketchWidget;
 
-    QMatrix4x4 projection;
-    QMatrix4x4 rasterProj;
-
-    QVector2D lastMousePosition;
-    QVector2D mousePressPosition;
-    Camera *mCamera;
-    RayCaster rayCaster;
-    QVector<QVector3D> triangles;
-
-    Layer *mLayer;
-    Layer *mLayer1;
-    Layer *mLayer2;
-    Stroke* currentStroke;
-    bool stroking;
-
-    float aspect;
-
+    QHBoxLayout *frameLayout;
 };
 
 #endif // MAINWINDOW_H

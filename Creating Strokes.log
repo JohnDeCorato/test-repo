@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  24 JUN 2015 16:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  10 JUL 2015 15:51
 entering extended mode
 **Creating*Strokes.tex
 ("C:\Users\jd537\Documents\Thesis\test-repo\Creating Strokes.tex"
@@ -448,31 +448,31 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 86.
 
-[5] [6]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 141.
+[5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 112.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 141.
- [7]
-<Images/splineartifact.png, id=40, 489.32813pt x 349.305pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 112.
+ [6]
+<Images/splineartifact.png, id=36, 489.32813pt x 349.305pt>
 File: Images/splineartifact.png Graphic file (type png)
 
 <use Images/splineartifact.png>
-Package pdftex.def Info: Images/splineartifact.png used on input line 154.
+Package pdftex.def Info: Images/splineartifact.png used on input line 125.
 (pdftex.def)             Requested size: 312.00119pt x 222.72296pt.
 
-<Images/terminationbspline.png, id=41, 402.00188pt x 170.13562pt>
+<Images/terminationbspline.png, id=37, 402.00188pt x 170.13562pt>
 File: Images/terminationbspline.png Graphic file (type png)
 
 <use Images/terminationbspline.png>
-Package pdftex.def Info: Images/terminationbspline.png used on input line 160.
+Package pdftex.def Info: Images/terminationbspline.png used on input line 131.
 (pdftex.def)             Requested size: 350.99762pt x 148.54897pt.
- [8] [9 <C:/Users/jd537/Documents/Thesis/test-repo/Images/splineartifact.png> <
-C:/Users/jd537/Documents/Thesis/test-repo/Images/terminationbspline.png>] [10] 
-[11] [12]
+ [7 <C:/Users/jd537/Documents/Thesis/test-repo/Images/splineartifact.png>] [8 <
+C:/Users/jd537/Documents/Thesis/test-repo/Images/terminationbspline.png>] [9] [
+10] [11]
 ("C:\Users\jd537\Documents\Thesis\test-repo\Creating Strokes.aux") ) 
 Here is how much of TeX's memory you used:
  3484 strings out of 493921
@@ -497,9 +497,9 @@ ts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmsy8.pfb>
-Output written on "Creating Strokes.pdf" (12 pages, 359247 bytes).
+Output written on "Creating Strokes.pdf" (11 pages, 355003 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
+ 100 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

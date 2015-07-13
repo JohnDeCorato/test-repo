@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  16 JUN 2015 16:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  8 JUL 2015 16:59
 entering extended mode
 **Input.tex
 (C:\Users\jd537\Documents\Thesis\test-repo\Input.tex
@@ -375,151 +375,144 @@ Chapter 1.
 File: Images/virtual-keyboard.jpg Graphic file (type jpg)
 
 <use Images/virtual-keyboard.jpg>
-Package pdftex.def Info: Images/virtual-keyboard.jpg used on input line 69.
+Package pdftex.def Info: Images/virtual-keyboard.jpg used on input line 80.
 (pdftex.def)             Requested size: 360.0pt x 202.42047pt.
 
 <Images/ergonomickeyboard.jpg, id=14, 752.8125pt x 602.25pt>
 File: Images/ergonomickeyboard.jpg Graphic file (type jpg)
 
 <use Images/ergonomickeyboard.jpg>
-Package pdftex.def Info: Images/ergonomickeyboard.jpg used on input line 70.
+Package pdftex.def Info: Images/ergonomickeyboard.jpg used on input line 81.
 (pdftex.def)             Requested size: 360.0pt x 288.01071pt.
- [4] [5 <C:/Users/jd537/Documents/Thesis/test-repo/Images/virtual-keyboard.jpg>
- <C:/Users/jd537/Documents/Thesis/test-repo/Images/ergonomickeyboard.jpg>]
-<Images/mechmouse.jpg, id=22, 1606.0pt x 1204.5pt>
+ [4] [5] [6 <C:/Users/jd537/Documents/Thesis/test-repo/Images/virtual-keyboard.
+jpg> <C:/Users/jd537/Documents/Thesis/test-repo/Images/ergonomickeyboard.jpg>] 
+[7]
+<Images/mechmouse.jpg, id=29, 1606.0pt x 1204.5pt>
 File: Images/mechmouse.jpg Graphic file (type jpg)
  <use Images/mechmouse.jpg>
-Package pdftex.def Info: Images/mechmouse.jpg used on input line 99.
+Package pdftex.def Info: Images/mechmouse.jpg used on input line 121.
 (pdftex.def)             Requested size: 180.0pt x 134.99496pt.
 
-<Images/opticalmouse.jpg, id=23, 401.5pt x 323.2075pt>
+<Images/opticalmouse.jpg, id=30, 401.5pt x 323.2075pt>
 File: Images/opticalmouse.jpg Graphic file (type jpg)
 
 <use Images/opticalmouse.jpg>
-Package pdftex.def Info: Images/opticalmouse.jpg used on input line 100.
+Package pdftex.def Info: Images/opticalmouse.jpg used on input line 122.
 (pdftex.def)             Requested size: 180.0pt x 144.90446pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 99--101
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 121--123
 [][] [] 
  []
 
-<Images/trackball.jpg, id=24, 246.6816pt x 185.0112pt>
-File: Images/trackball.jpg Graphic file (type jpg)
+[8 <C:/Users/jd537/Documents/Thesis/test-repo/Images/mechmouse.jpg> <C:/Users/j
+d537/Documents/Thesis/test-repo/Images/opticalmouse.jpg>] [9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 163.
 
-<use Images/trackball.jpg>
-Package pdftex.def Info: Images/trackball.jpg used on input line 105.
-(pdftex.def)             Requested size: 323.9978pt x 243.02138pt.
- [6] [7 <C:/Users/jd537/Documents/Thesis/test-repo/Images/mechmouse.jpg> <C:/Us
-ers/jd537/Documents/Thesis/test-repo/Images/opticalmouse.jpg> <C:/Users/jd537/D
-ocuments/Thesis/test-repo/Images/trackball.jpg>]
-[8] [9] [10]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 166.
 
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 163.
+ [10]
 <Images/resistive.jpg, id=41, 592.2125pt x 444.66125pt>
 File: Images/resistive.jpg Graphic file (type jpg)
 
 <use Images/resistive.jpg>
-Package pdftex.def Info: Images/resistive.jpg used on input line 181.
+Package pdftex.def Info: Images/resistive.jpg used on input line 178.
 (pdftex.def)             Requested size: 323.9978pt x 243.28207pt.
  [11] [12 <C:/Users/jd537/Documents/Thesis/test-repo/Images/resistive.jpg>] <Im
-ages/surcap.jpg, id=49, 592.2125pt x 444.66125pt>
-File: Images/surcap.jpg Graphic file (type jpg)
-
-<use Images/surcap.jpg>
-Package pdftex.def Info: Images/surcap.jpg used on input line 209.
-(pdftex.def)             Requested size: 323.9978pt x 243.28207pt.
- [13] [14 <C:/Users/jd537/Documents/Thesis/test-repo/Images/surcap.jpg>] <Image
-s/saw.jpg, id=57, 589.20125pt x 450.68375pt>
+ages/saw.jpg, id=48, 589.20125pt x 450.68375pt>
 File: Images/saw.jpg Graphic file (type jpg)
 
 <use Images/saw.jpg>
-Package pdftex.def Info: Images/saw.jpg used on input line 248.
+Package pdftex.def Info: Images/saw.jpg used on input line 204.
 (pdftex.def)             Requested size: 323.9978pt x 247.82867pt.
- [15] [16 <C:/Users/jd537/Documents/Thesis/test-repo/Images/saw.jpg>] <Images/p
-rojcap.jpg, id=64, 592.2125pt x 444.66125pt>
+ [13 <C:/Users/jd537/Documents/Thesis/test-repo/Images/saw.jpg>] [14] <Images/s
+urcap.jpg, id=56, 592.2125pt x 444.66125pt>
+File: Images/surcap.jpg Graphic file (type jpg)
+
+<use Images/surcap.jpg>
+Package pdftex.def Info: Images/surcap.jpg used on input line 232.
+(pdftex.def)             Requested size: 323.9978pt x 243.28207pt.
+ [15 <C:/Users/jd537/Documents/Thesis/test-repo/Images/surcap.jpg>] [16] <Image
+s/projcap.jpg, id=63, 592.2125pt x 444.66125pt>
 File: Images/projcap.jpg Graphic file (type jpg)
 
 <use Images/projcap.jpg>
-Package pdftex.def Info: Images/projcap.jpg used on input line 273.
+Package pdftex.def Info: Images/projcap.jpg used on input line 270.
 (pdftex.def)             Requested size: 323.9978pt x 243.28207pt.
- [17]
+ [17 <C:/Users/jd537/Documents/Thesis/test-repo/Images/projcap.jpg>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 291.
+(Font)              <10.95> on input line 287.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 291.
+(Font)              <8> on input line 287.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 291.
+(Font)              <6> on input line 287.
 
-Underfull \hbox (badness 1173) in paragraph at lines 297--297
+Underfull \hbox (badness 1173) in paragraph at lines 293--293
 []\OT1/cmr/m/n/10.95 Poor (Spe-cial pur-pose
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
 []\OT1/cmr/bx/n/10.95 Maximum Sin-gle User
  []
 
 
-Overfull \hbox (69.39163pt too wide) in paragraph at lines 291--304
+Overfull \hbox (69.39163pt too wide) in paragraph at lines 287--300
  [] 
  []
 
-[18 <C:/Users/jd537/Documents/Thesis/test-repo/Images/projcap.jpg>] [19]
-[20] [21] <Images/Taps.png, id=81, 209.28188pt x 94.85437pt>
+[18] [19] [20] [21] <Images/Taps.png, id=80, 209.28188pt x 94.85437pt>
 File: Images/Taps.png Graphic file (type png)
 
 <use Images/Taps.png>
-Package pdftex.def Info: Images/Taps.png used on input line 362.
+Package pdftex.def Info: Images/Taps.png used on input line 363.
 (pdftex.def)             Requested size: 360.0pt x 163.16513pt.
- <Images/Drags.png, id=82, 233.37187pt x 85.06781pt>
+ [22 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Taps.png>] <Images/Drags
+.png, id=84, 233.37187pt x 85.06781pt>
 File: Images/Drags.png Graphic file (type png)
 
 <use Images/Drags.png>
-Package pdftex.def Info: Images/Drags.png used on input line 373.
+Package pdftex.def Info: Images/Drags.png used on input line 374.
 (pdftex.def)             Requested size: 360.0pt x 131.24106pt.
- [22 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Taps.png>] <Images/Pinch
-.png, id=86, 246.1697pt x 88.07906pt>
+ <Images/Pinch.png, id=85, 246.1697pt x 88.07906pt>
 File: Images/Pinch.png Graphic file (type png)
 
 <use Images/Pinch.png>
-Package pdftex.def Info: Images/Pinch.png used on input line 383.
+Package pdftex.def Info: Images/Pinch.png used on input line 384.
 (pdftex.def)             Requested size: 360.0pt x 128.8134pt.
- <Images/Rotate.png, id=87, 310.91156pt x 89.58469pt>
+ [23 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Drags.png>] <Images/Rota
+te.png, id=89, 310.91156pt x 89.58469pt>
 File: Images/Rotate.png Graphic file (type png)
 
 <use Images/Rotate.png>
-Package pdftex.def Info: Images/Rotate.png used on input line 391.
+Package pdftex.def Info: Images/Rotate.png used on input line 392.
 (pdftex.def)             Requested size: 360.0pt x 103.72964pt.
- [23 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Drags.png> <C:/Users/jd5
-37/Documents/Thesis/test-repo/Images/Pinch.png>]
-<Images/Presses.png, id=91, 212.29312pt x 179.92218pt>
+ <Images/Presses.png, id=90, 212.29312pt x 179.92218pt>
 File: Images/Presses.png Graphic file (type png)
 
 <use Images/Presses.png>
-Package pdftex.def Info: Images/Presses.png used on input line 400.
+Package pdftex.def Info: Images/Presses.png used on input line 401.
 (pdftex.def)             Requested size: 360.0pt x 305.12239pt.
- [24 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Rotate.png>] [25 <C:/Use
-rs/jd537/Documents/Thesis/test-repo/Images/Presses.png>] <Images/pen-gestures.p
-ng, id=99, 410.53375pt x 325.215pt>
+ [24 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Pinch.png> <C:/Users/jd5
+37/Documents/Thesis/test-repo/Images/Rotate.png>]
+[25 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Presses.png>]
+<Images/pen-gestures.png, id=98, 410.53375pt x 325.215pt>
 File: Images/pen-gestures.png Graphic file (type png)
 
 <use Images/pen-gestures.png>
-Package pdftex.def Info: Images/pen-gestures.png used on input line 419.
+Package pdftex.def Info: Images/pen-gestures.png used on input line 422.
 (pdftex.def)             Requested size: 360.0pt x 285.18272pt.
- [26 <C:/Users/jd537/Documents/Thesis/test-repo/Images/pen-gestures.png>] [27] 
-[28] [29]
+ [26] [27 <C:/Users/jd537/Documents/Thesis/test-repo/Images/pen-gestures.png>] 
+[28]
 (C:\Users\jd537\Documents\Thesis\test-repo\Input.aux) ) 
 Here is how much of TeX's memory you used:
- 2936 strings out of 493921
- 43883 string characters out of 3144877
+ 2931 strings out of 493921
+ 43771 string characters out of 3144877
  100106 words of memory out of 3000000
- 6208 multiletter control sequences out of 15000+200000
+ 6204 multiletter control sequences out of 15000+200000
  9118 words of font info for 32 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  42i,8n,40p,363b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -528,9 +521,9 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Input.pdf (29 pages, 1572872 bytes).
+Output written on Input.pdf (28 pages, 1037613 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
+ 122 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

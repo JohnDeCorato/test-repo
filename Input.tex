@@ -22,9 +22,13 @@
 \chapter{Input Technologies and Human Computer Interaction}
 
 An important goal for any user interface is to have the human-computer interaction be as intuitive and natural as possible.
-Some of the most important advancements in this area are input devices; computer hardware used to control electronic devices.
-This is because the traditional input devices, the mouse and keyboard, are rather unintuitive ways to move and control the computer.
-This chapter discusses the technological advancements made for users to control computers.
+Natural interaction is critical for a sketching interface; while younger, more technologically willing professionals flock to digitized content creation software, those classically trained prefer to stick to physical methods.
+In order to convince the latter to adapt to a new system, the transition process must be as smooth as possible, so as many of the techniques utilized in the physical system should be emulated as closely as technology allows in the digital system.
+
+A key element of bridging the gap between physical and digital are input devices, computer hardware used to control electronic devices.
+For a long time, the most common input devices  have been the mouse and keyboard, and are rather unintuitive ways to move and control the computer.
+However, in recent years there have been sweeps of advancements in the human-computer interaction field, which has produced a wide array of input devices.
+In this chapter, we will discuss human-computer interaction principles used to decide how to best utilize input devices, as well as discuss the particular devices needed to create a good sketching system.
 
 
 
@@ -37,17 +41,19 @@ In human computer interaction, a modality is a channel of sensory input/output b
 Human-computer modalities describe the ways humans input information to the computer.
 These modalities are devices and sensors attached to the computer.
 Common input device modalities are keyboards, pointing devices, and touch screens, while more complex modalities are computer vision, speech recognition, gesture recognition, and orientation.
+In sketching, the equivalent of a human-computer modality is the sketch implement. 
+Whether the tool is a pen, pencil, charcoal, or something else. the artist provides "data" to the sketching surface through his strokes by sending information like position, angle, and pressure.
 
 Computer-human modalities describe the ways the computer outputs information to communicate with humans.
 This requires stimulation of one of the human senses: sight, hearing, taste, smell, touch, balance, temperature, and pain. 
 Of these, modern input devices generally communicate using sight and hearing, because they are capable of sending information at much higher speeds, as well as being the more common ways humans communicate with each other.
 There are also small uses of haptics, general vibrations or other movement, to provide feedback, but generally they are accompanied by visual and auditory cues.
 
-When digitizing physical techniques and interactions, it is common to focus on the human-computer modalities to provide an input that matches the physical technique as closely as possible.
-However, while working on this project, it is apparent that professionals are very sensitive to a complex combination of input and output modalities. 
+While working on this project, it became apparent that professionals are very sensitive to a complex combination of input and output modalities, some of which not reflected well by current hardware capabilities. 
 For example, an architect commented while drawing on the large display that he felt uncomfortable because the digital pen pressing against the display didn't feel like a physical pencil brushing against a piece of paper. 
 The difference in friction and materials meant that he was unsure of how things like pressure and angles effected his drawing.
 This problem is a result of both the input device, as well not providing proper feedback for his actions.
+On this project, we focus more on the input modalities, but for a truly realistic sketching system, specialized hardware must be utilized in order to closely emulate these intricacies.
 
 \subsection{Direct and Indirect}
 Direct and indirect input refer to how the input space corresponds to the display space. 
@@ -61,6 +67,11 @@ Indirect input devices have the advantage of being more application independent.
 A mouse can do many things, but the user must learn what it does in the current context. 
 Direct input methods tend to be intuitive while limited in scope. 
 The user knows touching a screen at a spot causes an action at that spot.
+
+When physically sketching, most if not all interactions are direct. 
+There are minute indirect details such as different drawing implements can produce different strokes with the same input, but on a high level there is a 1-to-1 spacial correlation between actions and results.
+Therefore, for this project, it is important to minimize any indirect interaction between the user and the system.
+For any indirect interaction, we should try to minimize the complexity of the difference between the input and output spaces.
 
 \section{Input Devices}
 \subsection{Keyboard}
@@ -77,9 +88,14 @@ Desktop keyboards usually have from 100 to 105 keys, while laptop and other smal
 All standard keyboards have a typing area used for letters of the alphabet, numbers, punctuation, and other basic characters.
 However, there are also composite devices that have keyboard like features, such as video game controllers. 
 Game controller buttons offer contextual and situational functionality depending on the application in use.
-The keyboard is the best input device for writing, and takes advantage of the ease on text as a medium of communication between the user and the computer.
-Problems are the lack of intuitive input methods for non text applications.
-Many applications use a combination of function and character keys to perform actions in non-text-based applications, bringing a learning curve in order to use these applications effectively.
+
+
+There are certainly auxiliary areas in good sketching software where a keyboard of some kind should see use; for example, saving files. 
+But for the core of the application, the user should never use one. 
+Many design applications such as Maya use a combination of function and character keys to perform actions, bringing a learning curve in order to use these applications effectively.
+This results in an interface that is unnatural, and requires application specific skill-sets.
+For this project, we try to avoid use of the keyboard as much as possible.
+
 
 \subsection{Pointing Devices}
  A pointing device is a device that allows a user to input spacial data to a computer. 
@@ -95,38 +111,17 @@ Many applications use a combination of function and character keys to perform ac
  When the mouse moves and rotation is sensed, the distance and directional information is sent from the mouse to the computer.
  A more modern approach is the optical mouse, which uses infrared light instead of a roller to detect changes in position.
  
+ The mouse is the oldest pointing device, and used with every desktop computer.
+ The mouse works in an indirect space as the position of the mouse and the that of the cursor on screen are completely unrelated.
+ When a mouse of moved 10 inches to the left, the movement of the mouse cursor on screen is not 10 inches, but some function with 10 inches as input.
+ As discussed previously, we would like to eliminate indirect input where ever possible.
+ While it will be possible to use the mouse with our application, it should be seen as legacy functionality.
+ 
  \begin{figure}
  \includegraphics[width=0.5\textwidth]{mechmouse}
  \includegraphics[width=0.5\textwidth]{opticalmouse}
  \caption{The two different types of mice. Left: mechanical mouse with a roller Right: An optical mouse}
  \end{figure}
- 
- \begin{figure}
- \includegraphics[width=0.9\textwidth]{trackball}
- \caption{A trackball}
- \end{figure}
- 
- \subsubsection{Trackball}
- 
- A trackball consists of a roller ball held by a socket containing sensors to detect rotation.
- It is essentially an upside-down mouse with an exposed ball.
- The trackball differentiates itself from the mouse by not having a limit on it's effective travel.
- Since a mouse requires the device to physically move, it is possible for the user to run out of workspace for the mouse to move on.
- When using the trackball, the user rotates the ball in place, so it does not run into this issue.
- Trackballs are commonly used for high precision applications, although there is no data on whether users are more accurate with trackballs compared to mice.
- 
- \subsubsection{Joystick}
- 
- A joystick is a handle stick that pivots on a base. 
- The user can freely change the stick's position by using constant force.
- The joystick reports it's angle or direction to the device it's controlling.
- Joysticks are commonly used to pilot aircrafts, and control video games. 
- 
- 
- \subsubsection{Touchpad}
- A touchpad or trackpad is a flat surface that can detect finger contact. 
- It is a stationary device, usually integrated into laptop computers. The trackpad controlled in a way similar to the mouse, where horizontal movement of the finger on the trackpad is converted into input. 
- Trackpads use a two layer grid of electrodes to detect movement: one layer for horizontal and one for vertical.
  
  \subsubsection{Tablet}
  A graphics or digitizing tablet is a special tablet that is similar to a touchpad. 
@@ -134,7 +129,9 @@ Many applications use a combination of function and character keys to perform ac
  An alternative control device for tablets is called a puck. 
  This is a mouse like device that can detect absolute position and rotation.
  Professional pucks have a reticle which allows the user to see the exact point on the tablet's surface targeted by the puck, for detailed CAD work.
- Graphics tablets are commonly used to create 2D computer graphics, because their input similarities to traditional drawing techniques. 
+ Graphics tablets are commonly used to create 2D computer graphics, because their input similarities to traditional drawing techniques.
+ Tablets are very commonly used for digital sketching applications.
+ However, many graphics tablets are used in combination with a screen, meaning there is still a visual and physical disconnect between the sketch and the output.
  
  \subsubsection{Pen}
  
@@ -191,7 +188,33 @@ Disadvantages include it's poor responsiveness compared to other developed sensi
 While high resolutions would allow for more accurate and more detailed sketching, the poor responsiveness would make resistive panels a poor substitute for traditional drawing media.
 
  
+\subsubsection{Surface Acoustic Wave (SAW) Sensing}
 
+Surface acoustic wave (SAW) touch panels were developed mainly to address the drawbacks of low light transmittance in resistive film touch panels; to achieve bright touch panels with high levels of visibility. 
+These are also called surface wave or acoustic wave touch panels. 
+Aside from standalone LCD monitors, these are widely used in public spaces, in devices like point-of-sale terminals, ATMs, and electronic kiosks.
+
+These panels detect the screen position where contact occurs with a finger or other object using the attenuation in ultrasound elastic waves on the surface. 
+The internal structure of these panels is designed so that multiple piezoelectric transducers arranged in the corners of a glass substrate transmit ultrasound surface elastic waves as vibrations in the panel surface, which are received by transducers installed opposite the transmitting ones. 
+When the screen is touched, ultrasound waves are absorbed and attenuated by the finger or other object. 
+The location is identified by detecting these changes.
+
+\begin{center}
+\begin{figure}
+\includegraphics[width=0.9\textwidth]{saw}
+\caption{A surface acoustic wave sensor}
+\end{figure}
+\end{center}
+
+The strengths of this type of touch panel include high light transmittance and superior visibility, since the structure requires no film or transparent electrodes on the screen. 
+Additionally, the surface glass provides better durability and scratch resistance than a capacitive touch panel. 
+Another advantage is that even if the surface does somehow become scratched, the panel remains sensitive to touch. 
+On a capacitive touch panel, surface scratches can sometimes interrupt signals. 
+Structurally, this type of panel ensures high stability and long service life, free of changes over time or deviations in position.
+Weak points include compatibility with only fingers and soft objects (such as gloves) that absorb ultrasound surface elastic waves. 
+These panels require special-purpose styluses and may react to substances like water drops or small insects on the panel.
+This sensing method, like resistive sensing, is more suitable for public displays that see heavy use.
+While high quality displays are desirable, the relative inflexibility of input capabilities limit SAW powered display for use in sketching applications.
 
 
 
@@ -232,32 +255,6 @@ However, it's simplistic structure also means it is structurally difficult to de
 Surface capacitive can only detect bare finger touches, although some may detect touches through a thin pair of gloves.
 Some surface capacitive displays support pen writing, but not simultaneous pen and touch.
 
-\subsubsection{Surface Acoustic Wave (SAW) Sensing}
-
-Surface acoustic wave (SAW) touch panels were developed mainly to address the drawbacks of low light transmittance in resistive film touch panels; to achieve bright touch panels with high levels of visibility. 
-These are also called surface wave or acoustic wave touch panels. 
-Aside from standalone LCD monitors, these are widely used in public spaces, in devices like point-of-sale terminals, ATMs, and electronic kiosks.
-
-These panels detect the screen position where contact occurs with a finger or other object using the attenuation in ultrasound elastic waves on the surface. 
-The internal structure of these panels is designed so that multiple piezoelectric transducers arranged in the corners of a glass substrate transmit ultrasound surface elastic waves as vibrations in the panel surface, which are received by transducers installed opposite the transmitting ones. 
-When the screen is touched, ultrasound waves are absorbed and attenuated by the finger or other object. 
-The location is identified by detecting these changes.
-
-\begin{center}
-\begin{figure}
-\includegraphics[width=0.9\textwidth]{saw}
-\caption{A surface acoustic wave sensor}
-\end{figure}
-\end{center}
-
-The strengths of this type of touch panel include high light transmittance and superior visibility, since the structure requires no film or transparent electrodes on the screen. 
-Additionally, the surface glass provides better durability and scratch resistance than a capacitive touch panel. 
-Another advantage is that even if the surface does somehow become scratched, the panel remains sensitive to touch. 
-On a capacitive touch panel, surface scratches can sometimes interrupt signals. 
-Structurally, this type of panel ensures high stability and long service life, free of changes over time or deviations in position.
-Weak points include compatibility with only fingers and soft objects (such as gloves) that absorb ultrasound surface elastic waves. 
-These panels require special-purpose styluses and may react to substances like water drops or small insects on the panel.
-
 \paragraph{Projected Capacitive Sensing}
 
 is often used for smaller screen sizes than surface capacitive touch panels. 
@@ -283,10 +280,9 @@ Unlike resistive film touch panels, they do not respond to touch by clothing or 
 They feature strong resistance to dust and water drops and high durability and scratch resistance. 
 In addition, their light transmittance is higher, as compared to resistive film touch panels allowing for higher quality displays.
 
+\subsection{Summary of Input Technology}
 
-
-\subsubsection{Summary of Touch Panel Technology}
-
+\subsubsection{Comparison of Touch Technology}
 \begin{center}
 \begin{tabular}{| p{5cm} | l | p{4cm} | l |}
 \hline
@@ -302,6 +298,12 @@ In addition, their light transmittance is higher, as compared to resistive film 
 \textbf{Cost} & Reasonable & Not reasonable & Not reasonable \\ \hline
 \end{tabular}
 \end{center}
+
+If our application was to be a pure 2-D sketching interface, then a resistive panel would likely be the best touch device.
+It's high accuracy and resolution are desirable traits for creating high quality, accurate sketches.
+However, as a 3-D sketching system, we require multi-touch capabilities that a resistive panel lacks in order to make the complete system as functional and intuitive as possible.
+Because of this, we design our application around capacitive displays, as they have the best touch functionality.
+In particular, we use Microsoft's Perspective Pixel display, soon to be rebranded as the Surface Hub, which has basic pen capability, upwards of 4K resolution, and support for up to a hundred touch points.
 
 \section{Advanced User Interaction: Input using Gesture}
 
@@ -353,8 +355,7 @@ Human computer interaction further distinguishes between types of gestures,; spl
 Multi-touch gestures are predefined motions used to interact with multi-touch devices.
 Many modern consumer electronics like smartphones, tablets, laptops, or desktop computers feature functions triggered by multi-touch gestures.
 They tend to be direct input methods with simple to understand functionality heavily based on the gesture used, allowing non-technical people to quickly configure and navigate multi-touch applications.
-
-Common multi-touch gestures are:
+This section will show common multi-touch gestures, as well as explain their inferred functionality.
 
 \subsubsection{Tap}
 
@@ -414,6 +415,8 @@ Depending on the implementation, what is deleted might be the object or text whe
 These types of gestures are offline.
 
 Pens can be used to perform many of the multi-touch gestures, but the pen is just treated as a finger in these scenarios.
+In order for this project to incorporate pen gestures, the pen input would need to be preprocessed before it is projected into 3-D space.
+Exploring this area is left to future work.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{pen-gestures}
@@ -424,38 +427,15 @@ Pens can be used to perform many of the multi-touch gestures, but the pen is jus
 
 While older forms of gesture recognition attempt to translate physical interaction with an input device in oder to form gesture based commands, more modern approaches attempt to do away with the intermediary and directly interpret motions of the human body.
 This is accomplished using computer vision techniques, as well as different types of cameras used to capture and understand a three dimensional environment.
-The two types of cameras used for this are depth aware cameras and stereo cameras.
+Once this information is captured a variety of techniques can be used to analyze the scene and detect gestural information. 
+While 3-D gesture recognition is an emerging area, and is beginning to see common use in a number of modern user interfaces, it's use for 3-D sketching is left to future work.
+Possible applications are using 3-D gestures to manipulate the environment in conjunction with 2-D gestures.
 
-Depth aware cameras are capable of generating a depth map, an image representing the physical distance between captured objects and the camera.
-These cameras use structured light or time-of-flight techniques to capture this information.
-Current depth aware cameras are capable of capturing and representing a scene accurately between 1 to 15 feet with error in the millimeters.
-
-Stereo cameras use two cameras whose relations to one another are known. 
-Using information such as the distance between the two cameras, the focus points, and the lens information, a three dimensional representation of the captures scene can be approximated. 
-Infrared emitters are commonly used to get this information.
-In combination with direct motion measurement, gestures can be directly detected.
-
-Once this information is captured a variety of techniques can be used to analyze the scene and detect gestural information
-
-\subsubsection{3-D Model Analysis}
-
-A 3-D model can be constructed from the depth data and analyzed for forms approximating common gestures. 
-This method is very computationally intensive, and is currently not used for real time applications.
-However, it might be possible to map simple primitives, such as a sphere for the palm of the hand and and cylinders for the fingers, in oder to speed up this process.
-
-\subsubsection{Skeletal Analysis}
-
-Instead of using a complicated model, only joint angle parameters and segment length analysis is used to approximate a simple skeletal structure. By only analyzing key parameters, skeletal analysis allows for much faster speeds compared to a full model analysis.
-The simple structure can also be matched to a pattern database using machine learning techniques in order to further increase speeds.
-
-\subsubsection{Appearance-based Analysis}
-
-These models don’t use a spatial representation of the body, because they derive the parameters directly from the images or videos using a template database. 
-Some are based on the deformable 2D templates of the human parts of the body, particularly hands.
-Deformable templates are sets of points on the outline of an object, used as interpolation nodes for the object’s outline approximation. 
-One of the simplest interpolation function is linear, which performs an average shape from point sets, point variability parameters and external deformators. 
-These template-based models are mostly used for hand-tracking, but could also be of use for simple gesture classification.
-
-
+\section{Summary}
+In this chapter we discussed how users interact with technology, an overview of common and project related input devices, and why certain interaction methods are preferable for 3-D sketching.
+Unfortunately, many of the techniques and devices discussed are not available in conjunction with each other, and some sacrifices have to be made in order to make the project functional.
+The biggest example is the capabilities of the active pen; many of the libraries used to capture data are proprietary, and do not extend to all systems.
+In order to make our system usable on preferable devices, active pen support had to be cut.
+Active pen support may be easily incorporated into the framework and is left for future work.
 
 \end{document}

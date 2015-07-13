@@ -1,15 +1,21 @@
 #include "layer.h"
+#include <QDebug>
 
-Layer::Layer()
+Layer::Layer(string name)
 {
-    strokes = QVector<Stroke*>(0, NULL);
+    strokes = vector<Stroke*>(0, NULL);
+    layerName = name;
+    activeStroke = NULL;
 }
 
-Stroke* Layer::createNewStroke()
+Stroke* Layer::createNewStroke(QColor color, float lineWidth)
 {
-    Stroke* s = new Stroke();
-    strokes.append(s);
-    return s;
+    if (!activeStroke)
+    {
+        activeStroke = new Stroke(color, lineWidth);
+        strokes.push_back(activeStroke);
+    }
+    return activeStroke;
 }
 
 int Layer::getStrokeCount()
@@ -19,12 +25,33 @@ int Layer::getStrokeCount()
 
 void Layer::deleteLastStroke()
 {
-    strokes.removeLast();
+    strokes.pop_back();
 }
 
-void Layer::drawLayer(QOpenGLShaderProgram *program)
+//void Layer::drawLayer(QOpenGLShaderProgram *program)
+//{
+//    for(int i = 0; i < strokes.size(); i++)
+//        strokes[i]->drawStroke(program);
+//}
+
+vector<Stroke*> Layer::getStrokes()
 {
-    for(int i = 0; i < strokes.size(); i++)
-        strokes[i]->drawStroke2(program);
+    return strokes;
 }
 
+void Layer::addPointToActiveStroke(QVector3D point)
+{
+    if (activeStroke != NULL)
+    {
+        activeStroke->addPoint(point);
+    }
+}
+
+void Layer::endCurrentStroke()
+{
+    if (activeStroke)
+    {
+        activeStroke->endStroke();
+        activeStroke = NULL;
+    }
+}

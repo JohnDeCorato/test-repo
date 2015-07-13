@@ -1,29 +1,33 @@
 #include "stroke.h"
 #include <algorithm>
+#include <QDebug>
 
-Stroke::Stroke()
-    : indexBuf(QOpenGLBuffer::IndexBuffer)
+
+Stroke::Stroke(QColor color, float width)
 {
-    initializeOpenGLFunctions();
+//    initializeOpenGLFunctions();
 
-    // Generate VBOs
-    arrayBuf.create();
-    vertBuf.create();
-    prevBuf.create();
-    nextBuf.create();
-    dirBuf.create();
-    indexBuf.create();
+//    // Generate VBOs
+//    arrayBuf.create();
+//    vertBuf.create();
+//    prevBuf.create();
+//    nextBuf.create();
+//    dirBuf.create();
+//    indexBuf.create();
+
+    mColor = color;
+    lineWidth = width;
     madeCurve = false;
 }
 
 Stroke::~Stroke()
 {
-    arrayBuf.destroy();
-    vertBuf.destroy();
-    prevBuf.destroy();
-    nextBuf.destroy();
-    dirBuf.destroy();
-    indexBuf.destroy();
+//    arrayBuf.destroy();
+//    vertBuf.destroy();
+//    prevBuf.destroy();
+//    nextBuf.destroy();
+//    dirBuf.destroy();
+//    indexBuf.destroy();
 }
 
 // Transfers the stroke data to the VBOS
@@ -32,6 +36,7 @@ Stroke::~Stroke()
 void Stroke::endStroke()
 {
     buildSpline(points);
+    //curve = points;
 //    qDebug() << curve.size();
 
 //    arrayBuf.bind();
@@ -47,28 +52,28 @@ void Stroke::endStroke()
 //    }
 //    indexBuf.bind();
 //    indexBuf.allocate(indices.constData(), indices.size() * sizeof(GLushort));
-    bindBuffers(points);
+//    bindBuffers(points);
     madeCurve = true;
 }
 
 // Draw the stroke
-void Stroke::drawStroke(QOpenGLShaderProgram *program)
-{
+//void Stroke::drawStroke(QOpenGLShaderProgram *program)
+//{
 
-    indexBuf.bind();
+//    indexBuf.bind();
 
-    bindAttributeBuffer(arrayBuf, "position", program, GL_FLOAT, 3, sizeof(QVector3D));
+//    bindAttributeBuffer(arrayBuf, "position", program, GL_FLOAT, 3, sizeof(QVector3D));
 
-    //int vertexLocation = program->attributeLocation("a_position");
-    //program->enableAttributeArray(vertexLocation);
-    //program->setAttributeBuffer(vertexLocation, GL_FLOAT, 0, 3, sizeof(QVector3D));
+//    //int vertexLocation = program->attributeLocation("a_position");
+//    //program->enableAttributeArray(vertexLocation);
+//    //program->setAttributeBuffer(vertexLocation, GL_FLOAT, 0, 3, sizeof(QVector3D));
 
-    if (!madeCurve)
-    //glLineWidth(10);
-        glDrawElements(GL_LINES, 2*(points.size()-1), GL_UNSIGNED_SHORT, 0);
-    else
-        glDrawElements(GL_LINES, 2*(curve.size()-1), GL_UNSIGNED_SHORT, 0);
-}
+//    glLineWidth(10);
+//    if (!madeCurve)
+//        glDrawElements(GL_LINES, 2*(points.size()-1), GL_UNSIGNED_SHORT, 0);
+//    else
+//        glDrawElements(GL_LINES, 2*(curve.size()-1), GL_UNSIGNED_SHORT, 0);
+//}
 
 // Add a point to the stroke
 void Stroke::addPoint(QVector3D &point)
@@ -87,7 +92,7 @@ void Stroke::addPoint(QVector3D &point)
 //    }
 //    indexBuf.bind();
 //    indexBuf.allocate(indices.constData(), indices.size() * sizeof(GLushort));
-    bindBuffers(points);
+//    bindBuffers(points);
 }
 
 // Build a B-Spline curve from a set of control points
@@ -206,69 +211,79 @@ float Stroke::computeOffsets(QVector3D *points, int id)
     return std::max(S1,S2);
 }
 
-// Creates and binds all of the data needed to create a rendered line
-void Stroke::bindBuffers(QVector<QVector3D> verts)
+//// Creates and binds all of the data needed to create a rendered line
+//void Stroke::bindBuffers(QVector<QVector3D> verts)
+//{
+//    QVector<QVector3D> vertices;
+//    QVector<QVector3D> prevVertices;
+//    QVector<QVector3D> nextVertices;
+//    QVector<float> directions;
+//    QVector<GLshort> indices;
+
+
+
+//    for (int i = 0; i < verts.size(); i++)
+//    {
+//        // First Copy
+//        vertices.append(verts[i]);
+//        prevVertices.append(verts[std::max(i-1,0)]);
+//        nextVertices.append(verts[std::min(i+1,verts.size()-1)]);
+//        directions.append(1.0f);
+//        indices.append(2*i);
+
+//        // Second copy
+//        vertices.append(verts[i]);
+//        prevVertices.append(verts[std::max(i-1,0)]);
+//        nextVertices.append(verts[std::min(i+1,verts.size()-1)]);
+//        directions.append(-1.0f);
+//        indices.append(2*i+1);
+//    }
+
+//    numIndices = indices.size();
+
+//    // Bind the buffers
+//    vertBuf.bind();
+//    vertBuf.allocate(vertices.constData(), numIndices * sizeof(QVector3D));
+
+//    prevBuf.bind();
+//    prevBuf.allocate(prevVertices.constData(), numIndices * sizeof(QVector3D));
+
+//    nextBuf.bind();
+//    nextBuf.allocate(nextVertices.constData(), numIndices * sizeof(QVector3D));
+
+//    dirBuf.bind();
+//    dirBuf.allocate(directions.constData(), numIndices * sizeof(float));
+
+//    indexBuf.bind();
+//    indexBuf.allocate(indices.constData(), numIndices * sizeof(GLshort));
+//}
+
+//// Utility Function to Bind and OpenGL Attribute Buffer
+//void Stroke::bindAttributeBuffer(QOpenGLBuffer buffer, const char *varName, QOpenGLShaderProgram *program, GLenum type, int tupleSize, int offset)
+//{
+//    buffer.bind();
+//    int location = program->attributeLocation(varName);
+//    program->enableAttributeArray(location);
+//    program->setAttributeBuffer(location, type, 0, tupleSize, offset);
+//}
+
+//void Stroke::drawStroke2(QOpenGLShaderProgram *program)
+//{
+//    bindAttributeBuffer(vertBuf, "position", program, GL_FLOAT, 3, sizeof(QVector3D));
+//    bindAttributeBuffer(prevBuf, "previous", program, GL_FLOAT, 3, sizeof(QVector3D));
+//    bindAttributeBuffer(nextBuf, "next", program, GL_FLOAT, 3, sizeof(QVector3D));
+//    bindAttributeBuffer(dirBuf, "direction", program, GL_FLOAT, 1, sizeof(float));
+
+//    indexBuf.bind();
+//    glDrawElements(GL_TRIANGLE_STRIP, numIndices, GL_UNSIGNED_SHORT, 0);
+//}
+
+QVector<QVector3D> Stroke::getStroke()
 {
-    QVector<QVector3D> vertices;
-    QVector<QVector3D> prevVertices;
-    QVector<QVector3D> nextVertices;
-    QVector<float> directions;
-    QVector<GLshort> indices;
-
-
-
-    for (int i = 0; i < verts.size(); i++)
-    {
-        // First Copy
-        vertices.append(verts[i]);
-        prevVertices.append(verts[std::max(i-1,0)]);
-        nextVertices.append(verts[std::min(i+1,verts.size()-1)]);
-        directions.append(1.0f);
-        indices.append(2*i);
-
-        // Second copy
-        vertices.append(verts[i]);
-        prevVertices.append(verts[std::max(i-1,0)]);
-        nextVertices.append(verts[std::min(i+1,verts.size()-1)]);
-        directions.append(-1.0f);
-        indices.append(2*i+1);
-    }
-
-    numIndices = indices.size();
-
-    // Bind the buffers
-    vertBuf.bind();
-    vertBuf.allocate(vertices.constData(), numIndices * sizeof(QVector3D));
-
-    prevBuf.bind();
-    prevBuf.allocate(prevVertices.constData(), numIndices * sizeof(QVector3D));
-
-    nextBuf.bind();
-    nextBuf.allocate(nextVertices.constData(), numIndices * sizeof(QVector3D));
-
-    dirBuf.bind();
-    dirBuf.allocate(directions.constData(), numIndices * sizeof(float));
-
-    indexBuf.bind();
-    indexBuf.allocate(indices.constData(), numIndices * sizeof(GLshort));
+    return madeCurve ? curve : points;
 }
 
-// Utility Function to Bind and OpenGL Attribute Buffer
-void Stroke::bindAttributeBuffer(QOpenGLBuffer buffer, const char *varName, QOpenGLShaderProgram *program, GLenum type, int tupleSize, int offset)
+QVector<QVector3D> Stroke::getControlPoints()
 {
-    buffer.bind();
-    int location = program->attributeLocation(varName);
-    program->enableAttributeArray(location);
-    program->setAttributeBuffer(location, type, 0, tupleSize, offset);
-}
-
-void Stroke::drawStroke2(QOpenGLShaderProgram *program)
-{
-    bindAttributeBuffer(vertBuf, "position", program, GL_FLOAT, 3, sizeof(QVector3D));
-    bindAttributeBuffer(prevBuf, "previous", program, GL_FLOAT, 3, sizeof(QVector3D));
-    bindAttributeBuffer(nextBuf, "next", program, GL_FLOAT, 3, sizeof(QVector3D));
-    bindAttributeBuffer(dirBuf, "direction", program, GL_FLOAT, 1, sizeof(float));
-
-    indexBuf.bind();
-    glDrawElements(GL_TRIANGLE_STRIP, numIndices, GL_UNSIGNED_SHORT, 0);
+    return points;
 }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  6 JUN 2015 18:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  8 JUL 2015 15:50
 entering extended mode
 **DrawingLines.tex
 (C:\Users\jd537\Documents\Thesis\test-repo\DrawingLines.tex
@@ -15,8 +15,8 @@ an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
-File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -334,35 +334,95 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 \WF@everypar=\toks17
 Package: wrapfig 2003/01/31  v 3.6
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count94
+\LTcapwidth=\dimen115
+\LT@head=\box27
+\LT@firsthead=\box28
+\LT@foot=\box29
+\LT@lastfoot=\box30
+\LT@cols=\count95
+\LT@rows=\count96
+\c@LT@tables=\count97
+\c@LT@chunks=\count98
+\LT@p@ftn=\toks18
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algpseudocode.sty"
+Package: algpseudocode 
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algorithmicx.sty"
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count99
+\c@ALG@rem=\count100
+\c@ALG@nested=\count101
+\ALG@tlm=\skip47
+\ALG@thistlm=\skip48
+\c@ALG@Lnr=\count102
+\c@ALG@blocknr=\count103
+\c@ALG@storecount=\count104
+\c@ALG@tmpcounter=\count105
+\ALG@tmplength=\skip49
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count106
+\float@exts=\toks19
+\float@box=\box31
+\@float@everytoks=\toks20
+\@floatcapt=\box32
+)
+\@float@every@algorithm=\toks21
+\c@algorithm=\count107
+)
 (C:\Users\jd537\Documents\Thesis\test-repo\DrawingLines.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count94
-\scratchdimen=\dimen115
-\scratchbox=\box27
-\nofMPsegments=\count95
-\nofMParguments=\count96
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count97
-\MPscratchDim=\dimen116
-\MPnumerator=\count98
-\makeMPintoPDFobject=\count99
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count108
+\scratchdimen=\dimen116
+\scratchbox=\box33
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen117
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks23
 )
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: longtable package is loaded.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\ltcaption.sty"
+Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
+)
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
@@ -371,84 +431,117 @@ Chapter 1.
 
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<Images/opengllines.png, id=7, 615.29875pt x 191.71625pt>
-File: Images/opengllines.png Graphic file (type png)
-
-<use Images/opengllines.png>
-Package pdftex.def Info: Images/opengllines.png used on input line 36.
-(pdftex.def)             Requested size: 390.0pt x 121.51906pt.
-
-<Images/linesegment1.png, id=8, 518.6878pt x 237.88875pt>
-File: Images/linesegment1.png Graphic file (type png)
-
-<use Images/linesegment1.png>
-Package pdftex.def Info: Images/linesegment1.png used on input line 51.
-(pdftex.def)             Requested size: 390.0pt x 178.8771pt.
- [2 <C:/Users/jd537/Documents/Thesis/test-repo/Images/opengllines.png>]
-<Images/linesegment2.png, id=15, 292.84406pt x 204.01219pt>
+<Images/linesegment2.png, id=7, 1918.91907pt x 1148.03906pt>
 File: Images/linesegment2.png Graphic file (type png)
 
 <use Images/linesegment2.png>
-Package pdftex.def Info: Images/linesegment2.png used on input line 56.
-(pdftex.def)             Requested size: 390.0pt x 271.72504pt.
+Package pdftex.def Info: Images/linesegment2.png used on input line 39.
+(pdftex.def)             Requested size: 360.0pt x 215.37941pt.
 
-<Images/jointypes.jpg, id=16, 2353.79375pt x 783.92876pt>
-File: Images/jointypes.jpg Graphic file (type jpg)
+Overfull \hbox (0.66492pt too wide) in paragraph at lines 46--50
+[]\OT1/cmr/m/n/10.95 Additionally, OpenGL lines have in-con-sis-tent sup-port f
+or anti-aliasing
+ []
 
-<use Images/jointypes.jpg>
-Package pdftex.def Info: Images/jointypes.jpg used on input line 61.
-(pdftex.def)             Requested size: 390.0pt x 129.88094pt.
+[2 <C:/Users/jd537/Documents/Thesis/test-repo/Images/linesegment2.png>]
+<Images/opengllines.png, id=14, 615.29875pt x 191.71625pt>
+File: Images/opengllines.png Graphic file (type png)
+
+<use Images/opengllines.png>
+Package pdftex.def Info: Images/opengllines.png used on input line 52.
+(pdftex.def)             Requested size: 360.0pt x 112.17256pt.
+ [3 <C:/Users/jd537/Documents/Thesis/test-repo/Images/opengllines.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 68.
+(Font)              <10.95> on input line 61.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 68.
+(Font)              <8> on input line 61.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 68.
+(Font)              <6> on input line 61.
+ <Images/miter.png, id=18, 613.0905pt x 452.1693pt>
+File: Images/miter.png Graphic file (type png)
 
-<Images/miterartifact.jpg, id=17, 1927.2pt x 1160.335pt>
-File: Images/miterartifact.jpg Graphic file (type jpg)
+<use Images/miter.png>
+Package pdftex.def Info: Images/miter.png used on input line 87.
+(pdftex.def)             Requested size: 251.9989pt x 185.85287pt.
+ [4] <Images/bevel.png, id=26, 612.1269pt x 414.5889pt>
+File: Images/bevel.png Graphic file (type png)
 
-<use Images/miterartifact.jpg>
-Package pdftex.def Info: Images/miterartifact.jpg used on input line 76.
-(pdftex.def)             Requested size: 390.0pt x 234.8072pt.
- [3 <C:/Users/jd537/Documents/Thesis/test-repo/Images/linesegment1.png>] [4 <C:
-/Users/jd537/Documents/Thesis/test-repo/Images/linesegment2.png> <C:/Users/jd53
-7/Documents/Thesis/test-repo/Images/jointypes.jpg>] <Images/miterpolys.jpg, id=
-28, 1927.2pt x 1160.335pt>
-File: Images/miterpolys.jpg Graphic file (type jpg)
+<use Images/bevel.png>
+Package pdftex.def Info: Images/bevel.png used on input line 94.
+(pdftex.def)             Requested size: 251.9989pt x 170.67209pt.
 
-<use Images/miterpolys.jpg>
-Package pdftex.def Info: Images/miterpolys.jpg used on input line 89.
-(pdftex.def)             Requested size: 390.0pt x 234.8072pt.
+<Images/joinartifact.png, id=27, 402.00188pt x 124.96687pt>
+File: Images/joinartifact.png Graphic file (type png)
 
-<Images/trianglestrip.png, id=29, 114.1866pt x 75.8835pt>
-File: Images/trianglestrip.png Graphic file (type png)
+<use Images/joinartifact.png>
+Package pdftex.def Info: Images/joinartifact.png used on input line 100.
+(pdftex.def)             Requested size: 360.0pt x 111.90852pt.
+ [5 <C:/Users/jd537/Documents/Thesis/test-repo/Images/miter.png>] [6 <C:/Users/
+jd537/Documents/Thesis/test-repo/Images/bevel.png> <C:/Users/jd537/Documents/Th
+esis/test-repo/Images/joinartifact.png>]
+<Images/linerendering.png, id=36, 438.13687pt x 226.59656pt>
+File: Images/linerendering.png Graphic file (type png)
 
-<use Images/trianglestrip.png>
-Package pdftex.def Info: Images/trianglestrip.png used on input line 95.
-(pdftex.def)             Requested size: 390.0pt x 259.24516pt.
- [5 <C:/Users/jd537/Documents/Thesis/test-repo/Images/miterartifact.jpg>] [6 <C
-:/Users/jd537/Documents/Thesis/test-repo/Images/miterpolys.jpg>] [7 <C:/Users/j
-d537/Documents/Thesis/test-repo/Images/trianglestrip.png>] [8] (C:\Users\jd537\
-Documents\Thesis\test-repo\DrawingLines.aux) ) 
+<use Images/linerendering.png>
+Package pdftex.def Info: Images/linerendering.png used on input line 121.
+(pdftex.def)             Requested size: 438.13579pt x 226.596pt.
+
+Overfull \hbox (78.13579pt too wide) in paragraph at lines 121--122
+[][] 
+ []
+
+<Images/lineadjacency.png, id=37, 612.1269pt x 340.3917pt>
+File: Images/lineadjacency.png Graphic file (type png)
+
+<use Images/lineadjacency.png>
+Package pdftex.def Info: Images/lineadjacency.png used on input line 127.
+(pdftex.def)             Requested size: 360.0pt x 200.1853pt.
+
+<Images/linepolyex.png, id=38, 614.0541pt x 397.2441pt>
+File: Images/linepolyex.png Graphic file (type png)
+
+<use Images/linepolyex.png>
+Package pdftex.def Info: Images/linepolyex.png used on input line 132.
+(pdftex.def)             Requested size: 360.0pt x 232.89905pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 142.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 142.
+ [7] [8 <C:/Users/jd537/Documents/Thesis/test-repo/Images/linerendering.png> <C
+:/Users/jd537/Documents/Thesis/test-repo/Images/lineadjacency.png>] [9 <C:/User
+s/jd537/Documents/Thesis/test-repo/Images/linepolyex.png>]
+<Images/rotation.png, id=51, 322.95656pt x 275.52937pt>
+File: Images/rotation.png Graphic file (type png)
+
+<use Images/rotation.png>
+Package pdftex.def Info: Images/rotation.png used on input line 166.
+(pdftex.def)             Requested size: 180.0pt x 153.56384pt.
+ [10 <C:/Users/jd537/Documents/Thesis/test-repo/Images/rotation.png>] [11]
+(C:\Users\jd537\Documents\Thesis\test-repo\DrawingLines.aux) ) 
 Here is how much of TeX's memory you used:
- 2879 strings out of 493921
- 42863 string characters out of 3144877
- 98110 words of memory out of 3000000
- 6161 multiletter control sequences out of 15000+200000
- 8503 words of font info for 30 fonts, out of 3000000 for 9000
+ 3630 strings out of 493921
+ 53773 string characters out of 3144877
+ 109680 words of memory out of 3000000
+ 6883 multiletter control sequences out of 15000+200000
+ 8812 words of font info for 31 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 42i,5n,40p,273b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr8.pfb>
-Output written on DrawingLines.pdf (8 pages, 660023 bytes).
+ 42i,10n,40p,741b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on DrawingLines.pdf (11 pages, 434295 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
+ 85 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

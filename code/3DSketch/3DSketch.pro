@@ -11,25 +11,45 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
     stroke.cpp \
     raycaster.cpp \
     camera.cpp \
     layer.cpp \
-    lineshader.cpp
+    shaderprogram.cpp \
+    lineshader.cpp \
+    gllinesshader.cpp \
+    layerrenderer.cpp \
+    vertexbasedlineshader.cpp \
+    singlepasswireframeshader.cpp \
+    sketchmanager.cpp \
+    sketchwidget.cpp \
+    mainwindow.cpp \
+    inputengine.cpp \
+    surfaceapplication.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     stroke.h \
     raycaster.h \
     camera.h \
     layer.h \
-    lineshader.h
+    shaderprogram.h \
+    lineshader.h \
+    gllinesshader.h \
+    layerrenderer.h \
+    vertexbasedlineshader.h \
+    singlepasswireframeshader.h \
+    sketchmanager.h \
+    sketchwidget.h \
+    mainwindow.h \
+    inputengine.h \
+    surfaceapplication.h
 
 RESOURCES += \
     resources.qrc
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Embree/ -lembree
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Embree/ -lembree
+
+
+win32: LIBS += -L$$PWD/../Embree/lib/ -lembree
 
 INCLUDEPATH += $$PWD/../Embree/include
 DEPENDPATH += $$PWD/../Embree/include

@@ -4,5 +4,11 @@
         <file>shaders/simple.vs</file>
         <file>shaders/lines.fs</file>
         <file>shaders/lines.vs</file>
+        <file>shaders/miter_line_shader.fs</file>
+        <file>shaders/miter_line_shader.gs</file>
+        <file>shaders/miter_line_shader.vs</file>
+        <file>shaders/single_pass_wireframe.fs</file>
+        <file>shaders/single_pass_wireframe.gs</file>
+        <file>shaders/single_pass_wireframe.vs</file>
     </qresource>
 </RCC>
