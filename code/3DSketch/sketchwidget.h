@@ -67,7 +67,7 @@ protected:
 
 private:
     // Checks if two mouse positions are not in pixels between the threshhold
-    bool notAdjecnt(QVector2D p0, QVector2D p1, int threshhold);
+    bool notAdjecnt(QVector2D p0, QVector2D p1, float threshhold);
 
     QBasicTimer timer;
     QOpenGLShaderProgram program;

@@ -2,6 +2,7 @@
 #include "sketchwidget.h"
 
 #include <QMouseEvent>
+#include <surfaceapplication.h>
 #include <iostream>
 
 #include <math.h>
@@ -202,9 +203,11 @@ void SketchWidget::tabletMoveEvent(QTabletEvent *e)
 {
     currPos = QVector2D(e->pos());
 
-    bool intersect = manager.stroke(currPos.x(), currPos.y(), mCamera, mLineWidth, rayCaster, triangles);
-
-    lastPos = currPos;
+    if (notAdjecnt(currPos, lastPos, 2.0f))
+    {
+        bool intersect = manager.stroke(currPos.x(), currPos.y(), mCamera, mLineWidth, rayCaster, triangles);
+        lastPos = currPos;
+    }
 }
 
 void SketchWidget::tabletReleaseEvent(QTabletEvent *e)
@@ -214,17 +217,25 @@ void SketchWidget::tabletReleaseEvent(QTabletEvent *e)
 
 void SketchWidget::touchBeginEvent(QTouchEvent *e)
 {
-
+    qDebug() << "Touch Begin";
 }
 
 void SketchWidget::touchUpdateEvent(QTouchEvent *e)
 {
+    if (e->touchPointStates() & Qt::TouchPointReleased)
+    {
+        qDebug() << "Point Ids";
+        for (int i = 0; i < e->touchPoints().size(); i++)
+        {
 
+            qDebug() << e->touchPoints()[i].id();
+        }
+    }
 }
 
 void SketchWidget::touchEndEvent(QTouchEvent *e)
 {
-
+    qDebug() << "Touch End";
 }
 
 bool SketchWidget::event(QEvent *e)
@@ -233,25 +244,48 @@ bool SketchWidget::event(QEvent *e)
     {
     case QEvent::TabletPress:
     {
+        e->accept();
         QTabletEvent *te = static_cast<QTabletEvent*>(e);
         tabletPressEvent(te);
         return true;
     }
     case QEvent::TabletMove:
     {
+        e->accept();
         QTabletEvent *te = static_cast<QTabletEvent*>(e);
         tabletMoveEvent(te);
         return true;
     }
     case QEvent::TabletRelease:
     {
+        e->accept();
         QTabletEvent *te = static_cast<QTabletEvent*>(e);
         tabletReleaseEvent(te);
         return true;
     }
+    case QEvent::TouchBegin:
+    {
+        e->accept();
+        QTouchEvent *te = static_cast<QTouchEvent*>(e);
+        touchBeginEvent(te);
+        return true;
+    }
+    case QEvent::TouchUpdate:
+    {
+        e->accept();
+        QTouchEvent *te = static_cast<QTouchEvent*>(e);
+        touchUpdateEvent(te);
+        return true;
+    }
+    case QEvent::TouchEnd:
+    {
+        e->accept();
+        QTouchEvent *te = static_cast<QTouchEvent*>(e);
+        touchEndEvent(te);
+        return true;
+    }
     default:
         return QWidget::event(e);
-
     }
 }
 
@@ -396,7 +430,7 @@ void SketchWidget::paintGL()
 
 }
 
-bool SketchWidget::notAdjecnt(QVector2D p0, QVector2D p1, int threshhold)
+bool SketchWidget::notAdjecnt(QVector2D p0, QVector2D p1, float threshhold)
 {
     return std::abs(p1.x() - p0.x()) + std::abs(p1.y() - p0.y()) > threshhold;
 }

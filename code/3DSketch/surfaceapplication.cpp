@@ -77,6 +77,16 @@ bool SurfaceApplication::notify(QObject *receiver, QEvent * event)
 {
     QEvent::Type evtype = event->type();
 
+    // Only handle touch events we create
+    if (evtype == QEvent::TouchBegin ||
+            evtype == QEvent::TouchUpdate ||
+            evtype == QEvent::TouchEnd)
+    {
+        QTouchEvent *te = static_cast<QTouchEvent*>(event);
+        if (te->device()->name()!= QString("WM_POINTER"))
+            return true;
+    }
+
     // Try to pass TabletPress/TouchBegin event and see if a widget accepts
     if ((evtype == QEvent::TabletPress || evtype == QEvent::TouchBegin) && inputState == None)
     {
@@ -171,7 +181,6 @@ bool SurfaceApplication::notify(QObject *receiver, QEvent * event)
         receiver = getRecvWindow(receiver);
         QTouchEvent* touchEvent = static_cast<QTouchEvent*>(event);
         QEvent::Type mevtype = QEvent::MouseMove;
-
         if (inputState == None && evtype == QEvent::TouchBegin
                 && touchEvent->touchPoints().size() == 1 && touchEvent->device()->type() != QTouchDevice::TouchPad)
         {

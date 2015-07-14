@@ -1,11 +1,12 @@
 #ifndef INPUTENGINE_H
 #define INPUTENGINE_H
 
-#include <Windows.h>
-#include "WinUser.h"
+#include <windows.h>
+#include <WinUser.h>
 #include <QDebug>
 
 #include <QEvent>
+#include <QWindow>
 #include <QApplication>
 #include <QCoreApplication>
 #include <QAbstractNativeEventFilter>

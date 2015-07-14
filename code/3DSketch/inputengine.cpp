@@ -13,7 +13,7 @@ static POINTER_PEN_INFO penPointerInfo[MAX_PEN_POINTERS];
 // NON QT FUNCTIONS
 int overrideWindowProcedure(HWND & hWnd)
 {
-    OldWinProc = (WNDPROC)GetWindowLong(hWnd, GWL_WNDPROC);
+    //OldWinProc = (WNDPROC)GetWindowLong(hWnd, GWL_WNDPROC);
 
     qDebug() << "************************************";
     qDebug() << "Displaying System Touch Capabilities";
@@ -40,7 +40,8 @@ int overrideWindowProcedure(HWND & hWnd)
     if(!OldWinProc)
         return (int) OldWinProc;
 
-    return SetWindowLong(hWnd, GWL_WNDPROC, (LONG) (WNDPROC) NewWndProc);
+    return 0;
+    //return SetWindowLong(hWnd, GWL_WNDPROC, (LONG) (WNDPROC) NewWndProc);
 }
 
 LRESULT CALLBACK NewWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -106,6 +107,8 @@ static void handlePenInput(POINTER_PEN_INFO &ppi, QEvent::Type eventtype)
 
     const POINT pix = ppi.pointerInfo.ptPixelLocation;
     const POINT him = ppi.pointerInfo.ptHimetricLocation;
+
+
 
     qreal x = him.x * HimetricToPix;
     qreal y = him.y * HimetricToPix;
@@ -268,12 +271,64 @@ InputFilter::~InputFilter()
 
 void InputFilter::notifyTabletEvent(QEvent::Type eventtype, const QPointF &globalpos, qreal pressure, QTabletEvent::PointerType ptrtype, int buttons, int deviceid)
 {
+    if (eventtype == QEvent::TabletPress || !tabletTarget)
+    {
+        tabletTarget = QGuiApplication::topLevelAt(globalpos.toPoint());
+        if(!tabletTarget)
+        {
+            return;
+        }
+        QObject::connect(tabletTarget, SIGNAL(destroyed()), helperObject, SLOT(tabletWindowDestroyed()));
+    }
 
+    QWindow* window = tabletTarget;
+    if(eventtype == QEvent::TabletRelease)
+    {
+        QObject::disconnect(tabletTarget, SIGNAL(destroyed()), helperObject, SLOT(tabletWindowDestroyed()));
+        tabletTarget = NULL;
+    }
+
+    QPointF localpos = window->mapFromGlobal(globalpos.toPoint()) + (globalpos - globalpos.toPoint());
+    QTabletEvent tabletevent(eventtype, localpos, globalpos, deviceid , ptrtype,
+                             pressure, 0, 0, 0, 0, 0, QApplication::keyboardModifiers(), deviceid);
+    surfaceApp->setTabletButtons(buttons);
+    surfaceApp->notify(window, &tabletevent);
 }
 
 void InputFilter::notifyTouchEvent(Qt::TouchPointStates touchstate, const QList<QTouchEvent::TouchPoint> &_points)
 {
+    QList<QTouchEvent::TouchPoint> points = _points;
+    QEvent::Type evtype = QEvent::TouchUpdate;
+    if(touchstate == Qt::TouchPointPressed && !touchTarget) {
+        touchTarget = QGuiApplication::topLevelAt(points[0].screenPos().toPoint());
+        if(touchTarget)
+        {
+            QObject::connect(touchTarget, SIGNAL(destroyed()), helperObject, SLOT(touchWindowDestroyed()));
+        }
+        evtype = QEvent::TouchBegin;
+    }
+    if(!touchTarget)
+    {
+        return;
+    }
+    QWindow* window = touchTarget;
+    if(touchstate == Qt::TouchPointReleased && points.count() == 1)
+    {
+        QObject::disconnect(touchTarget, SIGNAL(destroyed()), helperObject, SLOT(touchWindowDestroyed()));
+        touchTarget = NULL;
+        evtype = QEvent::TouchEnd;
+    }
+    if(points.count() > 1)
+    {
+        touchstate |= Qt::TouchPointMoved;
+    }
 
+    for(int ii = 0; ii < points.count(); ++ii)
+    {
+        points[ii].setPos(window->mapFromGlobal(points[ii].screenPos().toPoint()));
+    }
+    QTouchEvent touchevent(evtype, &touchDevice, QApplication::keyboardModifiers(), touchstate, points);
+    surfaceApp->notify(window, &touchevent);
 }
 
 void SurfaceHelperObject::tabletWindowDestroyed()
