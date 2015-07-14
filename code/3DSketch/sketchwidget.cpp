@@ -26,6 +26,8 @@ SketchWidget::SketchWidget(QWidget *parent) :
 
     const float zNear = 1.0f, zFar = 100.0f, fov =  60.0f;
     mCamera = new Camera(QVector3D(0,0,-2), QVector3D(0,0,-3), 0, 0, fov, zNear, zFar);
+
+    setAttribute(Qt::WA_AcceptTouchEvents);
 }
 
 SketchWidget::~SketchWidget()
@@ -185,9 +187,72 @@ void SketchWidget::wheelEvent(QWheelEvent *e)
     mCamera->zoom(numDegrees.y());
 }
 
+void SketchWidget::tabletPressEvent(QTabletEvent *e)
+{
+    currPos = QVector2D(e->pos());
+
+    bool intersect = manager.stroke(currPos.x(), currPos.y(), mCamera, mLineWidth, rayCaster, triangles);
+
+    qDebug() << "Beginning Stroke";
+
+    lastPos = currPos;
+}
+
+void SketchWidget::tabletMoveEvent(QTabletEvent *e)
+{
+    currPos = QVector2D(e->pos());
+
+    bool intersect = manager.stroke(currPos.x(), currPos.y(), mCamera, mLineWidth, rayCaster, triangles);
+
+    lastPos = currPos;
+}
+
+void SketchWidget::tabletReleaseEvent(QTabletEvent *e)
+{
+    manager.endStroke();
+}
+
+void SketchWidget::touchBeginEvent(QTouchEvent *e)
+{
+
+}
+
+void SketchWidget::touchUpdateEvent(QTouchEvent *e)
+{
+
+}
+
+void SketchWidget::touchEndEvent(QTouchEvent *e)
+{
+
+}
+
 bool SketchWidget::event(QEvent *e)
 {
-    return QWidget::event(e);
+    switch (e->type())
+    {
+    case QEvent::TabletPress:
+    {
+        QTabletEvent *te = static_cast<QTabletEvent*>(e);
+        tabletPressEvent(te);
+        return true;
+    }
+    case QEvent::TabletMove:
+    {
+        QTabletEvent *te = static_cast<QTabletEvent*>(e);
+        tabletMoveEvent(te);
+        return true;
+    }
+    case QEvent::TabletRelease:
+    {
+        QTabletEvent *te = static_cast<QTabletEvent*>(e);
+        tabletReleaseEvent(te);
+        return true;
+    }
+    default:
+        return QWidget::event(e);
+
+    }
 }
 
 void SketchWidget::timerEvent(QTimerEvent *)

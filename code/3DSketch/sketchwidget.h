@@ -21,6 +21,7 @@
 #include <QBasicTimer>
 #include <QOpenGLShaderProgram>
 #include <QOpenGLTexture>
+#include <QTouchEvent>
 
 
 class SketchWidget : public QOpenGLWidget, protected QOpenGLFunctions
@@ -36,13 +37,25 @@ public:
     void loadSketch();
 
 protected:
-    // Event Functions
+    // Mouse / Keyboard Event Functions
     void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
     void mouseMoveEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
     void mouseReleaseEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
     void keyPressEvent(QKeyEvent *k) Q_DECL_OVERRIDE;
     void wheelEvent(QWheelEvent *e) Q_DECL_OVERRIDE;
     void timerEvent(QTimerEvent *e) Q_DECL_OVERRIDE;
+
+    // Tablet Event Functions
+    void tabletPressEvent(QTabletEvent *e);
+    void tabletMoveEvent(QTabletEvent *e);
+    void tabletReleaseEvent(QTabletEvent *e);
+
+    // Touch Event Functions
+    void touchBeginEvent(QTouchEvent *e);
+    void touchUpdateEvent(QTouchEvent *e);
+    void touchEndEvent(QTouchEvent *e);
+
+    // Event Handler
     bool event(QEvent *e) Q_DECL_OVERRIDE;
 
     void initializeGL() Q_DECL_OVERRIDE;
@@ -64,6 +77,10 @@ private:
 
     QVector2D lastMousePosition;
     QVector2D mousePressPosition;
+
+    QVector2D currPos;
+    QVector2D lastPos;
+
     Camera *mCamera;
     RayCaster rayCaster;
     QVector<QVector3D> triangles;
