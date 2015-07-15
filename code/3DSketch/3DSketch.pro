@@ -25,7 +25,10 @@ SOURCES += main.cpp\
     sketchwidget.cpp \
     mainwindow.cpp \
     inputengine.cpp \
-    surfaceapplication.cpp
+    surfaceapplication.cpp \
+    GestureWorksCore.cpp \
+    GWCUtils.cpp \
+    gestureengine.cpp
 
 HEADERS  += \
     stroke.h \
@@ -42,7 +45,10 @@ HEADERS  += \
     sketchwidget.h \
     mainwindow.h \
     inputengine.h \
-    surfaceapplication.h
+    surfaceapplication.h \
+    GestureWorksCore.h \
+    GWCUtils.h \
+    gestureengine.h
 
 RESOURCES += \
     resources.qrc

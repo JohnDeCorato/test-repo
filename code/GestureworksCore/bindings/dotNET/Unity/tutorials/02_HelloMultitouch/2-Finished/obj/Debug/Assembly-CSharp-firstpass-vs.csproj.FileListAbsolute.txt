@@ -1,0 +1,10 @@
+C:\gwdistro\release\1.0\GestureworksCore\bindings\dotNET\Unity\tutorials\02_HelloMultitouch\2-Finished\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\gwdistro\release\1.0\GestureworksCore\bindings\dotNET\Unity\tutorials\02_HelloMultitouch\2-Finished\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\gwdistro\release\1.0\GestureworksCore\bindings\dotNET\Unity\tutorials\02_HelloMultitouch\2-Finished\Temp\bin\Debug\UnityEditor.dll
+C:\gwdistro\release\1.0\GestureworksCore\bindings\dotNET\Unity\tutorials\02_HelloMultitouch\2-Finished\Temp\bin\Debug\UnityEngine.dll
+C:\gwdistro\release\1.0\GestureworksCore\bindings\dotNET\Unity\tutorials\02_HelloMultitouch\2-Finished\Temp\bin\Debug\Mono.Cecil.dll
+C:\gwdistro\release\1.0\GestureworksCore\bindings\dotNET\Unity\tutorials\02_HelloMultitouch\2-Finished\Temp\bin\Debug\nunit.framework.dll
+C:\gwdistro\release\1.0\GestureworksCore\bindings\dotNET\Unity\tutorials\02_HelloMultitouch\2-Finished\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\gwdistro\release\1.0\GestureworksCore\bindings\dotNET\Unity\tutorials\02_HelloMultitouch\2-Finished\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
+C:\gwdistro\release\1.0\GestureworksCore\bindings\dotNET\Unity\tutorials\02_HelloMultitouch\2-Finished\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\gwdistro\release\1.0\GestureworksCore\bindings\dotNET\Unity\tutorials\02_HelloMultitouch\2-Finished\obj\Debug\Assembly-CSharp-firstpass.pdb

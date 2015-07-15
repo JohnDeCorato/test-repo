@@ -1,0 +1,529 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GestureWorksCoreNET64</name>
+    </assembly>
+    <members>
+        <member name="T:GestureWorksCoreNET.GestureEvent">
+            <summary>
+            The <see cref="T:GestureEvent"/> provides data associated with a particular gesture event as tracked by GestureWorksCore.
+            <see cref="T:GestureEvent"/> objects are retrieved from GestureWorks by calling <see cref="M:GestureWorksCoreNET.GestureWorks.ConsumeGestureEvents"/>,
+            typically from within an application's draw loop (or similar).
+            </summary>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureEvent.CreateGestureEvent(GestureWorksCoreNET.GestureEventIntermediate)">
+            <summary>
+            Creates and returns a new, fully initialized instance of a <see cref="T:GestureWorksCoreNET.GestureEvent"/> based off of the supplied <see cref="T:GestureWorksCoreNET.GestureEventIntermediate"/>.
+            </summary>
+            <param name="intermediateGestureEvent">The raw GestureEvent as received from GestureWorksCore that contains the "non-consumer" fields.</param>
+            <returns>Consumable <see cref="T:GestureWorksCoreNET.GestureEvent"/> with only consumer-accessible fields.</returns>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureEvent.EventID">
+            <summary>
+            Gets the ID of the <see cref="T:GestureEvent"/>.
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureEvent.GestureID">
+            <summary>
+            Gets the  name of the gesture. This corresponds to gesture names as read from GML via <see cref="M:GestureWorksCoreNET.GestureWorks.LoadGML(System.String)"/>.
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureEvent.Target">
+            <summary>
+            Gets the  name of the touch object associated with this <see cref="T:GestureEvent"/>. This value corresponds to a touch object previously associated with a <see cref="T:GestureEvent"/> via <see cref="M:GestureWorksCoreNET.GestureWorks.AddGesture(System.String,System.String)"/>.
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureEvent.N">
+            <summary>
+            Gets the current number of touch points that are actively associated with this <see cref="T:GestureEvent"/>.
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureEvent.X">
+            <summary>
+            Gets the screen coordinate of the <see cref="T:GestureEvent"/> on the X-axis.
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureEvent.Y">
+            <summary>
+            Gets the screen coordinate of the <see cref="T:GestureEvent"/> on the Y-axis.
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureEvent.Phase">
+            <summary>
+            Gets the current state of the gesture.
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureEvent.Timestamp">
+            <summary>
+            Gets the  timestamp of the <see cref="T:GestureEvent"/>. This value is represented in clock ticks measuring elapsed processor time; the base time is arbitrary, but does not change within a single process.
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureEvent.LockedPoints">
+            <summary>
+            Gets an array of TouchPoint IDs for any TouchPoints during a 'hold' <see cref="T:GestureEvent"/>. This value will be 0 if there are no locked points or if the event is not of type 'hold' or a subset thereof.
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureEvent.Values">
+            <summary>
+            Gets the value of the property as defined by the gesture dimension for this <see cref="T:GestureEvent"/>. These properties are defined in GML and their values are computed and returned by GestureWorks.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.GestureEventArray">
+            <summary>
+            Represents a collection of <see cref="T:GestureWorksCoreNET.GestureEvent"/> objects as obtained from <see cref="M:GestureWorksCoreNET.GestureWorks.ConsumeGestureEvents"/>.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.GesturePhase">
+            <summary>
+            The GesturePhase describes the current state of the gesture and is consumable via the <see cref="P:GestureWorksCoreNET.GestureEvent.Phase"/> property.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GesturePhase.GESTURE_BEGIN">
+            <summary>
+            Signifies the start of a gesture.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GesturePhase.GESTURE_ACTIVE">
+            <summary>
+            The gesture is currently being generated by direct manipulation.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GesturePhase.GESTURE_RELEASE">
+            <summary>
+            Direct manipulation has ceased.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GesturePhase.GESTURE_PASSIVE">
+            <summary>
+            The gesture is being generated by indirect manipulation (e.g. inertial filters).
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GesturePhase.GESTURE_END">
+            <summary>
+            The gesture has completed; this is the last event in a gesture's lifespan.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.GestureWorks">
+            <summary>
+            The <see cref="T:GestureWorksCoreNET.GestureWorks"/> object is the primary facility for interacting with the <c>GestureWorksCore.dll</c> native library from within .NET applications.
+            </summary>
+            <example>
+            Creating a fully initialized <see cref="T:GestureWorksCoreNET.GestureWorks"/> object is performed as follows (parameter values should be changed as necessary).
+            <code lang="c#">
+            GestureWorks gw = new GestureWorks();
+            
+            gw.LoadGestureWorksDll("C:\\path\\to\\GestureWorksCore.dll");
+            gw.InitializeGestureWorks(1920, 1080);
+            gw.LoadGML("C:\\path\\to\\my_gestures.gml");
+            gw.RegisterWindowForTouchByName("My Touch Application");
+            </code>
+            If each of the above methods have returned <c>true</c>, the application may now make use of the various <see cref="T:GestureWorksCoreNET.GestureWorks"/> methods for processing touch events.
+            </example>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.LoadGestureWorksDll(System.String)">
+            <summary>
+            Loads the <c>GestureWorksCore.dll</c> library, providing access to the exported functions found in <c>GestureWorksCore.dll</c> native library.
+            This should be the first method called during the initialization phase of <c>GestureWorksCore</c> interaction, and should be followed by a call to <see cref="M:GestureWorksCoreNET.GestureWorks.InitializeGestureWorks(System.Int32,System.Int32)"/>.
+            Note that the name of the DLL must also be updated in <c>GwNative.cs</c>.
+            </summary>
+            <param name="gestureworksDllPath">The full path (including filename and extension) to the <c>GestureWorksCore.dll</c> file.</param>
+            <returns>Value indicating whether the load operation was successful.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.InitializeGestureWorks(System.Int32,System.Int32)">
+            <summary>
+            Sets the screen dimensions and instructs <c>GestureWorksCore</c> to perform various initialization functions for point, cluster, and gesture data.
+            This should be the second method called during the initialization phase of <c>GestureWorksCore</c> interaction, and should be followed by calls
+            to <see cref="M:GestureWorksCoreNET.GestureWorks.LoadGML(System.String)"/> and <see cref="M:GestureWorksCoreNET.GestureWorks.RegisterWindowForTouchByName(System.String)"/>.
+            </summary>
+            <param name="screenWidth">The width of the screen resolution in pixels.</param>
+            <param name="screenHeight">The height of the screen resolution in pixels.</param>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.LoadGML(System.String)">
+            <summary>
+            Loads and parses the specified GestureML (GML) file containing the gesture information to be tracked and processed by <c>GestureWorksCore</c>.
+            This should be called after <see cref="M:GestureWorksCoreNET.GestureWorks.InitializeGestureWorks(System.Int32,System.Int32)"/> during the initialization phase of <c>GestureWorksCore</c> interaction.
+            </summary>
+            <param name="pathToGML">The full path (including filename and extension) to the GML file for GestureWorks.</param>
+            <returns>Value indicating whether the specified GML file was successfully loaded by GestureWorks.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.RegisterWindowForTouch(System.IntPtr)">
+            <summary>
+            Registers the window for which GestureWorks should process gesture events.
+            This should be called after <see cref="M:GestureWorksCoreNET.GestureWorks.InitializeGestureWorks(System.Int32,System.Int32)"/> during the initialization phase of <c>GestureWorksCore</c> interaction.
+            </summary>
+            <param name="hWnd">The <c>HWND</c> of the window for which GestureWorks should process gesture events.</param>
+            <returns>Value indicating whether the specified window was successfully registered.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.RegisterWindowForTouchByName(System.String)">
+            <summary>
+            Registers the window for which GestureWorks should process gesture events.
+            This should be called after <see cref="M:GestureWorksCoreNET.GestureWorks.InitializeGestureWorks(System.Int32,System.Int32)"/> during the initialization phase of <c>GestureWorksCore</c> interaction.
+            </summary>
+            <param name="windowName">The main title (caption) of the window for which GestureWorks should process gesture events.</param>
+            <returns>Value indicating whether the specified window was successfully registered.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.RegisterTouchObject(System.String)">
+            <summary>
+            Registers the specified object with GestureWorks for touch processing.
+            </summary>
+            <param name="touchObjectName">The name of the object that should be registered for GestureWorks touch processing.</param>
+            <returns>Value indicating whether the specified touch object was successfully registered.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.DeregisterTouchObject(System.String)">
+            <summary>
+            Removes the specified object from the collection of objects managed by GestureWorks for touch processing.
+            </summary>
+            <param name="touchObjectName">The name of the object that should be deregistered from GestureWorks touch processing.</param>
+            <returns>Value indicating whether the specified touch object was successfully deregistered.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.AddGesture(System.String,System.String)">
+            <summary>
+            Adds and enables the specified gesture to those associated with the specified touch object.
+            </summary>
+            <param name="touchObjectName">The name of the object registered with GestureWorks for touch processing. The object should previously have been registered with GestureWorks via a call to <see cref="M:GestureWorksCoreNET.GestureWorks.RegisterTouchObject(System.String)"/>.</param>
+            <param name="gestureName">The name of the gesture (from GML) that should be associated with the touch object.</param>
+            <returns>Value indicating whether the specified touch object was successfully associated with the specified gesture.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.AddGestureSet(System.String,System.String)">
+            <summary>
+            Adds and enables the specified gesture set to those associated with the specified touch object.
+            </summary>
+            <param name="touchObjectName">The name of the object registered with GestureWorks for touch processing. The object should previously have been registered with GestureWorks via a call to <see cref="M:GestureWorksCoreNET.GestureWorks.RegisterTouchObject(System.String)"/>.</param>
+            <param name="gestureSetName">The name of the gesture set that should be associated with the touch object.</param>
+            <returns>Value indicating whether the specified touch object was successfully associated with the specified gesture set.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.RemoveGesture(System.String,System.String)">
+            <summary>
+            Removes the specified gesture from those associated with the specified touch object.
+            </summary>
+            <param name="touchObjectName">The name of the object registered with GestureWorks for touch processing.</param>
+            <param name="gestureName">The name of the gesture (from GML) that should be disassociated from the touch object.</param>
+            <returns>Value indicating whether the specified touch object was successfully disassociated from the specified gesture.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.EnableGesture(System.String,System.String)">
+            <summary>
+            Enables the specified gesture for the specified touch object.
+            </summary>
+            <param name="touchObjectName">The name of the object registered with GestureWorks for touch processing.</param>
+            <param name="gestureName">The name of the gesture (from GML) that should be ensabled for the touch object.</param>
+            <returns>Value indicating whether the specified gesture was successfully enabled for the specified touch object.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.DisableGesture(System.String,System.String)">
+            <summary>
+            Disables the specified gesture for the specified touch object.
+            </summary>
+            <param name="touchObjectName">The name of the object registered with GestureWorks for touch processing.</param>
+            <param name="gestureName">The name of the gesture (from GML) that should be disabled for the touch object.</param>
+            <returns>Value indicating whether the specified gesture was successfully disabled for the specified touch object.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.ResizeScreen(System.Int32,System.Int32)">
+            <summary>
+            Updates GestureWorks with new screen dimensions.
+            </summary>
+            <param name="screenWidth">The width of the screen resolution in pixels.</param>
+            <param name="screenHeight">The height of the screen resolution in pixels.</param>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.ProcessFrame">
+            <summary>
+            Instructs GestureWorks to perform all pipeline processing tasks such as point, cluster, and gesture updating as well as temporal analysis.
+            Typically called from within in an application's draw loop.
+            </summary>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.AddTouchPoint(System.String,System.Int32)">
+            <summary>
+            Adds the point represented by the specified point ID to the specified touch object.
+            </summary>
+            <param name="touchObjectName">The name of the object registered with GestureWorks for touch processing.</param>
+            <param name="pointId">The name of the gesture (from GML) that should be associated with the touch object.</param>
+            <returns>Value indicating whether the specified touch object was successfully associated with the specified touch point.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.AddEvent(GestureWorksCoreNET.TouchEvent)">
+            <summary>
+            Adds the specified <see cref="T:GestureWorksCoreNET.TouchEvent"/> to Gestureworks' processing pipeline; typically used for passing touch position information to
+            Gestureworks as obtained from external sources (e.g. TUIO).
+            </summary>
+            <param name="touchEvent">The <see cref="T:GestureWorksCoreNET.TouchEvent"/> to pass to Gestureworks for touch processing.</param>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.ConsumePointEvents">
+            <summary>
+            Obtains all currently tracked touch point events from <c>GestureWorksCore</c>, represented by a collection of <see cref="T:GestureWorksCoreNET.PointEvent"/> objects.
+            </summary>
+            <returns>A <see cref="T:GestureWorksCoreNET.PointEventArray"/> containing any point events as held by GestureWorks.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.GestureWorks.ConsumeGestureEvents">
+            <summary>
+            Obtains all currently tracked gesture events from <c>GestureWorksCore</c>, represented by a collection of <see cref="T:GestureWorksCoreNET.GestureEvent"/> objects.
+            </summary>
+            <returns>A <see cref="T:GestureWorksCoreNET.GestureEventArray"/> containing any gesture events currently tracked by <c>GestureWorksCore</c>.</returns>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureWorks.IsLoaded">
+            <summary>
+            Gets a value indicating whether the <c>GestureWorksCore.dll</c> has been successfully loaded by a call to <see cref="M:GestureWorksCoreNET.GestureWorks.LoadGestureWorksDll(System.String)"/>.
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureWorks.IsInitialized">
+            <summary>
+            Gets a value indicating whether this <see cref="T:GestureWorksCoreNET.GestureWorks"/> object has been successfully initialized by a call to <see cref="M:GestureWorksCoreNET.GestureWorks.InitializeGestureWorks(System.Int32,System.Int32)"/>. 
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureWorks.IsGmlLoaded">
+            <summary>
+            Gets a value indicating whether gestures contained in a properly formatted GestureML (GML) file have been successfully loaded by a call to <see cref="M:GestureWorksCoreNET.GestureWorks.LoadGML(System.String)"/>. 
+            </summary>
+        </member>
+        <member name="P:GestureWorksCoreNET.GestureWorks.IsWindowRegistered">
+            <summary>
+            Gets a value indicating whether a window name has been successfully registered by a call to <see cref="M:GestureWorksCoreNET.GestureWorks.RegisterWindowForTouchByName(System.String)"/>. 
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.TouchStatus">
+            <summary>
+            Provides the type of touch event within a <see cref="T:GestureWorksCoreNET.PointEvent"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchStatus.TOUCHUPDATE">
+            <summary>
+            The position of the <see cref="T:GestureWorksCoreNET.TouchPoint"/> associated with the <see cref="T:GestureWorksCoreNET.PointEvent"/> has been updated.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchStatus.TOUCHADDED">
+            <summary>
+            This <see cref="T:GestureWorksCoreNET.TouchPoint"/> associated with a <see cref="T:GestureWorksCoreNET.PointEvent"/> has been added to the collection of points tracked by GestureWorksCore.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchStatus.TOUCHREMOVED">
+            <summary>
+            This <see cref="T:GestureWorksCoreNET.TouchPoint"/> associated with a <see cref="T:GestureWorksCoreNET.PointEvent"/> has been removed from the collection of points tracked by GestureWorksCore.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.TouchPoint">
+            <summary>
+            Defines the position of a touch point as tracked by GestureWorksCore.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchPoint.X">
+            <summary>
+            Position of the <see cref="T:TouchPoint"/> on the X axis.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchPoint.Y">
+            <summary>
+            Position of the <see cref="T:TouchPoint"/> on the Y axis.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchPoint.Z">
+            <summary>
+            Position of the <see cref="T:TouchPoint"/> on the Z axis.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchPoint.W">
+            <summary>
+            Width of the <see cref="T:TouchPoint"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchPoint.H">
+            <summary>
+            The height of the <see cref="T:TouchPoint"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchPoint.R">
+            <summary>
+            The radius of the <see cref="T:TouchPoint"/>.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.PointEvent">
+            <summary>
+            The <see cref="T:PointEvent"/> provides touch point event information; this includes event type and status information via its <see cref="T:GestureWorksCoreNET.TouchStatus"/> and
+            <see cref="T:GestureWorksCoreNET.TouchPoint"/> fields, among others. <see cref="T:PointEvent"/>s are retrieved from GestureWorks by calling <see cref="M:GestureWorksCoreNET.GestureWorks.ConsumePointEvents"/>,
+            typically from within an application's draw loop (or similar).
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.PointEvent.PointId">
+            <summary>
+            The numeric ID of the <see cref="T:PointEvent"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.PointEvent.Status">
+            <summary>
+            The type of touch event associated with the <see cref="T:PointEvent"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.PointEvent.Position">
+            <summary>
+            The <see cref="T:PointEvent"/>'s position information as represented by a <see cref="T:GestureWorksCoreNET.TouchPoint"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.PointEvent.Timestamp">
+            <summary>
+            The timestamp of the <see cref="T:PointEvent"/>. This value is represented in clock ticks measuring elapsed processor time; the base time is arbitrary, but does not change within a single process.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.PointEventArrayIntermediate">
+            <summary>
+            The <c>PointEventArrayIntermediate</c> struct is used during the construction of the publicly consumable <see cref="T:GestureWorksCoreNET.PointEventArray"/> and is not intended for use
+            by <see cref="N:GestureWorksCoreNET"/> library users.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.TouchEvent">
+            <summary>
+            Defines the position of a point suitable for passing to Gestureworks Core for processing via the <see cref="M:GestureWorksCoreNET.GestureWorks.AddEvent(GestureWorksCoreNET.TouchEvent)"/> method; typically used when passing touch position information to
+            Gestureworks Core from an external source (e.g. TUIO events).
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchEvent.Timestamp">
+            <summary>
+            The timestamp of the <see cref="T:TouchEvent"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchEvent.Status">
+            <summary>
+            The type of event associated with the <see cref="T:TouchEvent"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchEvent.TouchEventID">
+            <summary>
+            Unique identifier for the <see cref="T:TouchEvent"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchEvent.X">
+            <summary>
+            Position of the <see cref="T:TouchEvent"/> on the X axis.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchEvent.Y">
+            <summary>
+            Position of the <see cref="T:TouchEvent"/> on the Y axis.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchEvent.Z">
+            <summary>
+            Position of the <see cref="T:TouchEvent"/> on the Z axis.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchEvent.W">
+            <summary>
+            Width of the <see cref="T:TouchEvent"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchEvent.H">
+            <summary>
+            The height of the <see cref="T:TouchEvent"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchEvent.R">
+            <summary>
+            The radius of the <see cref="T:TouchEvent"/>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.TouchEvent.P">
+            <summary>
+            The pressure of the <see cref="T:TouchEvent"/>.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.GestureEventArrayIntermediate">
+            The <c>GestureEventArrayIntermediate</c> struct is used during the construction of publicly consumable <see cref="T:GestureWorksCoreNET.GestureEventArray"/> objects and is not intended for use
+            by <see cref="N:GestureWorksCoreNET"/> library users.
+        </member>
+        <member name="T:GestureWorksCoreNET.GestureEventIntermediate">
+            The <c>GestureEventIntermediate</c> struct is used during the construction of publicly consumable <see cref="T:GestureWorksCoreNET.GestureEvent"/> objects and is not intended for use
+            by <see cref="N:GestureWorksCoreNET"/> library users. Internally, the struct provides access to a number of GestureEvent properties not passed on to <see cref="N:GestureWorksCoreNET"/> users.
+        </member>
+        <member name="F:GestureWorksCoreNET.GestureEventIntermediate.GestureEventID">
+            <summary>
+            Unique identifier for the gesture event.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GestureEventIntermediate.GestureID">
+            <summary>
+            The name a user has given for the gesture in GML
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GestureEventIntermediate.Target">
+            <summary>
+            The name of the touch object which owns the gesture (as defined by registerTouchObject).
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GestureEventIntermediate.N">
+            <summary>
+            The number of touch points involved in the gesture.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GestureEventIntermediate.X">
+            <summary>
+            X coordinate of where the gesture occurred.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GestureEventIntermediate.Y">
+            <summary>
+            Y coordinate of where the gesture occurred.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GestureEventIntermediate.values">
+            <summary>
+            The <c>values</c> map is where relevant gesture values will be returned by name as defined in the GML.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.MapStruct">
+            The <c>MapStruct</c> struct is used during the construction of publicly consumable <see cref="T:GestureWorksCoreNET.GestureEvent"/> objects and is not intended for use
+            by <see cref="N:GestureWorksCoreNET"/> library users.
+        </member>
+        <member name="T:GestureWorksCoreNET.GwNative">
+            <summary>
+            Provides the static methods for all of the PInvoked calls into native functions exported by <c>GestureWorksCore.dll</c>.
+            </summary>
+        </member>
+        <member name="F:GestureWorksCoreNET.GwNative._dllName">
+            <summary>
+            Specifies the name of the GestureWorksCore DLL that should be used by the bindings. This is only the filename and extension, NOT the full path.
+            Update this to reflect the name of the DLL you are passing to <see cref="M:GestureWorksCoreNET.GestureWorks.LoadGestureWorksDll(System.String)"/>.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.NamespaceDoc">
+            <summary>
+            The <see cref="T:GestureWorksCoreNET"/> library is the primary facility for interacting with Gestureworks Core from within .NET applications
+            written in C# or VB.NET. <see cref="T:GestureWorksCoreNET"/> provides the managed code in .NET applications access to the native functions
+            exported by the <c>GestureWorksCore.dll</c>.
+            </summary>
+        </member>
+        <member name="T:GestureWorksCoreNET.PointEventArray">
+            <summary>
+            Represents a collection of <see cref="T:GestureWorksCoreNET.PointEvent"/> objects as obtained from <see cref="M:GestureWorksCoreNET.GestureWorks.ConsumePointEvents"/>.
+            </summary>
+            <example>
+            <code lang="c#">
+            PointEventArray pointEvents = initializedGestureWorks.ConsumePointEvents();
+            foreach (PointEvent pEvent in pointEvents)
+            {        
+                Console.WriteLine(pEvent.PointId.ToString());
+            }
+            </code>
+            </example>
+        </member>
+        <member name="T:GestureWorksCoreNET.Utils">
+            <summary>
+            Provides various static utility methods useful when working with the <c>GestureWorksCore.dll</c> and its functions.
+            </summary>
+        </member>
+        <member name="M:GestureWorksCoreNET.Utils.LoadDll(System.String)">
+            <summary>
+            Loads the specified DLL into memory.
+            </summary>
+            <param name="path">The full path including the filename and extension to <c>GestureWorksCore.dll</c></param>
+            <returns>Value indicating whether the setting of the search path was successful.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.Utils.LoadLibrary(System.String)">
+            <summary>
+            Loads the specified module into the address space of the calling process. The specified module may cause other modules to be loaded.
+            </summary>
+            <param name="dllName">The full path including the filename and extension to <c>GestureWorksCore.dll</c></param>
+            <returns>If the function succeeds, the return value is a handle to the module. If the function fails, the return value is <c>NULL</c>.</returns>
+        </member>
+        <member name="M:GestureWorksCoreNET.Utils.GetDictFromMapStruct(GestureWorksCoreNET.MapStruct)">
+            <summary>
+            Returns a Dictionary of string keys and float values from the supplied <see cref="T:GestureWorksCoreNET.MapStruct"/>.
+            </summary>
+            <param name="mapStruct">The <see cref="T:GestureWorksCoreNET.MapStruct"/> from which to construct the Dictionary.</param>
+            <returns>A Dictionary generated from the supplied <see cref="T:GestureWorksCoreNET.MapStruct"/> whose keys are strings and values are floats.</returns>
+        </member>
+    </members>
+</doc>
