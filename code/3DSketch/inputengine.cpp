@@ -1,5 +1,7 @@
 #include "inputengine.h"
 #include "surfaceapplication.h"
+#include <set>
+#include <time.h>
 
 // NON QT Variables
 WNDPROC OldWinProc = NULL;
@@ -9,6 +11,9 @@ qreal HimetricToPix;
 static POINTER_INFO pointerInfo[MAX_TOUCH_POINTS];
 static POINTER_PEN_INFO penPointerInfo[MAX_PEN_POINTERS];
 
+std::set<UINT32> ptrids;
+
+clock_t lasttime;
 
 // NON QT FUNCTIONS
 int overrideWindowProcedure(HWND & hWnd)
@@ -180,6 +185,7 @@ static bool handleTouchInput(UINT32 ptrid, Qt::TouchPointState eventtype)
         }
 
         // Send the touch data to QT
+
         InputFilter::instace()->notifyTouchEvent(eventtype, pts);
     }
     return false;
@@ -193,6 +199,7 @@ static bool winInputEvent(MSG* m, long* result)
 {
     static UINT32 penPointerId = NULL;
 
+    clock_t t = clock();
     switch (m->message)
     {
     case WM_POINTERDOWN:
@@ -209,6 +216,11 @@ static bool winInputEvent(MSG* m, long* result)
             }
             else
             {
+                //qDebug() << "Pointer Down";
+                //if (t - lasttime <= 1)
+                    //return true;
+
+                lasttime = t;
                 return handleTouchInput(GET_POINTERID_WPARAM(m->wParam), Qt::TouchPointPressed);
             }
         }
@@ -221,6 +233,9 @@ static bool winInputEvent(MSG* m, long* result)
         }
         else
         {
+            //if (t - lasttime <= 1)
+                //return true;
+            lasttime = t;
             return handleTouchInput(GET_POINTERID_WPARAM(m->wParam), Qt::TouchPointMoved);
         }
         break;
@@ -236,6 +251,9 @@ static bool winInputEvent(MSG* m, long* result)
         }
         else
         {
+            //if (t - lasttime <= 1)
+                //return true;
+            lasttime = t;
             return handleTouchInput(GET_POINTERID_WPARAM(m->wParam), Qt::TouchPointReleased);
         }
     default:

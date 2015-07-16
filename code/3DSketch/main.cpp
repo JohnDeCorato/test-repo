@@ -2,6 +2,7 @@
 #include "mainwindow.h"
 #include "inputengine.h"
 #include "surfaceapplication.h"
+#include "touchapplication.h"
 #include <QApplication>
 #include <QSurfaceFormat>
 
@@ -16,21 +17,31 @@ int main(int argc, char *argv[])
     //EnableMouseInPointer(true);
 
     // Load GestureWorks Library to Detect Gestures from Touch Input
-    if (!loadGestureWorks("..\\GestureWorks\\GestureWorksCore32.dll"))
+    if (loadGestureWorks("C:\\Users\\jd537\\Documents\\GitHub\\test-repo\\code\\GestureworksCore\\GestureWorksCore32.dll"))
     {
         qDebug() << "Error loading gestureworks dll";
     }
+    else
+    {
+        qDebug() << "Gestureworks dll loaded";
+    }
 
-    if (!loadGML("..\\GestureWorks\\basic_manipulation.gml"))
+    if (!loadGML("C:\\Users\\jd537\\Documents\\GitHub\\test-repo\\code\\GestureworksCore\\basic_manipulation.gml"))
     {
         qDebug() << "Could not find gml file";
     }
 
     initializeGestureWorks(1920,1080);
 
+    qDebug() << "Adding gestures";
+    registerTouchObject("sketch");
+    addGesture("sketch", "n-drag");
+    addGesture("sketch", "n-rotate");
+    addGesture("sketch", "n-scale");
+
 
     // Create our Custom Qt Application
-    SurfaceApplication app(argc, argv);
+    TouchApplication app(argc, argv);
 
     // OpenGL Settings
     QSurfaceFormat format;
@@ -40,6 +51,9 @@ int main(int argc, char *argv[])
 
     app.setApplicationName("3D Sketch");
     app.setApplicationVersion("0.7");
+
+
+
 #ifndef QT_NO_OPENGL
     //SketchWidget widget;
     //widget.show();
@@ -47,9 +61,12 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
+
     // Setting up our application to handle our custom input manager
     //HWND hWnd = (HWND) w.winId();
     //overrideWindowProcedure(hWnd);
+
+    //registerWindowForTouchByName("3D Sketch");
 
     qDebug() << "********************";
     qDebug() << "3D Sketch Debug Info";
@@ -58,6 +75,7 @@ int main(int argc, char *argv[])
     QLabel note("OpenGL Support required");
     note.show();
 #endif
+
 
     return app.exec();
 }

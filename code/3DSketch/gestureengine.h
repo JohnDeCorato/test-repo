@@ -10,9 +10,9 @@ public:
     GestureEngine();
 
     static GestureEngine* instance() { return mInstance; }
-    void addTouchPoint(QTouchEvent::TouchPoint *e);
-    void updateTouchPoint(QTouchEvent::TouchPoint *e);
-    void removeTouchPoint(QTouchEvent::TouchPoint *e);
+    void addTouchPoint(QTouchEvent::TouchPoint e);
+    void updateTouchPoint(QTouchEvent::TouchPoint e);
+    void removeTouchPoint(QTouchEvent::TouchPoint e);
     std::vector<gwc::GestureEvent> getGestures();
 
 protected:

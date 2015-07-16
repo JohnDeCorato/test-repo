@@ -15,6 +15,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "GestureWorksCore.h"
+#include <QLibrary>
+#include <QDebug>
 
 
 typedef void (*initializeGestureworksType)(int, int);
@@ -55,31 +57,35 @@ static addEventType _addEvent(0);
 
 static HINSTANCE gwcDLL(0);
 
-int loadGestureWorks(std::string dll_path) {
+int loadGestureWorks(QString dll_path) {
 
 	
 	int success = 0;
 
-	gwcDLL = LoadLibraryA(dll_path.c_str());
+    //gwcDLL = LoadLibraryA(dll_path.c_str());
+    QLibrary gwcDLL(dll_path);
+
+    qDebug() << gwcDLL.fileName();
+    qDebug() << gwcDLL.load();
 	
-	if(gwcDLL != NULL) {
-		_processFrame = (processFrameType)GetProcAddress(gwcDLL, "processFrame");
-		_initializeGestureWorks = (initializeGestureworksType) GetProcAddress(gwcDLL, "initializeGestureWorks");
-		_resizeScreen = (resizeScreenType) GetProcAddress(gwcDLL, "resizeScreen");
-		_consumePointEvents = (consumePointEventsType) GetProcAddress(gwcDLL, "consumePointEvents");
-		_consumeGestureEvents = (consumeGestureEventsType) GetProcAddress(gwcDLL, "consumeGestureEvents");
-		_registerWindowForTouchByName = (registerWindowForTouchByNameType) GetProcAddress(gwcDLL, "registerWindowForTouchByName");
-		_registerTouchObject = (registerTouchObjectType) GetProcAddress(gwcDLL, "registerTouchObject");
-		_assignTouchPoint = (assignTouchPointType) GetProcAddress(gwcDLL, "addTouchPoint");
-		_loadGML = (loadGMLType) GetProcAddress(gwcDLL, "loadGML");
-		_enableGesture = (enableGestureType) GetProcAddress(gwcDLL, "enableGesture");
-		_disableGesture = (disableGestureType) GetProcAddress(gwcDLL, "disableGesture");
-		_addGesture = (addGestureType) GetProcAddress(gwcDLL, "addGesture");
-		_deregisterTouchObject = (deregisterTouchObjectType) GetProcAddress(gwcDLL, "deregisterTouchObject");
-		_addGestureSet = (addGestureSetType) GetProcAddress(gwcDLL, "addGestureSet");
-		_removeGesture = (removeGestureType) GetProcAddress(gwcDLL, "removeGesture");
-		_removeGestureSet = (removeGestureSetType) GetProcAddress(gwcDLL, "removeGestureSet");
-		_addEvent = (addEventType) GetProcAddress(gwcDLL, "addEvent");
+    if(gwcDLL.isLoaded()) {
+        _processFrame = (processFrameType)gwcDLL.resolve("processFrame");
+        _initializeGestureWorks = (initializeGestureworksType) gwcDLL.resolve("initializeGestureWorks");
+        _resizeScreen = (resizeScreenType) gwcDLL.resolve("resizeScreen");
+        _consumePointEvents = (consumePointEventsType) gwcDLL.resolve("consumePointEvents");
+        _consumeGestureEvents = (consumeGestureEventsType) gwcDLL.resolve("consumeGestureEvents");
+        _registerWindowForTouchByName = (registerWindowForTouchByNameType) gwcDLL.resolve("registerWindowForTouchByName");
+        _registerTouchObject = (registerTouchObjectType) gwcDLL.resolve("registerTouchObject");
+        _assignTouchPoint = (assignTouchPointType) gwcDLL.resolve("addTouchPoint");
+        _loadGML = (loadGMLType) gwcDLL.resolve("loadGML");
+        _enableGesture = (enableGestureType) gwcDLL.resolve("enableGesture");
+        _disableGesture = (disableGestureType) gwcDLL.resolve("disableGesture");
+        _addGesture = (addGestureType) gwcDLL.resolve("addGesture");
+        _deregisterTouchObject = (deregisterTouchObjectType) gwcDLL.resolve("deregisterTouchObject");
+        _addGestureSet = (addGestureSetType) gwcDLL.resolve("addGestureSet");
+        _removeGesture = (removeGestureType) gwcDLL.resolve("removeGesture");
+        _removeGestureSet = (removeGestureSetType) gwcDLL.resolve("removeGestureSet");
+        _addEvent = (addEventType) gwcDLL.resolve("addEvent");
 
 		if(
 			!_processFrame ||
@@ -100,7 +106,7 @@ int loadGestureWorks(std::string dll_path) {
 			!_deregisterTouchObject ||
 			!_addEvent
 
-			) { success = 2; }
+            ) {success = 2; }
 
 		
 	} else { 

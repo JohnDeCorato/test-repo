@@ -19,13 +19,14 @@
 #include <Windows.h>
 #include <vector>
 #include "GWCUtils.h"
+#include <QString>
 
 //The following are all of the functions required to use the GestureWorks DLL. 
 //Please refer to the documentation for appropriate calling conventions and
 //explanation of Event objects.
 
 
-int loadGestureWorks(std::string dll_path);
+int loadGestureWorks(QString dll_path);
 void initializeGestureWorks(int screen_width, int screen_height);
 void resizeScreen(int screen_width, int screen_height);
 void processFrame(void);

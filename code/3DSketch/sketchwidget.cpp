@@ -4,6 +4,7 @@
 #include <QMouseEvent>
 #include <surfaceapplication.h>
 #include <iostream>
+#include <gestureengine.h>
 
 #include <math.h>
 
@@ -217,24 +218,54 @@ void SketchWidget::tabletReleaseEvent(QTabletEvent *e)
 
 void SketchWidget::touchBeginEvent(QTouchEvent *e)
 {
-    qDebug() << "Touch Begin";
+    for (int i = 0; i < e->touchPoints().size(); i++)
+    {
+        qDebug() << "Adding Touch Point";
+        GestureEngine::instance()->addTouchPoint(e->touchPoints()[i]);
+    }
+    GestureEngine::instance()->getGestures();
 }
 
 void SketchWidget::touchUpdateEvent(QTouchEvent *e)
 {
-    if (e->touchPointStates() & Qt::TouchPointReleased)
+    for (int i = 0; i < e->touchPoints().size(); i++)
     {
-        qDebug() << "Point Ids";
-        for (int i = 0; i < e->touchPoints().size(); i++)
+        if (e->touchPoints()[i].state() & Qt::TouchPointPressed)
         {
-
-            qDebug() << e->touchPoints()[i].id();
+            qDebug() << "Adding Touch Point";
+            GestureEngine::instance()->addTouchPoint(e->touchPoints()[i]);
+        }
+        else if (e->touchPoints()[i].state() & Qt::TouchPointReleased)
+        {
+            qDebug() << "Removing Touch Point";
+            GestureEngine::instance()->removeTouchPoint(e->touchPoints()[i]);
+        }
+        else
+        {
+            //qDebug() << "Updating";
+            GestureEngine::instance()->updateTouchPoint(e->touchPoints()[i]);
+        }
+    }
+    std::vector<gwc::GestureEvent> gestures = GestureEngine::instance()->getGestures();
+    for(std::vector<gwc::GestureEvent>::iterator gesture_it = gestures.begin(); gesture_it != gestures.end(); gesture_it++)
+    {
+        if (gesture_it->gesture_id == "n-drag")
+        {
+            float dx = gesture_it->values["drag_dx"];
+            float dy = gesture_it->values["drag_dy"];
+            qDebug() << dx << " " << dy;
+            mCamera->rotate(dx, dy);
         }
     }
 }
 
 void SketchWidget::touchEndEvent(QTouchEvent *e)
 {
+    for (int i = 0; i < e->touchPoints().size(); i++)
+    {
+        qDebug() << "Removing Touch Point";
+        GestureEngine::instance()->removeTouchPoint(e->touchPoints()[i]);
+    }
     qDebug() << "Touch End";
 }
 

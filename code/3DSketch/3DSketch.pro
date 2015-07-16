@@ -28,7 +28,9 @@ SOURCES += main.cpp\
     surfaceapplication.cpp \
     GestureWorksCore.cpp \
     GWCUtils.cpp \
-    gestureengine.cpp
+    gestureengine.cpp \
+    touchapplication.cpp \
+    touchinputfilter.cpp
 
 HEADERS  += \
     stroke.h \
@@ -48,7 +50,9 @@ HEADERS  += \
     surfaceapplication.h \
     GestureWorksCore.h \
     GWCUtils.h \
-    gestureengine.h
+    gestureengine.h \
+    touchapplication.h \
+    touchinputfilter.h
 
 RESOURCES += \
     resources.qrc

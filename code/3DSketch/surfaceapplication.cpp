@@ -78,13 +78,10 @@ bool SurfaceApplication::notify(QObject *receiver, QEvent * event)
     QEvent::Type evtype = event->type();
 
     // Only handle touch events we create
-    if (evtype == QEvent::TouchBegin ||
-            evtype == QEvent::TouchUpdate ||
-            evtype == QEvent::TouchEnd)
+    if (evtype == QEvent::TouchBegin && inputState != None)
     {
         QTouchEvent *te = static_cast<QTouchEvent*>(event);
-        if (te->device()->name()!= QString("WM_POINTER"))
-            return true;
+        qDebug() << te->device()->name();
     }
 
     // Try to pass TabletPress/TouchBegin event and see if a widget accepts
