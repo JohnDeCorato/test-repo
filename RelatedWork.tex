@@ -1,27 +1,7 @@
-\documentclass[11pt]{report}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{setspace}
-\usepackage[english]{babel}
-\usepackage{wrapfig}
-\usepackage[font=small,labelfont=bf]{caption}
-
-\doublespacing
-
-\graphicspath{{Images/}}
-\title{Thesis}
-\author{John DeCorato}
-\date{ }
-
-\setlength{\parindent}{3em}
-\setlength{\parskip}{1em}
-
-\begin{document}
-
 \chapter{Background / Related Work}
 
 \section{Two-Dimensional Image Representation on Computers}
+\label{sec:2dimages}
 
 At it's most basic form, a sketch can be described as an image drawn on a planar two-dimensional surface.
 With computer displays, there are two standard methods for working with two dimensional images: raster graphics and vector graphics.
@@ -36,7 +16,7 @@ The reasoning behind representing images by this method is that today most compu
 Today, although there are many standard formats, almost all displays consist of rectangular arrays of square pixels, and the bandwidth from the display's memory is sufficient enough to dynamically render multi-megapixel images. 
 \begin{figure}
 \includegraphics[width=\textwidth]{raster.jpg}
-\caption{Zooming in on a Raster Graphics Image}
+\caption{Zooming in on a Raster Graphics Image \autocite{printingcollection}}
 \end{figure}
 
 
@@ -75,7 +55,7 @@ This type of editing is not possible in a single raster graphics image, because 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{vector.jpg}
-\caption{Zooming in on a Vector Graphics Image}
+\caption{Zooming in on a Vector Graphics Image \autocite{printingcollection}}
 \end{figure}
 
 \begin{figure}
@@ -85,7 +65,7 @@ This type of editing is not possible in a single raster graphics image, because 
 
 Examples of popular vector graphics editing software are Adobe Illustrator, Corel Draw, and Inkscape.
 
-\subsection{Adaptive Distance Fields: Mischief} https://www.madewithmischief.com/
+\subsection{Adaptive Distance Fields: Mischief}
 
 Mischief is a pseudo-vector graphics editor created by Made With Mischief, now owned by The Foundry. 
 Although its systems are based on vector graphics, it does not allow for the precise editing of curves as seen in traditional vector graphics programs such as Adobe Illustrator. 
@@ -117,41 +97,27 @@ The traced curves are stored as Catmull-Clark splines.
 While this system closely resembles something we would like to implement, it is currently only available in a solid modeling environment, making it incompatible with many tools most architects use to create 3-D models.
 
 \begin{figure}
-
-\begin{subfigure}{\textwidth}
-\includegraphics[width=\textwidth]{CATIA1}
-\caption{Beginning the sketch}
-\end{subfigure}
-\begin{subfigure}{\textwidth}
-\includegraphics[width=\textwidth]{CATIA2}
-\caption{Finishing the sketch}
-\end{subfigure}
-
-\caption{Using Natural Sketch to Add Detailing to a Car}
+\centering     %%% not \center
+\subfigure[Beginning the sketch]{\label{fig:catia1}\includegraphics[width=60mm]{CATIA1}}
+\subfigure[Finishing the sketch]{\label{fig:catia2}\includegraphics[width=60mm]{CATIA2}}
+\caption{Using Natural Sketch to Add Detailing to a Car. \autocite{catiareel}}
 \end{figure}
-
 
 \subsection{ILoveSketch / EverybodyLovesSketch}
 
 EverybodyLovesSketch is a 3D curve sketching system from the University of Toronto's Dynamic Graphics Project Lab. It features a pen based gesture system, allowing the user to execute functions using rapid strokes, circles, and other defined gestures. Other features include dynamic sketch plane selection, single view definition of arbitrary extrusion vectors, multiple extruded surface sketching, copy-and-project of 3D curves, free-form surface sketching, and an interactive perspective grid. This project is based off of previous work by the same lab, ILoveSketch, which is the base 3D sketching functionality of the EverybodyLovesSketch project.
 
-\subsection{Hyve 3D}
+\subsection{Hyve3D}
 
 \begin{figure}
+\centering     %%% not \center
+\subfigure[Using the tablet to draw]{\label{fig:hyve1}\includegraphics[width=60mm]{Hyve3D1}}
+\subfigure[Manipulating the drawing plane]{\label{fig:hyve2}\includegraphics[width=60mm]{Hyve3D2}}
+\caption{An example of using Hyve3D to draw inside of a virtual environment. \autocite{hyve3d}}
 
-\begin{subfigure}{\textwidth}
-\includegraphics[width=0.9\linewidth]{Hyve3D1}
-\caption{Using the tablet to draw}
-\end{subfigure}
-\begin{subfigure}{\textwidth}
-\includegraphics[width=0.9\linewidth]{Hyve3D2}
-\caption{Manipulating the drawing plane}
-\end{subfigure}
-
-\caption{Examples of Hyve 3-D in use}
 \end{figure}
 
-Hyve 3D is an infinite virtual sketching environment from the University of Montreal. It uses two screens; a computer monitor to show the 3-D environment, and an iPad to draw. The sketching plane represented by the iPad is shown in the virtual environment, and is manipulated by moving and rotating the iPad in the real world. The user then pins the sketch plane in place and proceeds to draw at leisure. The advantage of this system is that it combines real world manipulation with virtual representation, eliminating the need for complex user interfaces and gestures. The disadvantage is that this kind of movement has no one-to-one feedback between the real world and the virtual, meaning that it is difficult to judge how your movements of the iPad effect the drawing place without confirming it visually.
+Hyve3D\autocite{hyve3d} is an infinite virtual sketching environment from the University of Montreal. It uses two screens; a computer monitor to show the 3-D environment, and an iPad to draw. The sketching plane represented by the iPad is shown in the virtual environment, and is manipulated by moving and rotating the iPad in the real world. The user then pins the sketch plane in place and proceeds to draw at leisure. The advantage of this system is that it combines real world manipulation with virtual representation, eliminating the need for complex user interfaces and gestures. The disadvantage is that this kind of movement has no one-to-one feedback between the real world and the virtual, meaning that it is difficult to judge how your movements of the iPad effect the drawing place without confirming it visually.
 
 
 
@@ -184,20 +150,3 @@ However, groups have experimented with using 3-D printing to create pens that ca
 These pens work similarly to hot glue guns, except instead of glue, the pens secrete ABS plastic that quickly hardens as it exits the tip of the pen.
 Like the digital approaches, these pens lack tactile feedback, and rely purely on the user's sight to sketch.
 Unfortunately, between the apparent structural instability of even small models created by the pen, as well as the lack of flexibility in the way the pen can be used, it appears that this route is impractical for creating the types of large and intricate structures seen in modern design, and is at best a toy.
-
-\pagebreak
-
-\section{3-D Media Interaction}
-
-Interacting with 3-D Media using modern input devices
-
-Gestures vs. Postures: ‘Gestural’ Touch Interaction in 3D Environments 
-
-\begin{verbatim}
-$http://tobias.isenberg.cc/personal/papers/Isenberg_2012_GPG.pdf$
-\end{verbatim}
-A Survey of Interaction Techniques for Interactive 3D Environments http://www.grey-eminence.org/papers/EG2013-STAR.pdf
-
-Interaction with 3-D environments using Multitouch Screens $http://www.researchgate.net/publication/236304194_Interaction_with_3D_Environments_using_Multi-Touch_Screens$
-
-\end{document}

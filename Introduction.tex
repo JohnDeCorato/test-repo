@@ -1,24 +1,3 @@
-\documentclass[11pt]{report}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{setspace}
-\usepackage[english]{babel}
-\usepackage{wrapfig}
-\usepackage[font=small,labelfont=bf]{caption}
-
-\doublespacing
-
-\graphicspath{{Images/}}
-\title{Thesis}
-\author{John DeCorato}
-\date{ }
-
-\setlength{\parindent}{3em}
-\setlength{\parskip}{1em}
-
-\begin{document}
-
 \chapter{Introduction}
 
 In this work, I implement a sketching interface that allows the user to create drawings in three dimensions.
@@ -41,9 +20,9 @@ However, if the building has poor results, the architect can only make superfici
 If we are able to digitize the early phase design process such that a rudimentary three-dimensional model can be made, architects can analyze their models earlier in the design process, and use this information to better design energy efficient buildings.
 
 Sketching is an old method of expressing ideas, and has a variety of techniques associated with the practice.
-Because of this, many professionals have been reluctant to use computer software, because the skills they have used and trained themselves in do not transef to the digital medium.
+Many professionals have been reluctant to use computer software, because the skills they have used and trained themselves in do not transfer to the digital medium.
 In recent years, technology has advanced to where the creation of specialized user input devices can allow better emulation of traditional sketching techniques.
-These devices are explored in Chapter 3.
+These devices are explored in Chapter~\ref{ch:input}.
 
 In our interface, a user sketches through an interaction window displaying a scene.
 This scene contains geometry of some form that the user can draw on.
@@ -52,6 +31,3 @@ In Chapters 4 and 5, we discuss how the rough, two dimensional user input is tra
 This spline is rendered in real time using OpenGL.
 However, the native support for displaying curves is limited, as many artifacts appear in the final curve when naively attempting to render them.
 Details on the approach we use to display our curves in high quality is discussed in Chapter 6.
-
-
-\end{document}

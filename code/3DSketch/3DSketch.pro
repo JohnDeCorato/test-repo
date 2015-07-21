@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     GWCUtils.cpp \
     gestureengine.cpp \
     touchapplication.cpp \
-    touchinputfilter.cpp
+    touchinputfilter.cpp \
+    objloader.cpp
 
 HEADERS  += \
     stroke.h \
@@ -52,7 +53,8 @@ HEADERS  += \
     GWCUtils.h \
     gestureengine.h \
     touchapplication.h \
-    touchinputfilter.h
+    touchinputfilter.h \
+    objloader.h
 
 RESOURCES += \
     resources.qrc

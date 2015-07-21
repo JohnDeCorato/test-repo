@@ -33,8 +33,9 @@ public:
     ~SketchWidget();
 
     void setLineWidth(float w);
-    void saveSketch();
-    void loadSketch();
+    void saveSketch(QString fileName);
+    void loadSketch(QString fileName);
+    void loadModel(QString fileName);
 
 protected:
     // Mouse / Keyboard Event Functions

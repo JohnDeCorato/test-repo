@@ -1,26 +1,3 @@
-\documentclass[11pt]{report}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{setspace}
-\usepackage[english]{babel}
-\usepackage{wrapfig}
-\usepackage[font=small,labelfont=bf]{caption}
-\usepackage{longtable}
-\usepackage{algpseudocode, algorithm}
-
-\doublespacing
-
-\graphicspath{{Images/}}
-\title{Thesis}
-\author{John DeCorato}
-\date{ }
-
-\setlength{\parindent}{3em}
-\setlength{\parskip}{1em}
-
-\begin{document}
-
 \chapter{Line Rendering}
 
 As a sketching application, it is important for curves to be rendered with high quality.
@@ -49,15 +26,15 @@ As we can see in the above image, without anti-aliasing rendered lines appear ja
 In order for our system to be appealing as a drafting table replacement, our system needs to render the highest quality lines possible.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{opengllines}
-\caption{An example of native line rendering in OpenGL using GL\_LINES. Notice the poor anti-aliasing and holes from no joins.}
+\includegraphics[width=\linewidth]{gllines}
+\caption{An example of the flaws of native line rendering in OpenGL using GL\_LINES.}
 \end{figure}
 
 \pagebreak
 \section{Creating Joins From the Line Definition}
 
+\begin{table}
 \begin{center}
-
 \begin{tabular}{|c|l|}
 \hline
 \textbf{Symbol} & \textbf{Description} \\ \hline
@@ -66,8 +43,9 @@ $n_{xy}$		& The normal to the line segment $(p_x, p_y)$ \\
 $t_x$			& Vector from $p_1$ along $n_{x1}$ with length $line\_width/2$ \\
 \hline
 \end{tabular}
-\captionof{table}{Section Variables} \label{tab:title}
+\caption{Section Variables} \label{tab:linevariables}
 \end{center}
+\end{table}
 
 In order to improve the appearance of our curves relative to the native OpenGL implementation, we will need to compute joins between each of our line segments.
 For this project, we implement three types of joins: miter, bevel, and round.
@@ -172,6 +150,3 @@ In this chapter we have described a method for creating geometry from a line def
 We have also described how we create this 2-D geometry such that it is visible from any 3-D direction.
 Similar applications create the extra line geometry on the CPU.
 By creating our geometry exclusively on the GPU, we minimize the bandwidth needed to transfer data from the CPU to the GPU, allowing extremely detailed curves using our spline calculation.
-
-
-\end{document}

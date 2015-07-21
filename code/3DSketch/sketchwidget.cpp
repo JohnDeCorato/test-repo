@@ -41,6 +41,7 @@ SketchWidget::~SketchWidget()
 
 void SketchWidget::mousePressEvent(QMouseEvent *e)
 {
+    setFocus();
     // Save mouse press position
     mousePressPosition = QVector2D(e->localPos());
     bool intersect = manager.stroke(mousePressPosition.x(), mousePressPosition.y(), mCamera, mLineWidth, rayCaster, triangles);
@@ -191,6 +192,7 @@ void SketchWidget::wheelEvent(QWheelEvent *e)
 
 void SketchWidget::tabletPressEvent(QTabletEvent *e)
 {
+    setFocus();
     currPos = QVector2D(e->pos());
 
     bool intersect = manager.stroke(currPos.x(), currPos.y(), mCamera, mLineWidth, rayCaster, triangles);
@@ -218,6 +220,7 @@ void SketchWidget::tabletReleaseEvent(QTabletEvent *e)
 
 void SketchWidget::touchBeginEvent(QTouchEvent *e)
 {
+    setFocus();
     for (int i = 0; i < e->touchPoints().size(); i++)
     {
         qDebug() << "Adding Touch Point";
@@ -315,6 +318,10 @@ bool SketchWidget::event(QEvent *e)
         touchEndEvent(te);
         return true;
     }
+    case QEvent::KeyPress:
+    {
+        qDebug() << "hi";
+    }
     default:
         return QWidget::event(e);
     }
@@ -323,6 +330,33 @@ bool SketchWidget::event(QEvent *e)
 void SketchWidget::timerEvent(QTimerEvent *)
 {
     update();
+}
+
+void SketchWidget::saveSketch(QString fileName)
+{
+    ofstream file(fileName.toStdString().c_str());
+    if (file.is_open())
+    {
+        manager.saveSketch(file);
+        file.close();
+        qDebug() << "File saved";
+    }
+}
+
+void SketchWidget::loadSketch(QString fileName)
+{
+    ifstream file(fileName.toStdString().c_str());
+    if (file.is_open())
+    {
+        manager.loadSketch(file);
+        file.close();
+        qDebug() << "File loaded";
+    }
+}
+
+void SketchWidget::loadModel(QString fileName)
+{
+    manager.loadOBJ(fileName.toStdString());
 }
 
 void SketchWidget::initializeGL()

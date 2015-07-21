@@ -4,6 +4,7 @@
 #include <QWindow>
 #include <QWidget>
 #include <QTabletEvent>
+#include <QDebug>
 
 
 int TouchApplication::m_tabletButtons = 0;

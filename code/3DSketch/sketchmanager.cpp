@@ -157,6 +157,18 @@ void SketchManager::loadSketch(ifstream &in)
     }
 }
 
+void SketchManager::loadOBJ(string fileName)
+{
+    std::vector<tinyobj::shape_t> objs;
+    tinyobj::LoadObj(objs, fileName.c_str());
+
+    qDebug() << objs.size();
+    for (int i =0; i < objs.size(); i++)
+    {
+        qDebug() << objs[i].mesh.indices.size();
+    }
+}
+
 bool SketchManager::addLayer(string name)
 {
     bool exists = false;

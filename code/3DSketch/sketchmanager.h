@@ -5,6 +5,7 @@
 #include "raycaster.h"
 #include "shaderprogram.h"
 #include "camera.h"
+#include "objloader.h"
 
 #include <iostream>
 #include <fstream>
@@ -22,6 +23,7 @@ public:
     // Save/Load functions
     void loadSketch(ifstream &in);
     void saveSketch(ofstream &out);
+    void loadOBJ(std::string fileName);
 
     // Test functions. Don't call these
     void saveSketch(ofstream &out, Layer* layer);
@@ -41,6 +43,7 @@ public:
 private:
     vector<Layer*> layers;
     Layer* activeLayer;
+    std::vector<tinyobj::shape_t> geometry;
 
 };
 

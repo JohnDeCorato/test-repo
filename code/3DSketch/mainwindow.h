@@ -14,9 +14,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
 
-signals:
-
-public slots:
+private slots:
+    void saveSketch();
+    void loadSketch();
+    void openModelFile();
 
 private:
     void buildMenus();

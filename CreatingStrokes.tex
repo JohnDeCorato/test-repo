@@ -1,31 +1,9 @@
-\documentclass[12pt]{report}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{setspace}
-\usepackage[english]{babel}
-\usepackage{wrapfig}
-\usepackage[font=small,labelfont=bf]{caption}
-\usepackage{amsmath}
-
-\doublespacing
-
-\graphicspath{{Images/}}
-\title{Thesis}
-\author{John DeCorato}
-\date{ }
-
-\setlength{\parindent}{3em}
-\setlength{\parskip}{1em}
-
-\begin{document}
-
 \chapter{Creating a Sketch}
 
 The most basic operation in any sketch-based modeling system is, of course, obtaining a sketch from the user.
 The key characteristic of a sketch-capable input device is that it allows freehand input.
 While a mouse is capable of this form of input, devices that more closely mimic the feel of freehand drawing using a pen, such as a digitizing tablet, are better for users to maximize their ability to draw.
-Devices that are both an input device and a display are particularly suited to this, because it most closely mimics traditional artist creation methods by allowing direct interaction with the sketch space, as opposed to Wacom tablets where the space is relative
+Devices that are both an input device and a display are particularly suited to this, because it most closely mimics traditional artist creation methods by allowing direct interaction with the sketch space, as opposed to tablets where the space between the input device and the display surface is relative.
 
 \begin{figure}
 \includegraphics[width=0.7\textwidth]{fujitv}
@@ -38,44 +16,32 @@ Small details can relay information about the object, such as important details;
 
 \section{Representation of a Sketch}
 
-At the bare minimum, an input device will provide positional information in some two dimensional coordinate system, usually one based on the interaction window.
-This information represents a piecewise linear approximation of continuous movement.
+At the bare minimum, an input device should provide positional information in some two dimensional coordinate system, usually one based on the interaction window.
+For sketch input, the representation must at least approximate continuous movement.
 Sampling rates vary from one device to the next.
-The samples themselves may also be spaced irregularly, with sample points closer as users draw slowly or carefully.
+The samples themselves may also be spaced irregularly, with sample points closer as users draw slowly or carefully, or father apart if the user draws quickly.
 
 \begin{figure}
 \includegraphics[width=0.7\textwidth]{stroke}
-\caption{An input stroke (a) is provided to the application as (b) a sequence of point samples. The point samples represent a piecewise linear approximation of the original sketch.}
+\caption{An input stroke (a) is provided to the application as (b) a sequence of point samples.}
 \end{figure}
 
 We will refer to this sampled sequence of points as a stroke. 
 Strokes are stored as a list of points, objects containing coordinates from the sample space, sorted by time.
 A sketch is comprised of a large number of these stroke objects.
 
-Strokes can be organized in order to enhance the drawing experience as well as minimize clutter when working on complicated images.
-The most common sorting method is a layer, an object that contains a subset of strokes from the total image.
-Layers are naturally contained in a hierarchical data structure. 
-If two layers have a stroke with a point at the same space, then the layer higher in the hierarchy is displayed.
-It is similar to stacking sheets of transparent tracing paper.
-Layers can be turned on or off to toggle whether or not they are displayed.
-This functionality is useful for focusing on specific ares on the sketch.
-
-To summarize, a sketch contains any number of layers.
-These layers are put in a list, and ordered by the user.
-Each layer contains a number of strokes created by drawing with a pen input device, and each stroke contains a series of points sampled from the sketch input.
-
 \section{Spline Curves}
 
-As stated in the previous section, a stroke object contains a linear approximation of the input from the user. 
+The input data represents an approximation of the stroke input from the user that is dependent on the sample resolution of the input device, and by extension the resolution of the display.
 While this would work decently well assuming we are working with a static raster image, three dimensional sketching allows the user to move the camera.
-If the camera were zoomed in close enough, the linear approximation of the stroke would no longer look like the original input, instead appearing like long connected line segments.
-To remedy this, a mathematical representation of the curve is needed.
+Moving the camera will eventually result in poor quality sketches from the stored stroke data lacking sub-sample rate information that accurately reflects the intent of the original stroke.
+Please see Figure for an example of this.
+To remedy this, a mathematical representation of the curve is needed such that the "sampling rate" of the stroke is independent from the resolution of the input device.
 In computer graphics, this is commonly accomplished with spline curves.
 
 A spline is a collection of polynomial segments.
 These segments can be linear, cubic, or any degree polynomial function.
 Splines are a common solution for modeling smooth curves from a small number of points.
-
 For this project, we use a Bézier curve function for the spline pieces.
 A Bézier curve is a parametric curve commonly used in computer graphics to model infinitely scaling, smooth curves.
 The curve is defined by control points P0, P1, ..., Pn, and is explicitly evaluated as follows:
@@ -100,31 +66,18 @@ The curve can also be evaluated recursively, by
 What this equation means is that a Bezier spline of order $n$ can be defined by linear interpolation between two splines of order $n - 1$.
 For this project, we will use a cubic Bézier function for the spline segments.
 
-If we want our spline to closely approximate the sketch, we have two options. 
-First, we can generate a spline curve that passes through our control points in order, by splitting the input set into subsets of 4 control points.
-Any series of any 4 distinct points can be converted to a cubic Bézier curve that goes through all 4 points in order.
-Given the starting and ending point of some cubic Bézier curve, and the points along the curve corresponding to t = 1/3 and t = 2/3, the control points for the original Bézier curve can be recovered.
-Adjacent sections would contain a duplicate point for the Bézier curve generation.
-
-\paragraph{Pros}
-
-\begin{itemize}
-\item This method is guaranteed to go through every point sampled from the input curve
-\item The memory use from generating the curve is linearly related to the number of control points.
-\end{itemize}
-
-\paragraph{Cons}
-\begin{itemize}
-\item If the sample distance changes dramatically, the generated curve contains artifacts that make it appear to not look like a curve that would be drawn intentionally.
-\item If the number of point is not $mn + 1$, where $m$ is one less than the number of points per curve generated, sub-cases must be made. If there is one point left over, then the last piece generated will be a line segment.
-\end{itemize}
+We must now determine a method for going from our sample data to a spline curve.
+A naive approach would be to generate a spline curve that passes through the all of our control points in the order they were generated.
+Any series of any four distinct points can easily be converted to a cubic Bézier curve that goes through all four points in order.
+While this method guarantees that the generated curve passes through all of the input control points, it is not guaranteed to generate a curve that represents the intent of the original stroke.
 
 \begin{center}
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{splineartifact}
 \end{center}
-\caption{An example of an artifact in the spline generation caused by oddly spaced sample points. This effect would be exasperated while zooming in on the curve.}
+\caption{An example of an artifact in the spline generation caused by oddly spaced sample points.}
+\label{fig:splineartifact}
 \end{figure}
 \begin{figure}
 \begin{center}
@@ -134,20 +87,10 @@ Adjacent sections would contain a duplicate point for the Bézier curve generati
 \end{figure}
 \end{center}
 
-The second approach is we can use the input samples as control points to generate a piecewise spline curve. 
-
-\paragraph{Pros}
-
-\begin{itemize}
-\item This method works with any curve which contains more than 5 sample points.
-For input with less than 5 points, a Bézier curve can be generated, using a linear, quadratic, and cubic curve for input with 2, 3, or 4 sample points respectively.
-\item This method is better at dealing with extreme changes in sample rates because the produced curve contains less convex and concave changes. However, it is likely that the produced curve will still be inaccurate.
-\end{itemize}
-
-\paragraph{Cons}
-\begin{itemize}
-\item The curve generated will not pass through the sampled points. However, if the sample rate is high, it will be close.
-\end{itemize}
+The approach we take is using the input samples as control points to generate a piecewise spline curve. 
+This method is better at dealing with extreme changes in sample rates because the produced curve contains less convex and concave changes. However, it is likely that the produced curve will still be inaccurate.
+The curve generated will also not pass through the sampled points. 
+However, if the sample rate is high, it will be close.
 
 In practice, not generating a curve that is exactly the same as the input sample points is not as necessary as one would think. 
 The most important part is the curve should match the form of the original curve.
@@ -181,8 +124,3 @@ In this section, we described how we turn user input over a set of pixel coordin
 We believe intent is more important than perfect accuracy since in practice, replicating curves that perfectly match input data results in poor quality curves.
 This is because of the finite resolution of a pixel grid, where as in real world sketching, the concept of 'input resolution' does not exist.
 Using a B-spline algorithm with cubic Bezier components, we can calculate a smooth spline curve for our stroke input.
-
-
-
-
-\end{document}

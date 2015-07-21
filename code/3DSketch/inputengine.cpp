@@ -185,8 +185,8 @@ static bool handleTouchInput(UINT32 ptrid, Qt::TouchPointState eventtype)
         }
 
         // Send the touch data to QT
-
         InputFilter::instace()->notifyTouchEvent(eventtype, pts);
+        return true;
     }
     return false;
 }
@@ -216,11 +216,6 @@ static bool winInputEvent(MSG* m, long* result)
             }
             else
             {
-                //qDebug() << "Pointer Down";
-                //if (t - lasttime <= 1)
-                    //return true;
-
-                lasttime = t;
                 return handleTouchInput(GET_POINTERID_WPARAM(m->wParam), Qt::TouchPointPressed);
             }
         }
@@ -233,9 +228,6 @@ static bool winInputEvent(MSG* m, long* result)
         }
         else
         {
-            //if (t - lasttime <= 1)
-                //return true;
-            lasttime = t;
             return handleTouchInput(GET_POINTERID_WPARAM(m->wParam), Qt::TouchPointMoved);
         }
         break;
@@ -251,9 +243,6 @@ static bool winInputEvent(MSG* m, long* result)
         }
         else
         {
-            //if (t - lasttime <= 1)
-                //return true;
-            lasttime = t;
             return handleTouchInput(GET_POINTERID_WPARAM(m->wParam), Qt::TouchPointReleased);
         }
     default:
