@@ -65,8 +65,7 @@ int loadGestureWorks(QString dll_path) {
     //gwcDLL = LoadLibraryA(dll_path.c_str());
     QLibrary gwcDLL(dll_path);
 
-    qDebug() << gwcDLL.fileName();
-    qDebug() << gwcDLL.load();
+    gwcDLL.load();
 	
     if(gwcDLL.isLoaded()) {
         _processFrame = (processFrameType)gwcDLL.resolve("processFrame");
