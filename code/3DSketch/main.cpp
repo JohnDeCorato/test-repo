@@ -17,6 +17,8 @@ int main(int argc, char *argv[])
     //EnableMouseInPointer(true);
 
     // Load GestureWorks Library to Detect Gestures from Touch Input
+
+    // TODO: Deal with this somehow
     if (loadGestureWorks("C:\\Users\\jd537\\Documents\\Thesis\\test-repo\\code\\GestureworksCore\\GestureWorksCore32.dll"))
     {
         qDebug() << "Error loading gestureworks dll";
@@ -41,7 +43,7 @@ int main(int argc, char *argv[])
 
 
     // Create our Custom Qt Application
-    QApplication app(argc, argv);
+    SurfaceApplication app(argc, argv);
 
     // OpenGL Settings
     QSurfaceFormat format;
