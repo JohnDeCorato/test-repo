@@ -24,7 +24,7 @@ SketchWidget::SketchWidget(QWidget *parent) :
     mLayer = mLayer1;
     stroking = false;
 
-    mLineWidth = 0.1f;
+    mLineWidth = 0.02f;
 
     const float zNear = 1.0f, zFar = 100.0f, fov =  60.0f;
     mCamera = new Camera(QVector3D(0,0,-2), QVector3D(0,0,-3), 0, 0, fov, zNear, zFar);
