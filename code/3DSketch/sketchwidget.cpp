@@ -372,7 +372,7 @@ void SketchWidget::initializeGL()
     qDebug() << "                    VERSION:      " << (const char*)glGetString(GL_VERSION);
     qDebug() << "                    GLSL VERSION: " << (const char*)glGetString(GL_SHADING_LANGUAGE_VERSION);
 
-    glClearColor(1,1,1,1);
+    glClearColor(0.7,0.7,0.7,0.7);
 
     initShaders();
     initGeometry();
@@ -470,19 +470,7 @@ void SketchWidget::paintGL()
     currentShader->setUniformValue("join_type", 0);
 
     Layer* l = manager.getLayerByName("Layer 1");
-
-    if (currentShader == glLinesShader)
-    {
-        renderLayer(l, mCamera, glLinesShader);
-    }
-    else if(currentShader == vertexLineShader)
-    {
-        renderLayer(l, mCamera, vertexLineShader);
-    }
-    else if (currentShader == lineShader)
-    {
-        renderLayer(l, mCamera, lineShader);
-    }
+    renderLayer(l, mCamera, currentShader);
     //mLayer->drawLayer(glLinesShader);
 
     geomShader->bind();

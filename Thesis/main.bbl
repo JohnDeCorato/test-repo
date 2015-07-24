@@ -16,26 +16,6 @@
   {}
 \endgroup
 
-\entry{catiareel}{online}{}
-  \name{author}{1}{}{%
-    {{}%
-     {3dsCATIA}{d.}%
-     {}{}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{d1}
-  \strng{fullhash}{d1}
-  \field{sortinit}{3}
-  \field{title}{CATIA V6 | Industrial Design | CATIA Natural Sketch Showreel}
-  \verb{url}
-  \verb https://www.youtube.com/watch?v=xXYCaabNHCo
-  \endverb
-  \field{day}{06}
-  \field{month}{12}
-  \field{year}{2011}
-\endentry
-
 \entry{inkgestures}{online}{}
   \name{author}{1}{}{%
     {{}%
@@ -49,27 +29,60 @@
   \field{sortinit}{A}
   \field{title}{Pen {G}estures}
   \verb{url}
-  \verb http://jeroenarendsen.nl/2006/04/pen-gestures/
+  \verb jeroenarendsen.nl/2006/04/pen-gestures/
   \endverb
   \field{year}{2006}
 \endentry
 
-\entry{printingcollection}{online}{}
-  \name{author}{1}{}{%
+\entry{lovesketch}{article}{}
+  \name{author}{3}{}{%
     {{}%
-     {Collection}{C.}%
-     {The~Printing}{T.~P.}%
+     {Bae}{B.}%
+     {Seok-Hyung}{S.-H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Balakrishnan}{B.}%
+     {Ravin}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Singh}{S.}%
+     {Karan}{K.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{CTP1}
-  \strng{fullhash}{CTP1}
+  \strng{namehash}{BSHBRSK1}
+  \strng{fullhash}{BSHBRSK1}
+  \field{sortinit}{B}
+  \field{title}{EverybodyLovesSketch: 3D Sketching for a Broader Audience}
+  \field{journaltitle}{UIST}
+  \field{year}{2009}
+\endentry
+
+\entry{catia}{online}{}
+  \list{organization}{1}{%
+    {Dassault Systèmes}%
+  }
   \field{sortinit}{C}
-  \field{title}{Raster Images vs. Vector Graphics}
+  \field{title}{CATIA}
   \verb{url}
-  \verb http://www.printcnx.com/resources-and-support/addiational-resources/ras
-  \verb ter-images-vs-vector-graphics/
+  \verb www.3ds.com/products/catia
   \endverb
+\endentry
+
+\entry{catiareel}{online}{}
+  \list{organization}{1}{%
+    {3dsCATIA}%
+  }
+  \field{sortinit}{C}
+  \field{title}{CATIA V6 | Industrial Design | CATIA Natural Sketch Showreel}
+  \verb{url}
+  \verb www.youtube.com/watch?v=xXYCaabNHCo
+  \endverb
+  \field{day}{06}
+  \field{month}{12}
+  \field{year}{2011}
 \endentry
 
 \entry{hyve3d}{online}{}
@@ -100,24 +113,133 @@
   \field{year}{2014}
 \endentry
 
-\entry{touchtech}{online}{}
+\entry{coreldraw}{online}{}
+  \list{organization}{1}{%
+    {Corel}%
+  }
+  \field{sortinit}{D}
+  \field{title}{Draw}
+  \verb{url}
+  \verb www.coreldraw.com
+  \endverb
+\endentry
+
+\entry{mischief}{online}{}
   \name{author}{1}{}{%
     {{}%
-     {Global}{G.}%
-     {EIZO}{E.}%
+     {Frisken}{F.}%
+     {Sarah~F.}{S.~F.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{GE1}
-  \strng{fullhash}{GE1}
-  \field{sortinit}{G}
+  \list{organization}{1}{%
+    {Made With Mischief}%
+  }
+  \strng{namehash}{FSF1}
+  \strng{fullhash}{FSF1}
+  \field{sortinit}{F}
+  \field{title}{Mischief}
+  \verb{url}
+  \verb www.madewithmischief.com
+  \endverb
+\endentry
+
+\entry{asdf}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Frisken}{F.}%
+     {Sarah~F.}{S.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Perry}{P.}%
+     {Ronald~N.}{R.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rockwood}{R.}%
+     {Alyn~P.}{A.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jones}{J.}%
+     {Thouis~R.}{T.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{FSF+1}
+  \strng{fullhash}{FSFPRNRAPJTR1}
+  \field{sortinit}{F}
+  \field{title}{Adaptively Sampled Distance Fields: A General Representation of
+  Shape for Computer Graphics}
+  \field{journaltitle}{Proc. SIGGRAPH}
+  \field{year}{2000}
+\endentry
+
+\entry{touchtech}{online}{}
+  \list{organization}{1}{%
+    {EIZO Global}%
+  }
+  \field{sortinit}{H}
   \field{title}{How Can a Screen Sense Touch? A Basic Understanding of Touch
   Panels}
   \verb{url}
-  \verb http://www.eizoglobal.com/library/basics/basic_understanding_of_touch_p
-  \verb anel/
+  \verb www.eizoglobal.com/library/basics/basic_understanding_of_touch_panel/
   \endverb
   \field{year}{2011}
+\endentry
+
+\entry{inkscape}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Hurst}{H.}%
+     {Nathan}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {Inkscape Project}%
+  }
+  \strng{namehash}{HN1}
+  \strng{fullhash}{HN1}
+  \field{sortinit}{H}
+  \field{title}{Inkscape}
+  \verb{url}
+  \verb inkscape.org
+  \endverb
+\endentry
+
+\entry{illustrator}{online}{}
+  \field{sortinit}{I}
+  \field{title}{Illustrator}
+  \verb{url}
+  \verb www.adobe.com/products/illustrator.html
+  \endverb
+\endentry
+
+\entry{gimp}{online}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Kimball}{K.}%
+     {Spencer}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mattis}{M.}%
+     {Peter}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {The GIMP Development Team}%
+  }
+  \strng{namehash}{KSMP1}
+  \strng{fullhash}{KSMP1}
+  \field{sortinit}{K}
+  \field{title}{GNU Image Manipulation Program (GIMP)}
+  \verb{url}
+  \verb www.gimp.org
+  \endverb
 \endentry
 
 \entry{morris79}{book}{}
@@ -153,6 +275,59 @@
   \field{year}{1979}
 \endentry
 
+\entry{mspaint}{online}{}
+  \list{organization}{1}{%
+    {Microsoft}%
+  }
+  \field{sortinit}{M}
+  \field{title}{MSPaint}
+\endentry
+
+\entry{coreal}{online}{}
+  \list{organization}{1}{%
+    {Corel Corporation}%
+  }
+  \field{sortinit}{P}
+  \field{title}{Painter}
+  \verb{url}
+  \verb www.painterartist.com/us/product/paint-program/
+  \endverb
+\endentry
+
+\entry{photoshop}{online}{}
+  \list{organization}{1}{%
+    {Adobe}%
+  }
+  \field{sortinit}{P}
+  \field{title}{Photoshop}
+  \verb{url}
+  \verb www.adobe.com/products/photoshop.html
+  \endverb
+\endentry
+
+\entry{printingcollection}{online}{}
+  \list{organization}{1}{%
+    {The Printing Collection}%
+  }
+  \field{sortinit}{R}
+  \field{title}{Raster Images vs. Vector Graphics}
+  \verb{url}
+  \verb www.printcnx.com/resources-and-support/addiational-resources/raster-ima
+  \verb ges-vs-vector-graphics/
+  \endverb
+\endentry
+
+\entry{sketchbook}{online}{}
+  \list{organization}{1}{%
+    {Autodesk}%
+  }
+  \field{sortinit}{S}
+  \field{title}{Sketchbook}
+  \verb{url}
+  \verb www.sketchbook.com/
+  \endverb
+\endentry
+
 \entry{touchreference}{online}{}
   \name{author}{1}{}{%
     {{}%
@@ -166,7 +341,7 @@
   \field{sortinit}{W}
   \field{title}{Touch {G}esture {R}eference {G}uide}
   \verb{url}
-  \verb http://www.lukew.com/ff/entry.asp?1071
+  \verb www.lukew.com/ff/entry.asp?1071
   \endverb
   \field{year}{2010}
 \endentry

@@ -22,110 +22,110 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.2}Vector Graphics}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.3}Adaptive Distance Fields: Mischief}{6}
+\contentsline {subsection}{\numberline {2.1.3}Adaptive Distance Fields: Mischief}{8}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}3-D Sketching in CAD}{8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}CATIA Natural Sketch}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}ILoveSketch / EverybodyLovesSketch}{10}
+\contentsline {subsection}{\numberline {2.2.2}EverybodyLovesSketch}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Hyve3D}{10}
+\contentsline {subsection}{\numberline {2.2.3}Hyve3D}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}3-D Sketching in 3-D}{11}
+\contentsline {section}{\numberline {2.3}3-D Sketching in 3-D}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Virtual Reality / Augmented Reality}{11}
+\contentsline {subsection}{\numberline {2.3.1}Virtual Reality / Augmented Reality}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}3-D Printing}{13}
+\contentsline {subsection}{\numberline {2.3.2}3-D Printing}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Input Technologies and Human Computer Interaction}{14}
+\contentsline {chapter}{\numberline {3}Input Technologies and Human Computer Interaction}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Input Classifications}{15}
+\contentsline {section}{\numberline {3.1}Input Classifications}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Modality}{15}
+\contentsline {subsection}{\numberline {3.1.1}Modality}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Direct and Indirect}{16}
+\contentsline {subsection}{\numberline {3.1.2}Direct and Indirect}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Input Devices}{17}
+\contentsline {section}{\numberline {3.2}Input Devices}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Keyboard}{17}
+\contentsline {subsection}{\numberline {3.2.1}Keyboard}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Pointing Devices}{18}
+\contentsline {subsection}{\numberline {3.2.2}Pointing Devices}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Mouse}{18}
+\contentsline {subsubsection}{Mouse}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Tablet}{19}
+\contentsline {subsubsection}{Tablet}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Pen}{20}
+\contentsline {subsubsection}{Pen}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Touch Screen Devices}{20}
+\contentsline {subsection}{\numberline {3.2.3}Touch Screen Devices}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Resistive Sensing}{21}
+\contentsline {subsubsection}{Resistive Sensing}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Surface Acoustic Wave (SAW) Sensing}{23}
+\contentsline {subsubsection}{Surface Acoustic Wave (SAW) Sensing}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Capacitive Sensing}{24}
+\contentsline {subsubsection}{Capacitive Sensing}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Surface Capacitive Sensing}{26}
+\contentsline {paragraph}{Surface Capacitive Sensing}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Projected Capacitive Sensing}{27}
+\contentsline {paragraph}{Projected Capacitive Sensing}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Summary of Input Technology}{28}
+\contentsline {subsection}{\numberline {3.2.4}Summary of Input Technologies}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Advanced User Interaction: Input using Gesture}{29}
+\contentsline {section}{\numberline {3.3}Advanced User Interaction: Input using Gesture}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Types of Gestures}{30}
+\contentsline {subsection}{\numberline {3.3.1}Types of Gestures}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Multi Touch Gestures}{31}
+\contentsline {subsection}{\numberline {3.3.2}Multi Touch Gestures}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Tap}{32}
+\contentsline {subsubsection}{Tap}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Drag}{33}
+\contentsline {subsubsection}{Drag}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Pinch and Spread}{33}
+\contentsline {subsubsection}{Pinch and Spread}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Rotate}{33}
+\contentsline {subsubsection}{Rotate}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Press}{33}
+\contentsline {subsubsection}{Press}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Pen Gestures}{34}
+\contentsline {subsection}{\numberline {3.3.3}Pen Gestures}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}Three Dimensional Gesture Recognition}{35}
+\contentsline {subsection}{\numberline {3.3.4}Three Dimensional Gesture Recognition}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Summary}{36}
+\contentsline {section}{\numberline {3.4}Summary}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Creating a Sketch}{37}
+\contentsline {chapter}{\numberline {4}Creating a Sketch}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Representation of a Sketch}{37}
+\contentsline {section}{\numberline {4.1}Representation of a Sketch}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Spline Curves}{39}
+\contentsline {section}{\numberline {4.2}Spline Curves}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Algorithm}{42}
+\contentsline {subsection}{\numberline {4.2.1}Algorithm}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Summary}{43}
+\contentsline {section}{\numberline {4.3}Summary}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Sketching in 3D}{45}
+\contentsline {chapter}{\numberline {5}Sketching in 3D}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Ray Casting}{45}
+\contentsline {section}{\numberline {5.1}Ray Casting}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Generating the Ray}{47}
+\contentsline {subsection}{\numberline {5.1.1}Generating the Ray}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Ray-Triangle Intersection}{49}
+\contentsline {subsection}{\numberline {5.1.2}Ray-Triangle Intersection}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Acceleration Structures}{51}
+\contentsline {section}{\numberline {5.2}Acceleration Structures}{53}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Bounding Boxes}{52}
+\contentsline {subsection}{\numberline {5.2.1}Bounding Boxes}{54}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}BVH Tree}{52}
+\contentsline {subsection}{\numberline {5.2.2}BVH Tree}{54}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Basic BVH Algorithm}{54}
+\contentsline {paragraph}{Basic BVH Algorithm}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Line Rendering}{56}
+\contentsline {chapter}{\numberline {6}Line Rendering}{58}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Problems With Available Line Renderers}{56}
+\contentsline {section}{\numberline {6.1}Problems With Available Line Renderers}{58}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Creating Joins From the Line Definition}{58}
+\contentsline {section}{\numberline {6.2}Creating Joins From the Line Definition}{60}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Implementation}{60}
+\contentsline {section}{\numberline {6.3}Implementation}{62}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusion}{66}
+\contentsline {chapter}{\numberline {7}Conclusion}{68}

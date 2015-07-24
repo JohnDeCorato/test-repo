@@ -11,5 +11,6 @@
 void renderLayer(Layer* layer, Camera* mCamera, GLLinesShader *shader);
 void renderLayer(Layer* layer, Camera* mCamera, VertexBasedLineShader *shader);
 void renderLayer(Layer* layer, Camera* mCamera, LineShader *shader);
+void renderLayer(Layer* layer, Camera* mCamera, ShaderProgram *shader);
 
 #endif // LAYERRENDERER_H

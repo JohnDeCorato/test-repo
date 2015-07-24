@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  21 JUL 2015 14:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  24 JUL 2015 10:24
 entering extended mode
 **main.tex
-(C:\Users\jd537\Documents\Thesis\test-repo\main.tex
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\main.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Users\jd537\Documents\Thesis\test-repo\cornell.cls
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\cornell.cls
 Document Class: cornell 2008/4/17 v2.9 Cornell University thesis class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
@@ -673,14 +673,14 @@ File: english.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 \@quotelevel=\count312
 \@quotereset=\count313
 
-(C:\Users\jd537\Documents\Thesis\test-repo\main.aux
-(C:\Users\jd537\Documents\Thesis\test-repo\superfluouscrap.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\introduction.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\relatedwork.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\inputcontent.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\creatingstrokes.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\sketchingin3d.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\drawinglines.aux))
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\main.aux
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\superfluouscrap.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\introduction.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\relatedwork.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\inputcontent.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\creatingstrokes.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\sketchingin3d.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\drawinglines.aux))
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 50.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 50.
 
@@ -741,7 +741,7 @@ Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'ascii'.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (C:\Users\jd537\Documents\Thesis\test-repo\main.bbl)
+ (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\main.bbl)
 Package biblatex Info: Reference section=0 on input line 50.
 Package biblatex Info: Reference segment=0 on input line 50.
 
@@ -766,7 +766,7 @@ LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
  [2
 
 ]
-(C:\Users\jd537\Documents\Thesis\test-repo\superfluouscrap.tex
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\superfluouscrap.tex
 Abstract
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1.
@@ -783,7 +783,7 @@ Vita
 ] [5
 
 
-]) (C:\Users\jd537\Documents\Thesis\test-repo\main.toc
+]) (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\main.toc
 LaTeX Font Info:    Try loading font information for OT1+txr on input line 3.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\ot1txr.fd"
@@ -815,13 +815,13 @@ File: utxsyc.fd 2000/12/15 v3.1
 ])
 \tf@toc=\write4
  [7]
-(C:\Users\jd537\Documents\Thesis\test-repo\main.lot)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\main.lot)
 \tf@lot=\write5
  [8
 
 
 ]
-(C:\Users\jd537\Documents\Thesis\test-repo\main.lof
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\main.lof
 Underfull \hbox (badness 1152) in paragraph at lines 29--29
  [][] []\OT1/ppl/m/n/12 Augmented Re-al-ity Sketch-ing us-ing the Grav-ity tabl
 et and 
@@ -832,13 +832,13 @@ et and
 
 ])
 \tf@lof=\write6
- [10] (C:\Users\jd537\Documents\Thesis\test-repo\introduction.tex
+ [10] (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\introduction.tex
 Chapter 1.
 [1
 
 
 
-]) [2] (C:\Users\jd537\Documents\Thesis\test-repo\relatedwork.tex
+]) [2] (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\relatedwork.tex
 Chapter 2.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 3.
@@ -848,6 +848,10 @@ File: Images/raster.jpg Graphic file (type jpg)
 Package pdftex.def Info: Images/raster.jpg used on input line 18.
 (pdftex.def)             Requested size: 419.16621pt x 157.1924pt.
 
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 18--19
+[][]
+ []
+
 [3
 
 
@@ -856,89 +860,91 @@ Package pdftex.def Info: Images/raster.jpg used on input line 18.
 File: Images/sketchbook.jpg Graphic file (type jpg)
 
 <use Images/sketchbook.jpg>
-Package pdftex.def Info: Images/sketchbook.jpg used on input line 30.
+Package pdftex.def Info: Images/sketchbook.jpg used on input line 33.
 (pdftex.def)             Requested size: 419.16621pt x 314.3881pt.
- [4 <C:/Users/jd537/Documents/Thesis/test-repo/Images/raster.jpg>] [5 <C:/Users
-/jd537/Documents/Thesis/test-repo/Images/sketchbook.jpg>] <Images/vector.jpg, i
-d=59, 803.0pt x 301.125pt>
+ [4 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/raster.jpg>] [5 <C
+:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/sketchbook.jpg>] <Images
+/vector.jpg, id=59, 803.0pt x 301.125pt>
 File: Images/vector.jpg Graphic file (type jpg)
- <use Images/vector.jpg>
-Package pdftex.def Info: Images/vector.jpg used on input line 57.
+
+<use Images/vector.jpg>
+Package pdftex.def Info: Images/vector.jpg used on input line 63.
 (pdftex.def)             Requested size: 419.16621pt x 157.1924pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 63--64
+[][]
+ []
 
 <Images/vector_raster.jpg, id=60, 373.395pt x 443.7378pt>
 File: Images/vector_raster.jpg Graphic file (type jpg)
 
 <use Images/vector_raster.jpg>
-Package pdftex.def Info: Images/vector_raster.jpg used on input line 62.
+Package pdftex.def Info: Images/vector_raster.jpg used on input line 68.
 (pdftex.def)             Requested size: 419.16621pt x 498.1543pt.
- [6 <C:/Users/jd537/Documents/Thesis/test-repo/Images/vector.jpg>] [7 <C:/Users
-/jd537/Documents/Thesis/test-repo/Images/vector_raster.jpg>] <Images/infiniteca
-nvas1.png, id=67, 365.11406pt x 292.84406pt>
+ [6 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/vector.jpg>] [7 <C
+:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/vector_raster.jpg>]
+<Images/infinitecanvas1.png, id=67, 365.11406pt x 292.84406pt>
 File: Images/infinitecanvas1.png Graphic file (type png)
 
 <use Images/infinitecanvas1.png>
-Package pdftex.def Info: Images/infinitecanvas1.png used on input line 79.
-(pdftex.def)             Requested size: 209.5831pt x 168.09804pt.
+Package pdftex.def Info: Images/infinitecanvas1.png used on input line 86.
+(pdftex.def)             Requested size: 188.6235pt x 151.28778pt.
 
 <Images/infinitecanvas2.png, id=69, 381.67593pt x 312.41719pt>
 File: Images/infinitecanvas2.png Graphic file (type png)
 
 <use Images/infinitecanvas2.png>
-Package pdftex.def Info: Images/infinitecanvas2.png used on input line 80.
-(pdftex.def)             Requested size: 209.5831pt x 171.55348pt.
-
-Overfull \hbox (2.28001pt too wide) in paragraph at lines 79--81
-[][] []
- []
-
-[8 <C:/Users/jd537/Documents/Thesis/test-repo/Images/infinitecanvas1.png> <C:/U
-sers/jd537/Documents/Thesis/test-repo/Images/infinitecanvas2.png>]
-<Images/CATIA1.png, id=76, 959.08313pt x 537.50812pt>
+Package pdftex.def Info: Images/infinitecanvas2.png used on input line 87.
+(pdftex.def)             Requested size: 188.6235pt x 154.3967pt.
+ [8]
+<Images/CATIA1.png, id=74, 959.08313pt x 537.50812pt>
 File: Images/CATIA1.png Graphic file (type png)
  <use Images/CATIA1.png>
-Package pdftex.def Info: Images/CATIA1.png used on input line 101.
-(pdftex.def)             Requested size: 170.71652pt x 95.67285pt.
+Package pdftex.def Info: Images/CATIA1.png used on input line 109.
+(pdftex.def)             Requested size: 419.16621pt x 234.92137pt.
 
-<Images/CATIA2.png, id=77, 961.34157pt x 539.76656pt>
+<Images/CATIA2.png, id=75, 961.34157pt x 539.76656pt>
 File: Images/CATIA2.png Graphic file (type png)
  <use Images/CATIA2.png>
-Package pdftex.def Info: Images/CATIA2.png used on input line 102.
-(pdftex.def)             Requested size: 170.71652pt x 95.85246pt.
+Package pdftex.def Info: Images/CATIA2.png used on input line 110.
+(pdftex.def)             Requested size: 419.16621pt x 235.35661pt.
 
-[9 <C:/Users/jd537/Documents/Thesis/test-repo/Images/CATIA1.png> <C:/Users/jd53
-7/Documents/Thesis/test-repo/Images/CATIA2.png>]
-<Images/Hyve3D1.png, id=83, 550.30594pt x 261.22594pt>
+[9 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/infinitecanvas1.png
+> <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/infinitecanvas2.png>
+] [10 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/CATIA1.png> <C:/
+Users/jd537/Documents/Thesis/test-repo/Thesis/Images/CATIA2.png>]
+<Images/Hyve3D1.png, id=86, 550.30594pt x 261.22594pt>
 File: Images/Hyve3D1.png Graphic file (type png)
 
 <use Images/Hyve3D1.png>
-Package pdftex.def Info: Images/Hyve3D1.png used on input line 114.
-(pdftex.def)             Requested size: 170.71652pt x 81.03499pt.
+Package pdftex.def Info: Images/Hyve3D1.png used on input line 122.
+(pdftex.def)             Requested size: 419.16621pt x 198.9802pt.
 
-<Images/Hyve3D2.png, id=84, 552.56438pt x 261.97874pt>
+<Images/Hyve3D2.png, id=87, 552.56438pt x 261.97874pt>
 File: Images/Hyve3D2.png Graphic file (type png)
 
 <use Images/Hyve3D2.png>
-Package pdftex.def Info: Images/Hyve3D2.png used on input line 115.
-(pdftex.def)             Requested size: 170.71652pt x 80.93674pt.
- [10 <C:/Users/jd537/Documents/Thesis/test-repo/Images/Hyve3D1.png> <C:/Users/j
-d537/Documents/Thesis/test-repo/Images/Hyve3D2.png>]
-[11] <Images/gravity1.png, id=93, 479.54156pt x 249.93375pt>
+Package pdftex.def Info: Images/Hyve3D2.png used on input line 123.
+(pdftex.def)             Requested size: 419.16621pt x 198.73015pt.
+ [11] [12 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/Hyve3D1.png>
+ <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/Hyve3D2.png>] <Images
+/gravity1.png, id=96, 479.54156pt x 249.93375pt>
 File: Images/gravity1.png Graphic file (type png)
 
 <use Images/gravity1.png>
-Package pdftex.def Info: Images/gravity1.png used on input line 141.
+Package pdftex.def Info: Images/gravity1.png used on input line 150.
 (pdftex.def)             Requested size: 419.16621pt x 218.47029pt.
 
-<Images/gravity2.png, id=94, 512.66531pt x 261.22594pt>
+<Images/gravity2.png, id=97, 512.66531pt x 261.22594pt>
 File: Images/gravity2.png Graphic file (type png)
 
 <use Images/gravity2.png>
-Package pdftex.def Info: Images/gravity2.png used on input line 142.
+Package pdftex.def Info: Images/gravity2.png used on input line 151.
 (pdftex.def)             Requested size: 419.16621pt x 213.58482pt.
-) [12 <C:/Users/jd537/Documents/Thesis/test-repo/Images/gravity1.png> <C:/Users
-/jd537/Documents/Thesis/test-repo/Images/gravity2.png>] [13] (C:\Users\jd537\Do
-cuments\Thesis\test-repo\inputcontent.tex
+) [13] [14 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/gravity1.pn
+g> <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/gravity2.png>] [15]
+
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\inputcontent.tex
 Chapter 3.
 
 Underfull \hbox (badness 1484) in paragraph at lines 19--20
@@ -946,79 +952,80 @@ Underfull \hbox (badness 1484) in paragraph at lines 19--20
 f sen-sory in-
  []
 
-[14
+[16
 
 
 
-] [15] [16] [17] [18] [19] [20]
-<Images/resistive.jpg, id=126, 592.2125pt x 444.66125pt>
+] [17] [18] [19] [20] [21] [22]
+<Images/resistive.jpg, id=133, 592.2125pt x 444.66125pt>
 File: Images/resistive.jpg Graphic file (type jpg)
 
 <use Images/resistive.jpg>
-Package pdftex.def Info: Images/resistive.jpg used on input line 133.
+Package pdftex.def Info: Images/resistive.jpg used on input line 132.
 (pdftex.def)             Requested size: 377.24702pt x 283.26593pt.
- [21]
-<Images/saw.jpg, id=130, 589.20125pt x 450.68375pt>
+ [23]
+<Images/saw.jpg, id=137, 589.20125pt x 450.68375pt>
 File: Images/saw.jpg Graphic file (type jpg)
  <use Images/saw.jpg>
-Package pdftex.def Info: Images/saw.jpg used on input line 152.
+Package pdftex.def Info: Images/saw.jpg used on input line 151.
 (pdftex.def)             Requested size: 377.24702pt x 288.56038pt.
 
-[22 <C:/Users/jd537/Documents/Thesis/test-repo/Images/resistive.jpg>] [23 <C:/U
-sers/jd537/Documents/Thesis/test-repo/Images/saw.jpg>] [24]
-<Images/surcap.jpg, id=140, 592.2125pt x 444.66125pt>
+[24 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/resistive.jpg>]
+[25 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/saw.jpg>] [26]
+<Images/surcap.jpg, id=148, 592.2125pt x 444.66125pt>
 File: Images/surcap.jpg Graphic file (type jpg)
  <use Images/surcap.jpg>
-Package pdftex.def Info: Images/surcap.jpg used on input line 195.
+Package pdftex.def Info: Images/surcap.jpg used on input line 194.
 (pdftex.def)             Requested size: 377.24702pt x 283.26593pt.
 
-[25 <C:/Users/jd537/Documents/Thesis/test-repo/Images/surcap.jpg>] [26]
-<Images/projcap.jpg, id=148, 592.2125pt x 444.66125pt>
+[27 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/surcap.jpg>]
+[28] <Images/projcap.jpg, id=155, 592.2125pt x 444.66125pt>
 File: Images/projcap.jpg Graphic file (type jpg)
 
 <use Images/projcap.jpg>
 Package pdftex.def Info: Images/projcap.jpg used on input line 229.
 (pdftex.def)             Requested size: 377.24702pt x 283.26593pt.
- [27 <C:/Users/jd537/Documents/Thesis/test-repo/Images/projcap.jpg>] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 263--263
+ [29 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/projcap.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 265--265
 []\OT1/ppl/b/n/12 Maximum Sin-gle User
  []
 
-[29] [30] <Images/CoreGestures.png, id=162, 552.0625pt x 501.875pt>
+[30] [31] [32] <Images/CoreGestures.png, id=169, 552.0625pt x 501.875pt>
 File: Images/CoreGestures.png Graphic file (type png)
 
 <use Images/CoreGestures.png>
-Package pdftex.def Info: Images/CoreGestures.png used on input line 314.
+Package pdftex.def Info: Images/CoreGestures.png used on input line 316.
 (pdftex.def)             Requested size: 419.16621pt x 381.07669pt.
- [31] [32 <C:/Users/jd537/Documents/Thesis/test-repo/Images/CoreGestures.png>]
-<Images/pen-gestures.png, id=171, 410.53375pt x 325.215pt>
+ [33] [34 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/CoreGestures
+.png>]
+<Images/pen-gestures.png, id=177, 410.53375pt x 325.215pt>
 File: Images/pen-gestures.png Graphic file (type png)
 
 <use Images/pen-gestures.png>
-Package pdftex.def Info: Images/pen-gestures.png used on input line 358.
+Package pdftex.def Info: Images/pen-gestures.png used on input line 360.
 (pdftex.def)             Requested size: 419.16621pt x 332.05235pt.
- [33] [34 <C:/Users/jd537/Documents/Thesis/test-repo/Images/pen-gestures.png>])
- [35] [36]
-(C:\Users\jd537\Documents\Thesis\test-repo\creatingstrokes.tex
+ [35] [36 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/pen-gestures
+.png>]) [37] [38]
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\creatingstrokes.tex
 Chapter 4.
-<Images/fujitv.jpg, id=184, 501.875pt x 383.4325pt>
+<Images/fujitv.jpg, id=191, 501.875pt x 383.4325pt>
 File: Images/fujitv.jpg Graphic file (type jpg)
  <use Images/fujitv.jpg>
 Package pdftex.def Info: Images/fujitv.jpg used on input line 9.
 (pdftex.def)             Requested size: 293.41507pt x 224.18132pt.
 
-<Images/stroke.jpg, id=185, 121.26906pt x 85.42314pt>
+<Images/stroke.jpg, id=192, 121.26906pt x 85.42314pt>
 File: Images/stroke.jpg Graphic file (type jpg)
  <use Images/stroke.jpg>
 Package pdftex.def Info: Images/stroke.jpg used on input line 25.
 (pdftex.def)             Requested size: 293.41507pt x 206.7155pt.
 
-[37
+[39
 
 
 
-] [38 <C:/Users/jd537/Documents/Thesis/test-repo/Images/fujitv.jpg> <C:/Users/j
-d537/Documents/Thesis/test-repo/Images/stroke.jpg>]
+] [40 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/fujitv.jpg> <C:/
+Users/jd537/Documents/Thesis/test-repo/Thesis/Images/stroke.jpg>]
 Missing character: There is no Ã in font pplr7t!
 Missing character: There is no © in font pplr7t!
 Missing character: There is no Ã in font pplr7t!
@@ -1029,54 +1036,55 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 52.
 
-[39]
+[41]
 Missing character: There is no Ã in font pplr7t!
 Missing character: There is no © in font pplr7t!
 Missing character: There is no Ã in font pplr7t!
 Missing character: There is no © in font pplr7t!
- <Images/splineartifact.png, id=196, 489.32813pt x 349.305pt>
+ <Images/splineartifact.png, id=202, 489.32813pt x 349.305pt>
 File: Images/splineartifact.png Graphic file (type png)
 
 <use Images/splineartifact.png>
 Package pdftex.def Info: Images/splineartifact.png used on input line 77.
 (pdftex.def)             Requested size: 335.33424pt x 239.37907pt.
 
-<Images/terminationbspline.png, id=197, 402.00188pt x 170.13562pt>
+<Images/terminationbspline.png, id=203, 402.00188pt x 170.13562pt>
 File: Images/terminationbspline.png Graphic file (type png)
 
 <use Images/terminationbspline.png>
 Package pdftex.def Info: Images/terminationbspline.png used on input line 84.
 (pdftex.def)             Requested size: 377.24702pt x 159.6575pt.
- [40] [41 <C:/Users/jd537/Documents/Thesis/test-repo/Images/splineartifact.png>
- <C:/Users/jd537/Documents/Thesis/test-repo/Images/terminationbspline.png>] [42
-]
+ [42] [43 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/splineartifa
+ct.png> <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/terminationbsp
+line.png>] [44]
 Missing character: There is no Ã in font pplr7t!
 Missing character: There is no © in font pplr7t!
 Missing character: There is no Ã in font pplr7t!
 Missing character: There is no © in font pplr7t!
-) [43] [44]
-(C:\Users\jd537\Documents\Thesis\test-repo\sketchingin3d.tex
+) [45] [46]
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\sketchingin3d.tex
 Chapter 5.
-<Images/raytracediagram.png, id=220, 878.28125pt x 584.1825pt>
+<Images/raytracediagram.png, id=226, 878.28125pt x 584.1825pt>
 File: Images/raytracediagram.png Graphic file (type png)
 
 <use Images/raytracediagram.png>
 Package pdftex.def Info: Images/raytracediagram.png used on input line 17.
 (pdftex.def)             Requested size: 377.24702pt x 250.92615pt.
 
-<Images/StrokeProjection.png, id=221, 1182.66844pt x 427.5975pt>
+<Images/StrokeProjection.png, id=227, 1182.66844pt x 427.5975pt>
 File: Images/StrokeProjection.png Graphic file (type png)
 
 <use Images/StrokeProjection.png>
 Package pdftex.def Info: Images/StrokeProjection.png used on input line 21.
 (pdftex.def)             Requested size: 377.24702pt x 136.39032pt.
- [45
+ [47
 
 
 
-] [46 <C:/Users/jd537/Documents/Thesis/test-repo/Images/raytracediagram.png> <C
-:/Users/jd537/Documents/Thesis/test-repo/Images/StrokeProjection.png>]
-<Images/etos.png, id=230, 526.96875pt x 342.5297pt>
+] [48 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/raytracediagram.
+png> <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/StrokeProjection.
+png>]
+<Images/etos.png, id=236, 526.96875pt x 342.5297pt>
 File: Images/etos.png Graphic file (type png)
  <use Images/etos.png>
 Package pdftex.def Info: Images/etos.png used on input line 54.
@@ -1086,8 +1094,8 @@ Overfull \hbox (107.80124pt too wide) in paragraph at lines 54--55
 [][]
  []
 
-[47] [48 <C:/Users/jd537/Documents/Thesis/test-repo/Images/etos.png>] [49]
-[50] [51] <Images/AABBray.png, id=248, 442.2924pt x 388.8126pt>
+[49] [50 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/etos.png>]
+[51] [52] [53] <Images/AABBray.png, id=254, 442.2924pt x 388.8126pt>
 File: Images/AABBray.png Graphic file (type png)
 
 <use Images/AABBray.png>
@@ -1098,17 +1106,17 @@ Overfull \hbox (23.1251pt too wide) in paragraph at lines 166--167
 [][]
  []
 
-[52] [53 <C:/Users/jd537/Documents/Thesis/test-repo/Images/AABBray.png>]
-<Images/sahbvh.png, id=256, 453.695pt x 349.305pt>
+[54] [55 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/AABBray.png>]
+<Images/sahbvh.png, id=262, 453.695pt x 349.305pt>
 File: Images/sahbvh.png Graphic file (type png)
  <use Images/sahbvh.png>
 Package pdftex.def Info: Images/sahbvh.png used on input line 199.
 (pdftex.def)             Requested size: 419.16621pt x 322.72363pt.
 )
-[54] [55 <C:/Users/jd537/Documents/Thesis/test-repo/Images/sahbvh.png>]
-(C:\Users\jd537\Documents\Thesis\test-repo\drawinglines.tex
+[56] [57 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/sahbvh.png>]
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\drawinglines.tex
 Chapter 6.
-<Images/linesegment2.png, id=263, 1918.91907pt x 1148.03906pt>
+<Images/linesegment2.png, id=270, 1918.91907pt x 1148.03906pt>
 File: Images/linesegment2.png Graphic file (type png)
 
 <use Images/linesegment2.png>
@@ -1125,41 +1133,41 @@ Underfull \hbox (badness 1005) in paragraph at lines 23--27
 anti-aliasing
  []
 
-[56
+[58
 
 
 
-] <Images/gllines.png, id=268, 555.57562pt x 278.54062pt>
+] <Images/gllines.png, id=274, 555.57562pt x 278.54062pt>
 File: Images/gllines.png Graphic file (type png)
 
 <use Images/gllines.png>
 Package pdftex.def Info: Images/gllines.png used on input line 29.
 (pdftex.def)             Requested size: 419.16621pt x 210.1545pt.
- [57 <C:/Users/jd537/Documents/Thesis/test-repo/Images/linesegment2.png>] [58 <
-C:/Users/jd537/Documents/Thesis/test-repo/Images/gllines.png>] <Images/miter.pn
-g, id=276, 613.0905pt x 452.1693pt>
+ [59 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/linesegment2.png>
+] [60 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/gllines.png>] <I
+mages/miter.png, id=282, 613.0905pt x 452.1693pt>
 File: Images/miter.png Graphic file (type png)
 
 <use Images/miter.png>
 Package pdftex.def Info: Images/miter.png used on input line 65.
 (pdftex.def)             Requested size: 293.41507pt x 216.40404pt.
- <Images/bevel.png, id=277, 612.1269pt x 414.5889pt>
+ <Images/bevel.png, id=283, 612.1269pt x 414.5889pt>
 File: Images/bevel.png Graphic file (type png)
 
 <use Images/bevel.png>
 Package pdftex.def Info: Images/bevel.png used on input line 72.
 (pdftex.def)             Requested size: 293.41507pt x 198.72205pt.
 
-<Images/joinartifact.png, id=278, 402.00188pt x 124.96687pt>
+<Images/joinartifact.png, id=284, 402.00188pt x 124.96687pt>
 File: Images/joinartifact.png Graphic file (type png)
 
 <use Images/joinartifact.png>
 Package pdftex.def Info: Images/joinartifact.png used on input line 78.
 (pdftex.def)             Requested size: 419.16621pt x 130.3019pt.
- [59 <C:/Users/jd537/Documents/Thesis/test-repo/Images/miter.png>] [60 <C:/User
-s/jd537/Documents/Thesis/test-repo/Images/bevel.png> <C:/Users/jd537/Documents/
-Thesis/test-repo/Images/joinartifact.png>]
-<Images/linerendering.png, id=287, 438.13687pt x 226.59656pt>
+ [61 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/miter.png>] [62 <
+C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/bevel.png> <C:/Users/jd
+537/Documents/Thesis/test-repo/Thesis/Images/joinartifact.png>] <Images/lineren
+dering.png, id=294, 438.13687pt x 226.59656pt>
 File: Images/linerendering.png Graphic file (type png)
 
 <use Images/linerendering.png>
@@ -1170,31 +1178,33 @@ Overfull \hbox (18.96957pt too wide) in paragraph at lines 99--100
 [][]
  []
 
-<Images/lineadjacency.png, id=288, 612.1269pt x 340.3917pt>
+<Images/lineadjacency.png, id=295, 612.1269pt x 340.3917pt>
 File: Images/lineadjacency.png Graphic file (type png)
 
 <use Images/lineadjacency.png>
 Package pdftex.def Info: Images/lineadjacency.png used on input line 105.
 (pdftex.def)             Requested size: 419.16621pt x 233.08899pt.
 
-<Images/linepolyex.png, id=289, 614.0541pt x 397.2441pt>
+<Images/linepolyex.png, id=296, 614.0541pt x 397.2441pt>
 File: Images/linepolyex.png Graphic file (type png)
 
 <use Images/linepolyex.png>
 Package pdftex.def Info: Images/linepolyex.png used on input line 110.
 (pdftex.def)             Requested size: 419.16621pt x 271.17104pt.
- [61 <C:/Users/jd537/Documents/Thesis/test-repo/Images/linerendering.png>] [62 
-<C:/Users/jd537/Documents/Thesis/test-repo/Images/lineadjacency.png> <C:/Users/
-jd537/Documents/Thesis/test-repo/Images/linepolyex.png>] [63] <Images/rotation.
-png, id=302, 322.95656pt x 275.52937pt>
+ [63 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/linerendering.png
+>] [64 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/lineadjacency.p
+ng> <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/linepolyex.png>] [
+65]
+<Images/rotation.png, id=308, 322.95656pt x 275.52937pt>
 File: Images/rotation.png Graphic file (type png)
 
 <use Images/rotation.png>
 Package pdftex.def Info: Images/rotation.png used on input line 144.
 (pdftex.def)             Requested size: 209.5831pt x 178.80608pt.
-) [64 <C:/Users/jd537/Documents/Thesis/test-repo/Images/rotation.png>] [65]
+) [66 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/rotation.png>] [
+67]
 Chapter 7.
-[66
+[68
 
 
 ]
@@ -1202,6 +1212,13 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 74.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+Underfull \hbox (badness 4846) in paragraph at lines 75--75
+[]\OT1/ppl/m/n/12 Seok-Hyung Bae, Ravin Bal-akr-ish-nan, and Karan Singh. ``Ev-
+ery-
+ []
+
+Missing character: There is no Ã in font pplr7t!
+Missing character: There is no ¨ in font pplr7t!
 Missing character: There is no Ã in font pplr7t!
 Missing character: There is no ¡ in font pplr7t!
 Missing character: There is no Ã in font pplr7t!
@@ -1212,24 +1229,36 @@ Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ± in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no Ÿ in font pplr7t!
- [67
+
+Overfull \hbox (36.74304pt too wide) in paragraph at lines 75--75
+[]\OT1/ppl/m/n/12 Sarah F. Frisken. \OT1/ppl/m/it/12 Mis-chief\OT1/ppl/m/n/12 .
+ Made With Mis-chief. \OT1/ppl/m/sc/12 url\OT1/ppl/m/n/12 : $\OT1/pcr/m/n/12 ww
+w . madewithmischief .$
+ []
+
+[69
 
 ]
-(C:\Users\jd537\Documents\Thesis\test-repo\main.aux
-(C:\Users\jd537\Documents\Thesis\test-repo\superfluouscrap.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\introduction.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\relatedwork.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\inputcontent.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\creatingstrokes.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\sketchingin3d.aux)
-(C:\Users\jd537\Documents\Thesis\test-repo\drawinglines.aux))
+Underfull \hbox (badness 1005) in paragraph at lines 75--75
+$\OT1/pcr/m/n/12 printcnx . com / resources -[] and -[] support / addiational -
+[]$
+ []
+
+[70] (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\main.aux
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\superfluouscrap.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\introduction.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\relatedwork.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\inputcontent.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\creatingstrokes.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\sketchingin3d.aux)
+(C:\Users\jd537\Documents\Thesis\test-repo\Thesis\drawinglines.aux))
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 15716 strings out of 493921
- 267090 string characters out of 3144877
- 570385 words of memory out of 3000000
- 18673 multiletter control sequences out of 15000+200000
+ 15732 strings out of 493921
+ 267790 string characters out of 3144877
+ 571385 words of memory out of 3000000
+ 18689 multiletter control sequences out of 15000+200000
  35942 words of font info for 84 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  39i,15n,49p,893b,1136s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1245,9 +1274,9 @@ uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.
 pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Pro
 gram Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (78 pages, 3934890 bytes).
+Output written on main.pdf (81 pages, 3939800 bytes).
 PDF statistics:
- 358 PDF objects out of 1000 (max. 8388607)
+ 368 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  181 words of extra memory for PDF output out of 10000 (max. 10000000)
 

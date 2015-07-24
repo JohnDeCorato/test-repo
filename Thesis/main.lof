@@ -12,76 +12,76 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Raster definition of an image vs Vector definition}}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces An example of the infinite canvas in Mischeif.}}{8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces An example of the infinite canvas in Mischeif.}}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Using Natural Sketch to Add Detailing to a Car. From \autocite {catiareel}}}{9}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Using Natural Sketch to Add Detailing to a Car. \autocite {catiareel}}}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Beginning the sketch}}}{9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Beginning the sketch }}}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Finishing the sketch}}}{9}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Finishing the sketch}}}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces An example of using Hyve3D to draw inside of a virtual environment. \autocite {hyve3d}}}{10}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces An example of using Hyve3D to draw inside of a virtual environment. \autocite {hyve3d}}}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Using the tablet to draw}}}{10}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A user using an iPad to sketch on a plane inside of the virtual environment.}}}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Manipulating the drawing plane}}}{10}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Manipulating the drawing plane by manipulating the iPad}}}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Augmented Reality Sketching using the Gravity tablet and Headset}}{12}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces A diagram of a user pressing a resistive touch device \cite {touchtech}}}{22}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A user touching a surface acoustic wave sensor \cite {touchtech}}}{23}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces A user touching a surface capacitive sensor \cite {touchtech}}}{25}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces A user touching a projected capacitive sensor \cite {touchtech}}}{27}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces A visual representation of the core set of touch gestures. \cite {touchreference} }}{32}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Examples of pen gestures and their associated functions. \cite {inkgestures}}}{34}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Augmented Reality Sketching using the Gravity tablet and Headset}}{14}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces An example of a sketch}}{38}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A diagram of a user pressing a resistive touch device \cite {touchtech}}}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces An input stroke (a) is provided to the application as (b) a sequence of point samples.}}{38}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A user touching a surface acoustic wave sensor \cite {touchtech}}}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces An example of an artifact in the spline generation caused by oddly spaced sample points.}}{41}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A user touching a surface capacitive sensor \cite {touchtech}}}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Using the distance from the control points for termination.}}{41}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces A user touching a projected capacitive sensor \cite {touchtech}}}{29}
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.5}{\ignorespaces A visual representation of the core set of touch gestures. \cite {touchreference} }}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Ray Tracing in Computer Graphics}}{46}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Rough Diagram of Projecting Stroke onto Drawing Surface}}{46}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces The ray from the eye $\mathbf {e}$ to a point on the screen $s$}}{48}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces An example of a ray checking and failing for intersection with a box}}{53}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces A comparison between the bounding volumes of a node using a naive implementation (left) and a surface area heuristic (right).}}{55}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Examples of pen gestures and their associated functions. \cite {inkgestures}}}{36}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Two line segments connected together, as per default GL\_LINES implementation. Note the gap from no join.}}{57}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces An example of a sketch}}{40}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces An example of the flaws of native line rendering in OpenGL using GL\_LINES.}}{58}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces An input stroke (a) is provided to the application as (b) a sequence of point samples.}}{40}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Diagram of a miter join with parameter labels}}{59}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces An example of an artifact in the spline generation caused by oddly spaced sample points.}}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Diagram of a bevel join with parameter labels}}{60}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Using the distance from the control points for termination.}}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Left: An example of a miter join artifact from a sharp curve. Right: Artifact post-correction.}}{60}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Left: A curve using default GL\_LINES. Right: Implemented system}}{61}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Ray Tracing in Computer Graphics}}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces The line adjacency data structure. Each instance of the geometry shader polygonalizes the line segment (p1, p2)}}{62}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Rough Diagram of Projecting Stroke onto Drawing Surface}}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Example polygonization of a line with miter joins.}}{62}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The ray from the eye $\mathbf {e}$ to a point on the screen $s$}}{50}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Even when rotating the drawing plane such that it is no longer visible, our lines remain visible.}}{64}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces An example of a ray checking and failing for intersection with a box}}{55}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces A comparison between the bounding volumes of a node using a naive implementation (left) and a surface area heuristic (right).}}{57}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Two line segments connected together, as per default GL\_LINES implementation. Note the gap from no join.}}{59}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces An example of the flaws of native line rendering in OpenGL using GL\_LINES.}}{60}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Diagram of a miter join with parameter labels}}{61}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Diagram of a bevel join with parameter labels}}{62}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Left: An example of a miter join artifact from a sharp curve. Right: Artifact post-correction.}}{62}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Left: A curve using default GL\_LINES. Right: Implemented system}}{63}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces The line adjacency data structure. Each instance of the geometry shader polygonalizes the line segment (p1, p2)}}{64}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Example polygonization of a line with miter joins.}}{64}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Even when rotating the drawing plane such that it is no longer visible, our lines remain visible.}}{66}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
