@@ -4,38 +4,55 @@ The most basic operation in any sketch-based modeling system is, of course, obta
 The key characteristic of a sketch-capable input device is that it allows freehand input.
 While a mouse is capable of this form of input, devices that more closely mimic the feel of freehand drawing using a pen, such as a digitizing tablet, are better for users to maximize their ability to draw.
 Devices that are both an input device and a display are particularly suited to this, because it most closely mimics traditional artist creation methods by allowing direct interaction with the sketch space, as opposed to tablets where the space between the input device and the display surface is relative.
-
-\begin{figure}
-\includegraphics[width=0.7\textwidth]{fujitv}
-\caption{An example of a sketch}
-\end{figure}
-
-Pencil and paper is a rich communication method. 
-Artists convey information not only with the shape of the completed objects in the sketch, but also through more subtle methods such as pressure and stroke style.
-Small details can relay information about the object, such as important details; heavier lines or many small strokes usually show more focus was put in a particular area.
+Because of this direct interaction method, it is important that our system accurately translated the user's sketch to the 3-D virtual space.
+In this chapter we will discuss how we take the sketch input and create a smooth stroke that is independent of the resolution of the input device.
 
 \section{Representation of a Sketch}
 
 At the bare minimum, an input device should provide positional information in some two dimensional coordinate system, usually one based on the interaction window.
-For sketch input, the representation must at least approximate continuous movement.
+For sketch input, the representation must at least approximate continuous movement (Figure~\ref{fig:sampledata}).
 Sampling rates vary from one device to the next.
 The samples themselves may also be spaced irregularly, with sample points closer as users draw slowly or carefully, or father apart if the user draws quickly.
 
 \begin{figure}
-\includegraphics[width=0.7\textwidth]{stroke}
+\label{fig:sampledata}
+\fbox{\includegraphics[width=0.98\textwidth]{stroke}}
 \caption{An input stroke (a) is provided to the application as (b) a sequence of point samples.}
 \end{figure}
 
 We will refer to this sampled sequence of points as a stroke. 
 Strokes are stored as a list of points, objects containing coordinates from the sample space, sorted by time.
 A sketch is comprised of a large number of these stroke objects.
+We also support a simple layer system that can be used to segment a sketch by allowing strokes to be contained in the active layer.
+
+\subsection{Understanding the Stroke Space}
+\label{sec:samplespace}
+
+\begin{figure}
+\label{fig:samplestroke}
+\centering  
+\subfigure[The intended complicated stroke input onto a sensing grid.] {\label{fig:sketchintent}\includegraphics[width=.48\textwidth]{sketchinput}}
+\subfigure[A potential raw input detected by the sensor.] {\label{fig:rawinput}\includegraphics[width=.48\textwidth]{rawinput}}
+\caption[Sketch intent versus sketch input]{When sketching, the user's input is rasterized according to the resolution of the sensor. This makes complicated sketch input (a), difficult to understand from the limited resolution of the input (b).}
+\end{figure}
+
+Before we discuss how to create smooth strokes, we need to understand how the stroke input gets sent to the application.
+When the pen touches the screen, it's position is detected by the touch panel.
+This detected position is not necessarily exactly the same as the real world positions of the pen.
+This is because the input is rasterized according to the resolution of the sampling device.
+For example, say we are working with integer sample data, and we receive that the pen is at pixel position (148, 148).
+The pen could actually be at (147.6, 148.2), or (148.2, 147.6), or any other position that samples to (148, 148) (Figure~\ref{fig:samplestroke}).
+This is an issue because in our sketching application, we would like to be able to zoom in onto any surface.
+This means that small errors in sampling data, and as a result, errors in spline generation, will be magnified.
+While the former isn't really an issue, the latter is.
+
 
 \section{Spline Curves}
+\label{sec:splines}
 
 The input data represents an approximation of the stroke input from the user that is dependent on the sample resolution of the input device, and by extension the resolution of the display.
 While this would work decently well assuming we are working with a static raster image, three dimensional sketching allows the user to move the camera.
 Moving the camera will eventually result in poor quality sketches from the stored stroke data lacking sub-sample rate information that accurately reflects the intent of the original stroke.
-Please see Figure for an example of this.
 To remedy this, a mathematical representation of the curve is needed such that the "sampling rate" of the stroke is independent from the resolution of the input device.
 In computer graphics, this is commonly accomplished with spline curves.
 
@@ -87,17 +104,24 @@ While this method guarantees that the generated curve passes through all of the 
 \end{figure}
 \end{center}
 
-The approach we take is using the input samples as control points to generate a piecewise spline curve. 
-This method is better at dealing with extreme changes in sample rates because the produced curve contains less convex and concave changes. However, it is likely that the produced curve will still be inaccurate.
-The curve generated will also not pass through the sampled points. 
-However, if the sample rate is high, it will be close.
+\subsection{Generating Splines From the Sample Data}
+In theory, creating splines that are accurate to the original stroke would involve generating a curve that passes through each of the control points.
+However in practice, generating a curve that is exactly the same as the input sample points is not as necessary as one would think. 
+As discussed in Section~\ref{sec:samplespace}, the input data that we get is not necessarily accurate to the actual shape of the sketch.
+Therefore, even if we were to create a curve that perfectly passed through all of the input points, it is possible that the output curve would still be unsatisfactory.
+One common example of this is a user sketching a line diagonally through a screen.
+Perfect sample data produces input in a staircase pattern, which would result in a wavy curve not representative of the intent of the original diagonal line.
+Additionally, because the sample distance between points is not consistent, it is possible to produce curve with artifacts that appear unnatural upon magnification (Figure~\ref{fig:splineartifact}).
+What we should actually try to accomplish with our curve generation is to match the intent of the stroke.
 
-In practice, not generating a curve that is exactly the same as the input sample points is not as necessary as one would think. 
-The most important part is the curve should match the form of the original curve.
-If the detail of the curve is important, then the user will probably draw more slowly, allowing for a greater number of sample points, and generating a spline that closely resembles the shape of the detailed section.
-Also, matching control points perfectly is a poor decision when working with pixel grids, as extremely detailed sampling produces input in a staircase pattern.
-Matching input exactly would make diagonal straight lines impossible.
-The simpler and more consistent shape of the recursive B-spline curve makes it a better choice than the inverse control point calculation, as seen in practice by a large number of applications implementing spline approximations, including Mischief.
+
+The approach we take is using the input samples as control points to generate a piecewise spline curve. 
+This method is better at dealing with extreme changes in sample rates because the produced curve contains less convex and concave changes. 
+The curve generated will also not pass through the sampled points, but if the sample rate is high, it will be close.
+Using the input data as control points results in smooth reasonable curves even when the control points are far apart.
+Additionally, to avoid any possible stair case sampling issues, we include a euclidean distance constraint between the sample data based on the resolution of the input. 
+By manipulating the sample data this way, we are able to create curves that reasonable match the intent of the user.
+However, more work can be done in the area of matching the intent of the stroke from the sample data. 
 
 \subsection{Algorithm}
 

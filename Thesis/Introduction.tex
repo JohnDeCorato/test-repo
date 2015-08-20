@@ -1,18 +1,26 @@
 \chapter{Introduction}
 
-In this work, I implement a sketching interface that allows the user to create drawings in three dimensions.
+The design process usually starts with rough doodles and sketches to create a basic visual representation of the solution to a problem.
+The processes from this conceptual stage to more detailed specifications has often been segmented between incompatible physical and virtual representations.
+Unfortunately, the answers to many important questions about the design are made during the conceptual stage without all of the information the designer needs, because getting this information requires a digital representation of the work that is currently too difficult to create during the rapid pace of the conceptual stage.
+Historically, there have been constraints to digitizing the conceptual design stage: displays were too small and the forced use of the mouse and keyboard were far more difficult to work with that the traditional methods of pen and paper.
+However, with the advent of large touch panel displays (e.g., the 55-inch Surface Hub Display), it is possible to implement a digital system that closely mimics a traditional conceptual design process.
+
+In this work, we implement a sketching interface that allows the user to create drawings in three dimensions.
 The interface is capable of using modern input devices to approximate the act of real world sketching as closely as possible.
 These devices include a display capable of multi-touch input, as well as a special electronic pen which relays extra information
 not sent through regular touch input.
-For the sketch itself, I implement a spline-based data structure in order to store high quality, three dimensional strokes, that can be zoomed in without loss in quality.
-I also implement a three-dimensional line rendering library, as native line rendering implementations are poor quality.
+For the sketch itself, we implement a spline-based data structure in order to store high quality, three dimensional strokes, that can be zoomed in without loss in quality.
+We also implement a three-dimensional line rendering library, as native line rendering implementations are poor quality.
 
-When creating a three-dimensional model, such as a building or a character in an animated film, much of the work is done on a computer using Computer-Aided Design (CAD) software.
-However, the initial designs are still done using two-dimensional sketches, rough drawings not intended as the finished work.
+When creating a three-dimensional model, much of the work is done on a computer using Computer-Aided Design (CAD) software specifically designed for the unique application.
+For example, in the architecture profession, Rhino and Revit are used to create building models.
+In the animation industry, Maya, Blender, and 3DSMax are used to create character models and complex scenery.
+In both cases however, the initial designs are still done using two-dimensional sketches, rough drawings not intended as the finished work.
 Sketches are generally not highly detailed works, as they intend to only capture the essentials of a final design.
-Through a number of rough sketches, a three-dimensional form can be created through the representations of perspective and volume.
+Through a number of rough sketches, a three-dimensional form can be implied through the representations of perspective and volume.
 This two-dimensional information is then used as a reference when designing the final three-dimensional model.
-Details of modern approaches to content creation on a computer are given in Chapter 2.
+Details of modern approaches to content creation on a computer are presented in Chapter 2.
 
 In architecture, there is a push towards creating buildings that reduce energy consumption though heating, cooling, and lighting.
 If an architect has a three dimensional model, it can be analyzed to predict how well it uses energy.

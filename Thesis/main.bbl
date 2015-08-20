@@ -16,6 +16,17 @@
   {}
 \endgroup
 
+\entry{3doodler}{online}{}
+  \list{organization}{1}{%
+    {Wobbleworks, Inc.}%
+  }
+  \field{sortinit}{3}
+  \field{title}{3Doodler}
+  \verb{url}
+  \verb the3doodler.com
+  \endverb
+\endentry
+
 \entry{inkgestures}{online}{}
   \name{author}{1}{}{%
     {{}%
@@ -242,6 +253,26 @@
   \endverb
 \endentry
 
+\entry{gigapixel}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Miranda}{M.}%
+     {Ronnie}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {Active Computer Services}%
+  }
+  \strng{namehash}{MR1}
+  \strng{fullhash}{MR1}
+  \field{sortinit}{M}
+  \field{title}{Gigapixel Project}
+  \verb{url}
+  \verb www.gigpixel.com
+  \endverb
+\endentry
+
 \entry{morris79}{book}{}
   \name{author}{4}{}{%
     {{}%
@@ -294,6 +325,38 @@
   \endverb
 \endentry
 
+\entry{gravitysketch}{online}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Paredes}{P.}%
+     {Daniella}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Couche}{C.}%
+     {Guilaume}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Paslier}{P.}%
+     {Pierre}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sosanya}{S.}%
+     {Oluwaseyi}{O.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PD+1}
+  \strng{fullhash}{PDCGPPSO1}
+  \field{sortinit}{P}
+  \field{title}{Gravity Sketch}
+  \verb{url}
+  \verb www.gravitysketch.com
+  \endverb
+\endentry
+
 \entry{photoshop}{online}{}
   \list{organization}{1}{%
     {Adobe}%
@@ -302,6 +365,17 @@
   \field{title}{Photoshop}
   \verb{url}
   \verb www.adobe.com/products/photoshop.html
+  \endverb
+\endentry
+
+\entry{polyes}{online}{}
+  \list{organization}{1}{%
+    {Future Make}%
+  }
+  \field{sortinit}{P}
+  \field{title}{Polyes Q1}
+  \verb{url}
+  \verb www.3dp.fm
   \endverb
 \endentry
 
@@ -325,6 +399,18 @@
   \field{title}{Sketchbook}
   \verb{url}
   \verb www.sketchbook.com/
+  \endverb
+\endentry
+
+\entry{tiltbrush}{online}{}
+  \list{organization}{2}{%
+    {Skillman}%
+    {Hackett}%
+  }
+  \field{sortinit}{T}
+  \field{title}{Tilt Brush}
+  \verb{url}
+  \verb www.tiltbrush.com
   \endverb
 \endentry
 

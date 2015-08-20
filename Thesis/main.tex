@@ -39,6 +39,9 @@
 \renewcommand{\textfraction}{0.1}
 \renewcommand{\floatpagefraction}{0.75}
 
+\usepackage{ifthen} 
+\renewcommand{\caption}[2][]{\singlespacingplus\ifthenelse{\equal{}{#1}}{\hangcaption{#2}}{\hangcaption[#1]{#2}}\normalspacing} 
+
 \graphicspath{{Images/}}
 
 \title {Creating Natural User Interfaces for Three Dimensional Sketching}

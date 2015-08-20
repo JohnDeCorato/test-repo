@@ -5,7 +5,7 @@ An important goal for any user interface is to have the human-computer interacti
 Natural interaction is critical for a sketching interface; while younger, more technologically willing professionals flock to digitized content creation software, those classically trained prefer to stick to physical methods.
 In order to convince the latter to adapt to a new system, the transition process must be as smooth as possible, so as many of the techniques utilized in the physical system should be emulated as closely as technology allows in the digital system.
 
-A key element of bridging the gap between physical and digital tools are input devices, computer hardware used to control electronic devices.
+A key element for bridging the gap between physical and digital tools are input devices, computer hardware used to control electronic devices.
 For a long time, the most common input devices for digital environments have been the mouse and keyboard, which provide rather unintuitive ways to move and control the computer.
 However, in recent years there have been a number of advancements in the human-computer interaction field, which has produced a wide array of input devices.
 In this chapter, we will discuss human-computer interaction principles used to decide how to best utilize input devices, as well as discuss the particular devices needed to create a good sketching system.
@@ -22,11 +22,11 @@ Human-computer modalities describe the ways humans input information to the comp
 These modalities are devices and sensors attached to the computer.
 Common input device modalities are keyboards, pointing devices, and touch screens, while more complex modalities are computer vision, speech recognition, gesture recognition, and orientation.
 In sketching, the equivalent of a human-computer modality is the sketch implement. 
-Whether the tool is a pen, pencil, charcoal, or something else. the artist provides "data" to the sketching surface through his strokes by sending information like position, angle, and pressure.
+Whether the tool is a pen, pencil, charcoal, or something else, the artist provides "data" to the sketching surface through his strokes by sending information like position, angle, and pressure.
 
 Computer-human modalities describe the ways the computer outputs information to communicate with humans.
 This requires stimulation of one of the human senses: sight, hearing, taste, smell, touch, balance, temperature, and pain. 
-Of these, modern input devices generally communicate using sight and hearing, because they are capable of sending information at much higher speeds, as well as being the more common ways humans communicate with each other.
+Of these, modern input devices generally communicate using sight and hearing, because they are capable of sending information at much higher speeds and larger bandwidths, as well as being the more common ways humans communicate with each other.
 There are also small uses of haptics, general vibrations or other movement, to provide feedback, but generally they are accompanied by visual and auditory cues.
 
 While working on this project, it became apparent that professionals are very sensitive to a complex combination of input and output modalities, some of which are not reflected well by current hardware capabilities. 
@@ -38,9 +38,9 @@ On this project, we focus more on the input modalities, but for a truly realisti
 \subsection{Direct and Indirect}
 Direct and indirect input refer to how the input space corresponds to the display space. 
 With direct input, the two are directly correlated. 
-On a touch screen, where you touch is where the input is recorded. 
-With indirect input devices, the input space is only relative to the input space. Moving a mouse three inches can correspond to movement of any kind on the computer screen. 
-In desktop settings, moving the mouse to the left three inches can cause the pointer on screen to move three pixels, or three hundred pixels. 
+For example, on a touch screen, where you touch is where the input is recorded. 
+With indirect input devices, the input value is only relative to the input space. Moving a mouse three inches can correspond to movement of any kind on the computer screen. 
+For example, in desktop settings, moving the mouse to the left three inches can correspond to a variety of moments on the computer screen. 
 In a three-dimensional application it can cause the user to move left, or turn left.
 
 Indirect input devices have the advantage of being more application independent. However, this comes at the cost of accessibility. 
@@ -48,8 +48,8 @@ A mouse can do many things, but the user must learn what it does in the current 
 Direct input methods tend to be intuitive while limited in scope. 
 The user knows touching a screen at a spot causes an action at that spot.
 
-When physically sketching, most if not all interactions are direct. 
-There are minute indirect details such as different drawing implements which can produce different strokes with the same input, but on a high level there is a one-to-one spacial correlation between actions and results.
+As will be described later, when physically sketching, most if not all interactions are direct. 
+There are minute indirect details such as different drawing implements which can produce different strokes with the same input, but on a high level there is a one-to-one spatial correlation between actions and results.
 Therefore, for this project, it is important to minimize any indirect interaction between the user and the system.
 For any indirect interaction, we should try to minimize the complexity of the difference between the input and output spaces.
 
@@ -80,12 +80,12 @@ For this project, we try to avoid use of the keyboard as much as possible.
  
  \subsubsection{Mouse}
  A mouse is a small, hand-held device that is pushed over a flat, horizontal surface.
- Older mouses used a physical ball at the base of the device, combined with sensors to detect when the ball rotates.
+ Older mice used a physical ball at the base of the device, combined with sensors to detect when the ball rotates.
  When the mouse moves and rotation is sensed, the distance and directional information is sent from the mouse to the computer.
  A more modern approach is the optical mouse, which uses infrared light instead of a roller to detect changes in position.
  
  The mouse is the oldest pointing device, and used with every desktop computer.
- The mouse works in an indirect space as the position of the mouse and is that of the cursor on screen are completely unrelated.
+ The mouse works in an indirect space as the position of the mouse and that of the cursor on screen are completely unrelated.
  When a mouse is moved ten inches to the left, the movement of the mouse cursor on screen is not ten inches, but some function with ten inches as input.
  As discussed previously, we would like to eliminate indirect input where ever possible.
  While it will be possible to use the mouse with our application, it should be seen as legacy functionality.
@@ -103,7 +103,7 @@ For this project, we try to avoid use of the keyboard as much as possible.
  \subsubsection{Pen}
  
  As mentioned above, touch panels can be used with rigid styli to simulate the experience of writing. 
- However, the pen itself can also be digitized to capture additional information for various applications. 
+ However, the pen itself can also be computerized to capture additional information for various applications. 
  An active pen is an input device that includes electronic components and allows users to write directly onto the display surface of a computing device.
  The active pen's electronic components generate wireless signals that are picked up by a built-in digitizer and transmitted to its dedicated controller, providing data on pen location, pressure and other functionalities. 
  Additional features enabled by the active pen's electronics include \textit{palm rejection} to prevent unintended touch inputs, and \textit{hover}, which allows the computer to track the pen's location when it is held near, but not touching the screen. 
@@ -117,20 +117,20 @@ This method of input allows users to directly interact with what is displayed, a
 
 One major advantage touch screens offer over other input devices is ease of use.
 While frequent computer users are familiar with using a mouse and keyboard, touching icons on a screen is intuitive even for those with limited to no computer experience.
-This ease of use can reduce the learning curve and increase productivity when using user interfaces.
+This ease of use can reduce the learning curve and increase productivity when using these types of user interfaces.
 Touchscreens are also faster to use than traditional input methods.
 When a user interacts with a computer using a mouse and keyboard, there are many small adjustments the user needs to make; they need to locate the pointer, and adjust for the mouse acceleration.
 Direct interaction allows for users to interact with the computer without worrying about correlating the interaction space to the virtual space. 
 
 There are many ways to build a touch screen.
-The key points in any implementation are to recognize one or more fingers touching a display, to interpret the command these touches represent, and to communicate with an application.
+The key points in any implementation are to recognize one or more input points touching a display, to interpret the command these touches represent, and to communicate with an application.
 The three main types of touch sensing technologies are resistive sensing, surface acoustic wave sensing, and capacitive sensing.
 
 \subsubsection{Resistive Sensing}
 \begin{figure}
 	\centering
-		\includegraphics[width=0.9\textwidth]{resistive}
-	\caption{A diagram of a user pressing a resistive touch device \cite{touchtech}} 
+		\fbox{\includegraphics[width=0.98\textwidth]{resistive}}
+	\caption[A diagram of a resistive touch sensor] {When a user interacts with a resistive touch panel, they press against a protective polyester film. At the touch point, two sheets of electrode covered film press against each other, causing an electric current. \cite{touchtech}} 
 	\label{fig:resistivetouch}
 \end{figure}
 Resistive touch panels are composed of two thin, flexible sheets coated with a resistive material and separated by a small gap.
@@ -139,26 +139,26 @@ Pressing the surface of the film screen causes the electrode-covered sheets betw
 The point of contact is identified by detecting this change in voltage. (Figure~\ref{fig:resistivetouch})
 
 Resistive technology is low cost due to the simple structure of the touch screen and controller circuit.
-Analog senors have high resolution, the most common being 4096 by 4096 dots-per-inch (DPI), as well as high accuracy, while consuming low amounts of power during operation.
+Analog sensors have high resolution, the most common being 4096 by 4096 dots-per-inch (DPI), as well as high accuracy, while consuming low amounts of power during operation.
 This DPI refers to the number of sensing dots-per-inch, and is uncorrelated to the display DPI.
-Resistive touch screens can be used with any object, since the system only requires contact. 
+Resistive touch screens can be used with any object that can provide a pressure point, since the system only requires contact. 
 This allows for users to use pens and gloves to interact with a device.
-Disadvantages include it's poor responsiveness compared to other developed sensing methods, generally requiring harder presses, providing lower light transmittance causing a reduction in screen quality, and a decrease in accuracy with large screen sizes (> 24 inches).
+Disadvantages include it's poor responsiveness compared to other developed sensing methods, generally requiring harder presses, providing lower light transmittance causing a reduction in screen quality, and a decrease in accuracy with large screen sizes (\textgreater 24 inches).
 While high resolutions would allow for more accurate and more detailed sketching, the poor responsiveness would make resistive panels a poor substitute for traditional drawing media.
 
 \begin{center}
 \begin{figure}
-\includegraphics[width=0.9\textwidth]{saw}
-\caption{A user touching a surface acoustic wave sensor \cite{touchtech}}
+\fbox{\includegraphics[width=0.98\textwidth]{saw}}
+\caption[A diagram of a surface acoustic wave sensor] {A surface acoustic wave sensor transmits vibrations across the surface of a glass screen. When the screen is touched, the vibrations are absorbed and attenuated by the touch object. \cite{touchtech}}
 \label{fig:sawsensing}
 \end{figure}
 \end{center}
  
 \subsubsection{Surface Acoustic Wave (SAW) Sensing}
 
-Surface acoustic wave (SAW) touch panels were developed to achieve bright touch panels with high levels of visibility; mainly to address the drawbacks of low light transmittance in resistive film touch panels. 
+Surface acoustic wave (SAW) technology was developed to achieve bright touch panels displays with high levels of visibility; mainly to address the drawbacks of low light transmittance in resistive film touch panels. 
 These are also called surface wave or acoustic wave touch panels. 
-Aside from standalone LCD monitors, these are widely used in public spaces, in devices like point-of-sale terminals, ATMs, and electronic kiosks.
+Aside from standalone LCD monitors, these are widely used in public spaces in devices like point-of-sale terminals, ATMs, and electronic kiosks.
 
 These panels detect the screen position where contact occurs with a finger or other object using the attenuation in ultrasound elastic waves on the surface. 
 The internal structure of these panels is designed so that multiple piezoelectric transducers arranged in the corners of a glass substrate transmit ultrasound surface elastic waves as vibrations in the panel surface, which are received by transducers installed opposite the transmitting ones. 
@@ -168,11 +168,9 @@ The location is identified by detecting these changes.
 
 
 
-The strengths of this type of touch panel include high light transmittance and superior visibility, since the structure requires no film or transparent electrodes on the screen. 
-Additionally, the surface glass provides better durability and scratch resistance than a capacitive touch panel. 
-Another advantage is that even if the surface does somehow become scratched, the panel remains sensitive to touch. 
-On a capacitive touch panel, surface scratches can sometimes interrupt signals. 
-Structurally, this type of panel ensures high stability and long service life, free of changes over time or deviations in position.
+The strengths of this type of touch panel include high light transmittance and superior visibility, since the structure requires no film or transparent electrodes on the screen.
+Structurally, this type of panel ensures high stability and long service life, free of changes over time or deviations in position. 
+Even if the surface does somehow become scratched, the panel remains sensitive to touch.  
 Weak points include compatibility with only fingers and soft objects (such as gloves) that absorb ultrasound surface elastic waves. 
 These panels require special-purpose styluses and may react to substances like water drops or small insects on the panel.
 This sensing method, like resistive sensing, is more suitable for public displays that see heavy use.
@@ -191,16 +189,15 @@ There are two types of capacitive technology; surface capacitive and projected c
  
 \begin{center}
 \begin{figure}
-\includegraphics[width=0.9\textwidth]{surcap}
-\caption{A user touching a surface capacitive sensor \cite{touchtech}}
+\fbox{\includegraphics[width=0.98\textwidth]{surcap}}
+\caption[A diagram of a surface capacitive sensor]{In a surface capacitive sensor, a uniform electric field is generated over a glass panel from electrodes on the panel's four corners. When a user touches the panel, current flows from each of the corners through the finger.  \cite{touchtech}}
 \label{fig:surcap}
 \end{figure}
 \end{center}
 
 \paragraph{Surface Capacitive Sensing}
 
-is often used for larger sized displays (over 14 inches) that are used by the general public.
-This accentuates their high durability and high screen quality.
+is often used for larger sized displays (over 14 inches) that are used by the general public because of their high durability and high screen quality.
 Surface capacitive displays can be seen on ATM machines, ticket kiosks, arcade games, automation devices in factories and offices, and in the medical industry.
 
 A surface capacitive panel is constructed using a glass sheet. 
@@ -208,26 +205,27 @@ A transparent conductive coating is placed over the sheet, and a glass protectiv
 Electrodes are placed on the four corners of the panel. 
 
 If the same phase voltage is imposed to the electrodes on the four corners, then a uniform electric field will be formed over the panel. 
-When a finger touches the panel, electrical current will flow from the four corners through the finger. 
-The ratio of the electrical current flowing from the four corners will be measured to detect the touched point. 
-The measured current value will be inversely proportional to the distance between the touched point and the four corners. (Figure~\ref{fig:surcap})
+When a finger touches the panel, electrical current flows from each of the four corners through the finger. 
+The ratio of the electrical currents flowing from each of the four corners is measured to detect the touched point. 
+The measured current values will be inversely proportional to the distance between the touched point and each of the four corners. (Figure~\ref{fig:surcap})
 
-A surface capacitive touch panel has a simpler structure than a projected touch panel.
+A surface capacitive touch panel has a simpler structure than a projected capacitive touch panel (see below).
 This allows for lower cost in production, high durability, and high visibility due to the main structure being a single glass layer. 
 However, it's simplistic structure also means it is structurally difficult to detect two or more contact points simultaneously.
-Surface capacitive can only detect bare finger touches, although some may detect touches through a thin pair of gloves.
+Surface capacitive can usually only detect bare finger touches, although some may detect touches through a thin pair of gloves.
+Surface scratches can cause touch signals to get interrupted.
 Some surface capacitive displays support pen writing, but not simultaneous pen and touch.
 
 \paragraph{Projected Capacitive Sensing}
 
 is often used for smaller screen sizes than surface capacitive touch panels. 
 They've attracted significant attention in mobile devices. 
-The iPhone, iPod Touch, and iPad use this method to achieve high-precision multi-touch functionality and high response speed.
-However, they have also seen use in other areas of display technology, with Microsoft's Surface Hub implementing a 55-inch projected capacitive display.
+The iPhone, iPod Touch, and iPad all use this method to achieve high-precision multi-touch functionality and high response speed.
+However, the technology is also now being used for large display devices such as Microsoft's Surface Hub, a 55-inch projected capacitive display.
 
 \begin{figure}
-\includegraphics[width=0.9\textwidth]{projcap}
-\caption{A user touching a projected capacitive sensor \cite{touchtech}}
+\fbox{\includegraphics[width=0.98\textwidth]{projcap}}
+\caption[A diagram a projected capacitive sensor]{In a projected capacitive sensor, the display is covered by a layer of numerous transparent electrodes positioned in specific patterns. When a finger approaches the surface, electrostatic capacity among multiple electrodes changes simultaneously. \cite{touchtech}}
 \label{fig:projcap}
 \end{figure}
 
@@ -269,7 +267,7 @@ In particular, we use Microsoft's Surface Hub technology, which has a basic pen 
 \textbf{Cost} & Reasonable & Not reasonable & Not reasonable \\ \hline
 \end{tabular}
 \end{center}
-\caption{A comparison of touch technology}
+\caption[A comparison of touch technology]{A comparison of touch technology.}
 \end{table}
 
 \section{Advanced User Interaction: Input using Gesture}
@@ -313,8 +311,8 @@ Human computer interaction further distinguishes between types of gestures, spli
 
 \subsection{Multi Touch Gestures}
 \begin{figure}
-\includegraphics[width=\textwidth]{CoreGestures}
-\caption{A visual representation of the core set of touch gestures. \cite{touchreference} } 
+\fbox{\includegraphics[width=\textwidth]{CoreGestures}}
+\caption[The core set of gestures]{A visual representation of the core set of touch gestures. \cite{touchreference} } 
 \label{fig:touchgestures}
 \end{figure}
 
@@ -326,7 +324,7 @@ This section will only discuss core multi-touch gestures, and not the many subse
 \subsubsection{Tap}
 
 Taps are performed by quickly pressing and releasing a screen with a fingertip. 
-Most systems differentiate between single and double taps, preformed by tapping the screen once or twice respectively.
+Most systems differentiate between single and double taps, performed by tapping the screen once or twice respectively.
 Taps are generally used for selecting items, with single and double taps offering different types of selection.
 Taps are both online and offline gestures, since the number of taps need to be processed, but directly interact with objects being tapped.
 
@@ -338,7 +336,7 @@ Drags are generally used to move elements, making them online gestures.
 
 \subsubsection{Pinch and Spread}
 
-Pinches are preformed by taking any number of fingertips and enclosing them towards a point. Spread gestures are the inverse action. Generally these online gestures are used for magnification.
+Pinches are performed by taking any number of fingertips and enclosing them towards a point. Spread gestures are the inverse action. Generally these online gestures are used for magnification.
 
 \subsubsection{Rotate}
 
@@ -358,19 +356,19 @@ This action usually results in context menus which are used for enhancing inform
 
 \begin{figure}
 \includegraphics[width=\textwidth]{pen-gestures}
-\caption{Examples of pen gestures and their associated functions.
-\label{fig:pengestures}
+\caption[Examples of pen gestures]{Examples of pen gestures and their associated functions. Note that many gestures have shapes unrelated to their functionality.
 \cite{inkgestures}}
+\label{fig:pengestures}
 \end{figure}
 
 Pen gestures recognize certain shapes, not as handwriting, but as an indicator of a special command.
 For example, a pig-tail shape (used often as a proofreader's mark) would indicate a delete operation. 
 Depending on the implementation, what is deleted might be the object or text where the mark was made, or the stylus can be used as a pointing device to select what it is that should be deleted.
 These types of gestures are offline.
-Figure~\ref{fig:pengestures} shows an example of a variety of pen gestures and their associated commands inside of an application.
+Pen gestures tend to be abstract, with functionality not necessarily representative of the shape formed by the gesture. (Figure~\ref{fig:pengestures})
 
 Pens can be used to perform many of the multi-touch gestures, but the pen is just treated as a finger in these scenarios.
-In order for this project to incorporate pen gestures, the pen input would need to be preprocessed before it is projected into 3-D space.
+In order for our project to incorporate pen gestures, the pen input would need to be preprocessed before it is projected into 3-D space.
 While pen gestures are a useful tool, in a free-form sketching environment it can be unclear if the user intends to make a stroke or a gesture, even if using the same symbol.
 This can potentially confuse the user.
 We can use touch gestures to accomplish similar results, and thus did not incorporate pen gestures in our application.
@@ -381,7 +379,7 @@ We can use touch gestures to accomplish similar results, and thus did not incorp
 \subsection{Three Dimensional Gesture Recognition}
 
 While older forms of gesture recognition attempt to translate physical interaction with an input device in order to form gesture based commands, more modern approaches directly interpret motions of the human body.
-This is accomplished using computer vision techniques, as well as different types of cameras and senors used to capture and understand a three dimensional environment.
+This is accomplished using computer vision techniques, as well as different types of cameras and sensors used to capture and understand a three dimensional environment.
 Once this information is captured a variety of techniques can be used to analyze the scene and detect gestural information. 
 While 3-D gesture recognition is an emerging area, and is beginning to see common use in a number of modern user interfaces, it's use for 3-D sketching is left to future work.
 Possible applications are using 3-D gestures to manipulate the environment in conjunction with 2-D gestures.

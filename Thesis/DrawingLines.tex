@@ -1,10 +1,10 @@
-\chapter{Line Rendering}
+\chapter{Curve Rendering}
 
 As a sketching application, it is important for curves to be rendered with high quality.
 While graphics hardware has support for line rendering, it's implementation is only suitable for line segments, with significant issues when trying to render curves.
 In this chapter, we discuss the system this project implements for curve rendering.
 
-\section{Problems With Available Line Renderers}
+\section{Problems with Native Curve Renderering}
 OpenGL has support for a variety of line primitives: lines, line strips, and lines with adjacency data.
 However, these primitives are not suited for rendering curves at high quality.
 This is because of the method OpenGL uses to render line segments: as a rectangle between the two segment points.
@@ -31,7 +31,7 @@ In order for our system to be appealing as a drafting table replacement, our sys
 \end{figure}
 
 \pagebreak
-\section{Creating Joins From the Line Definition}
+\section{Creating Joins From the Curve Definition}
 
 \begin{table}
 \begin{center}
