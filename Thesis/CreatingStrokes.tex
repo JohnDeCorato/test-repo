@@ -25,6 +25,7 @@ Strokes are stored as a list of points, objects containing coordinates from the 
 A sketch is comprised of a large number of these stroke objects.
 We also support a simple layer system that can be used to segment a sketch by allowing strokes to be contained in the active layer.
 
+
 \subsection{Understanding the Stroke Space}
 \label{sec:samplespace}
 
@@ -88,29 +89,33 @@ A naive approach would be to generate a spline curve that passes through the all
 Any series of any four distinct points can easily be converted to a cubic Bézier curve that goes through all four points in order.
 While this method guarantees that the generated curve passes through all of the input control points, it is not guaranteed to generate a curve that represents the intent of the original stroke.
 
-\begin{center}
+
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.8\textwidth]{splineartifact}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{staircase01.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{staircase02.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{staircase03.png}}
 \end{center}
-\caption{An example of an artifact in the spline generation caused by oddly spaced sample points.}
+\caption[Errors in spline generation from how strokes are sampled]{When a diagonal is drawn (a), the input gets rasterized into a staircase pattern of input (b). This input produces curves that do not even come close to approximating the intent of the original stroke (c). While this effect would be unnoticeable when the diagonal is originally drawn, zooming in onto the curve would reveal the error.}
+\label{fig:staircase}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{splineartifact}
+\end{center}
+\caption[An artifact in spline generation caused by oddly spaced sample points]{Using sample data as geometric knots can result in oddities in the curve generation if the knots have unusual spacing between them. This is very possible because no guarantee is made in the spacing between sampled points.}
 \label{fig:splineartifact}
 \end{figure}
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.9\textwidth]{terminationbspline}
-\end{center}
-\caption{Using the distance from the control points for termination.}
-\end{figure}
-\end{center}
+
 
 \subsection{Generating Splines From the Sample Data}
-In theory, creating splines that are accurate to the original stroke would involve generating a curve that passes through each of the control points.
-However in practice, generating a curve that is exactly the same as the input sample points is not as necessary as one would think. 
+In theory, creating splines that are accurate to the original stroke would involve generating a curve that passes through each of the sample points.
+However in practice, generating a curve in this fashion is not as necessary as one would think. 
 As discussed in Section~\ref{sec:samplespace}, the input data that we get is not necessarily accurate to the actual shape of the sketch.
 Therefore, even if we were to create a curve that perfectly passed through all of the input points, it is possible that the output curve would still be unsatisfactory.
 One common example of this is a user sketching a line diagonally through a screen.
-Perfect sample data produces input in a staircase pattern, which would result in a wavy curve not representative of the intent of the original diagonal line.
+Perfect sample data produces input in a staircase pattern, which would result in a wavy curve not representative of the intent of the original diagonal line (Figure~\ref{fig:staircase}).
 Additionally, because the sample distance between points is not consistent, it is possible to produce curve with artifacts that appear unnatural upon magnification (Figure~\ref{fig:splineartifact}).
 What we should actually try to accomplish with our curve generation is to match the intent of the stroke.
 
@@ -119,29 +124,41 @@ The approach we take is using the input samples as control points to generate a 
 This method is better at dealing with extreme changes in sample rates because the produced curve contains less convex and concave changes. 
 The curve generated will also not pass through the sampled points, but if the sample rate is high, it will be close.
 Using the input data as control points results in smooth reasonable curves even when the control points are far apart.
-Additionally, to avoid any possible stair case sampling issues, we include a euclidean distance constraint between the sample data based on the resolution of the input. 
+Additionally, to avoid any possible staircase sampling issues, we include a euclidean distance constraint between the sample data based on the resolution of the input. 
 By manipulating the sample data this way, we are able to create curves that reasonable match the intent of the user.
 However, more work can be done in the area of matching the intent of the stroke from the sample data. 
 
 \subsection{Algorithm}
 
-We begin with a list of control points, numbered from 0 to N-1. 
-Segment i of the curve is influenced by control points i-1, i, i+1, and i+2.
-Using this definition we can generate N-3 segments from the N control points without falling off the ends of the sequence.
+\begin{figure}
+\begin{center}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{subdiv1.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{subdiv2.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{subdiv3.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{subdiv5.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{subdiv4.png}}
+\end{center}
+\caption[Creating the subdivided polyline from the control points]{We begin with four points representing our spline: P0, P1, P2, and P3. Three points are generated by taking the midpoints of each adjacent pair of points (a). This process is repeated using the newly created set of points until only one point is generated (b) (c). From the points created through these calculations, two new sets of four points each are created (d). This process is repeated until a termination criteria is reached. We check that the perpendicular distance between two of the control points, P1 and P2, and the line between P0 and P3 is below a certain amount.}
+\label{fig:subdiv}
+\end{figure}
+
+We begin with a list of control points, numbered from 0 to $N-1$. 
+Segment $i$ of the curve is influenced by control points $i-1$, $i$, $i+1$, and $i+2$.
+Using this definition we can generate $N-3$ segments from the N control points without falling off the ends of the sequence.
 
 Since we can't render a spline, we need to approximate the curve by subdividing it into small line segments.
-We're going to divide each Bezier curve into a set of connected linear components, with the intent that a large enough number will look sufficiently smooth.
+We're going to divide each Bezier curve into a set of connected linear components, with the intent that a large enough number will look sufficiently smooth (Figure~\ref{fig:subdiv}).
 Subdivision of these segments occurs as follows:
 \begin{enumerate}
 \item Begin with points $\{P_0,P_1,P_2,P_3\}$, which define a Bézier curve, and a number $u, 0 \le u \le 1$
-\item Define $L_1=(P_0 + P_1)*u$, $H=(P_1 + P_2)*u$, and $R_2=(P_2 + P_3)*u$
-\item Define $L_2=(L_1 + H)*u$, and $R_1=(H + R_2)*u$
-\item Define $M=(L_2 + R_1)*u$
-\item Create two new Bézier curves using $\{P_0,L_1,L_2,M\}$ and $\{M,R_1,R_2,P_3\}$
+\item Define $P_4=(P_0 + P_1)*u$, $P_5=(P_1 + P_2)*u$, and $P_6=(P_2 + P_3)*u$
+\item Define $P_7=(P_4 + P_5)*u$, and $P_8=(P_5 + P_6)*u$
+\item Define $P_9=(P_7 + P_8)*u$
+\item Create two new Bézier curves using $\{P_0,P_4,P_7,P_9\}$ and $\{P_9,P_8,P_6,P_3\}$
 \item Repeat steps 2 through 5 until a termination criteria is met. Possible criteria include distance between control points, and distance between control points $P_1$ and $P_2$ and the line between $P_0$ and $P_3$.
 \end{enumerate}
 If the termination criteria is small enough, then the curve will appear very smooth, even when zooming in to the curve.
-This algorithm produces a smooth B-spline curve starting at control point 0 and ending at N-1.
+This algorithm produces a smooth B-spline curve starting at control point 0 and ending at $N-1$.
 
 \section{Summary}
 In this section, we described how we turn user input over a set of pixel coordinates into a curve approximating the intent of the stroke.

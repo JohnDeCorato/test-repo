@@ -104,32 +104,32 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.1}Generating Splines From the Sample Data}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Algorithm}{48}
+\contentsline {subsection}{\numberline {4.2.2}Algorithm}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Summary}{49}
+\contentsline {section}{\numberline {4.3}Summary}{50}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Sketching in 3D}{50}
+\contentsline {chapter}{\numberline {5}Sketching in 3D}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Ray Casting}{50}
+\contentsline {section}{\numberline {5.1}Ray Casting}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Generating the Ray}{52}
+\contentsline {subsection}{\numberline {5.1.1}Generating the Ray}{53}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Ray-Triangle Intersection}{54}
+\contentsline {subsection}{\numberline {5.1.2}Ray-Triangle Intersection}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Acceleration Structures}{56}
+\contentsline {section}{\numberline {5.2}Acceleration Structures}{57}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Bounding Boxes}{57}
+\contentsline {subsection}{\numberline {5.2.1}Bounding Boxes}{58}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}BVH Tree}{58}
+\contentsline {subsection}{\numberline {5.2.2}BVH Tree}{59}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Basic BVH Algorithm}{59}
+\contentsline {paragraph}{Basic BVH Algorithm}{60}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Curve Rendering}{61}
+\contentsline {chapter}{\numberline {6}Curve Rendering}{62}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Problems with Native Curve Renderering}{61}
+\contentsline {section}{\numberline {6.1}Problems with Native Curve Renderering}{62}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Creating Joins From the Curve Definition}{63}
+\contentsline {section}{\numberline {6.2}Creating Joins From the Curve Definition}{64}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Implementation}{65}
+\contentsline {section}{\numberline {6.3}Implementation}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusion}{71}
+\contentsline {chapter}{\numberline {7}Conclusion}{72}

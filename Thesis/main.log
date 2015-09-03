@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  19 AUG 2015 20:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  31 AUG 2015 16:56
 entering extended mode
 **main.tex
 (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\main.tex
@@ -1036,10 +1036,10 @@ Chapter 4.
 <Images/stroke.jpg, id=198, 121.26906pt x 85.42314pt>
 File: Images/stroke.jpg Graphic file (type jpg)
  <use Images/stroke.jpg>
-Package pdftex.def Info: Images/stroke.jpg used on input line 18.
+Package pdftex.def Info: Images/stroke.jpg used on input line 19.
 (pdftex.def)             Requested size: 410.7811pt x 289.40248pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
 [][]
  []
 
@@ -1051,14 +1051,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 File: Images/sketchinput.png Graphic file (type png)
 
 <use Images/sketchinput.png>
-Package pdftex.def Info: Images/sketchinput.png used on input line 32.
+Package pdftex.def Info: Images/sketchinput.png used on input line 35.
 (pdftex.def)             Requested size: 201.19798pt x 201.19388pt.
 
 <Images/rawinput.png, id=203, 516.42938pt x 516.42938pt>
 File: Images/rawinput.png Graphic file (type png)
 
 <use Images/rawinput.png>
-Package pdftex.def Info: Images/rawinput.png used on input line 33.
+Package pdftex.def Info: Images/rawinput.png used on input line 36.
 (pdftex.def)             Requested size: 201.19798pt x 201.19388pt.
  [42 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/stroke.jpg>] [43 
 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/sketchinput.png> <C:/U
@@ -1071,57 +1071,108 @@ Missing character: There is no © in font pplr7t!
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 67.
+(amsmath)                 on input line 70.
 
 [44]
 Missing character: There is no Ã in font pplr7t!
 Missing character: There is no © in font pplr7t!
 Missing character: There is no Ã in font pplr7t!
 Missing character: There is no © in font pplr7t!
- <Images/splineartifact.png, id=219, 489.32813pt x 349.305pt>
+ <Images/staircase01.png, id=219, 255.5949pt x 245.4771pt>
+File: Images/staircase01.png Graphic file (type png)
+
+<use Images/staircase01.png>
+Package pdftex.def Info: Images/staircase01.png used on input line 95.
+(pdftex.def)             Requested size: 134.13625pt x 128.82495pt.
+
+<Images/staircase02.png, id=220, 255.5949pt x 245.4771pt>
+File: Images/staircase02.png Graphic file (type png)
+
+<use Images/staircase02.png>
+Package pdftex.def Info: Images/staircase02.png used on input line 96.
+(pdftex.def)             Requested size: 134.13625pt x 128.82495pt.
+
+<Images/staircase03.png, id=221, 255.5949pt x 245.4771pt>
+File: Images/staircase03.png Graphic file (type png)
+
+<use Images/staircase03.png>
+Package pdftex.def Info: Images/staircase03.png used on input line 97.
+(pdftex.def)             Requested size: 134.13625pt x 128.82495pt.
+
+<Images/splineartifact.png, id=222, 489.32813pt x 349.305pt>
 File: Images/splineartifact.png Graphic file (type png)
 
 <use Images/splineartifact.png>
-Package pdftex.def Info: Images/splineartifact.png used on input line 92.
-(pdftex.def)             Requested size: 335.33424pt x 239.37907pt.
+Package pdftex.def Info: Images/splineartifact.png used on input line 105.
+(pdftex.def)             Requested size: 251.50227pt x 179.5343pt.
+ [45] [46 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/staircase01.
+png (PNG copy)> <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/stairc
+ase02.png (PNG copy)> <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/
+staircase03.png (PNG copy)> <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/I
+mages/splineartifact.png>]
+<Images/subdiv1.png, id=229, 203.0787pt x 203.0787pt>
+File: Images/subdiv1.png Graphic file (type png)
+ <use Images/subdiv1.png>
+Package pdftex.def Info: Images/subdiv1.png used on input line 135.
+(pdftex.def)             Requested size: 134.13625pt x 134.13461pt.
 
-<Images/terminationbspline.png, id=220, 402.00188pt x 170.13562pt>
-File: Images/terminationbspline.png Graphic file (type png)
+<Images/subdiv2.png, id=230, 201.6333pt x 201.8742pt>
+File: Images/subdiv2.png Graphic file (type png)
+ <use Images/subdiv2.png>
+Package pdftex.def Info: Images/subdiv2.png used on input line 136.
+(pdftex.def)             Requested size: 134.13625pt x 134.3001pt.
 
-<use Images/terminationbspline.png>
-Package pdftex.def Info: Images/terminationbspline.png used on input line 99.
-(pdftex.def)             Requested size: 377.24702pt x 159.6575pt.
- [45] [46 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/splineartifa
-ct.png> <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/terminationbsp
-line.png>] [47]
+<Images/subdiv3.png, id=231, 202.356pt x 202.1151pt>
+File: Images/subdiv3.png Graphic file (type png)
+ <use Images/subdiv3.png>
+Package pdftex.def Info: Images/subdiv3.png used on input line 137.
+(pdftex.def)             Requested size: 134.13625pt x 133.98233pt.
+
+<Images/subdiv5.png, id=232, 201.8742pt x 202.1151pt>
+File: Images/subdiv5.png Graphic file (type png)
+ <use Images/subdiv5.png>
+Package pdftex.def Info: Images/subdiv5.png used on input line 138.
+(pdftex.def)             Requested size: 134.13625pt x 134.30307pt.
+
+<Images/subdiv4.png, id=233, 201.6333pt x 201.8742pt>
+File: Images/subdiv4.png Graphic file (type png)
+ <use Images/subdiv4.png>
+Package pdftex.def Info: Images/subdiv4.png used on input line 139.
+(pdftex.def)             Requested size: 134.13625pt x 134.3001pt.
+
+[47] [48 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/subdiv1.png> 
+<C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/subdiv2.png> <C:/Users
+/jd537/Documents/Thesis/test-repo/Thesis/Images/subdiv3.png> <C:/Users/jd537/Do
+cuments/Thesis/test-repo/Thesis/Images/subdiv5.png> <C:/Users/jd537/Documents/T
+hesis/test-repo/Thesis/Images/subdiv4.png>]
 Missing character: There is no Ã in font pplr7t!
 Missing character: There is no © in font pplr7t!
 Missing character: There is no Ã in font pplr7t!
 Missing character: There is no © in font pplr7t!
-) [48] [49]
+) [49] [50]
 (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\sketchingin3d.tex
 Chapter 5.
-<Images/raytracediagram.png, id=237, 878.28125pt x 584.1825pt>
+<Images/raytracediagram.png, id=252, 878.28125pt x 584.1825pt>
 File: Images/raytracediagram.png Graphic file (type png)
 
 <use Images/raytracediagram.png>
 Package pdftex.def Info: Images/raytracediagram.png used on input line 17.
 (pdftex.def)             Requested size: 377.24702pt x 250.92615pt.
 
-<Images/StrokeProjection.png, id=238, 1182.66844pt x 427.5975pt>
+<Images/StrokeProjection.png, id=253, 1182.66844pt x 427.5975pt>
 File: Images/StrokeProjection.png Graphic file (type png)
 
 <use Images/StrokeProjection.png>
 Package pdftex.def Info: Images/StrokeProjection.png used on input line 21.
 (pdftex.def)             Requested size: 377.24702pt x 136.39032pt.
- [50
+ [51
 
 
 
-] [51 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/raytracediagram.
+] [52 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/raytracediagram.
 png> <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/StrokeProjection.
 png>]
-<Images/etos.png, id=248, 526.96875pt x 342.5297pt>
+<Images/etos.png, id=262, 526.96875pt x 342.5297pt>
 File: Images/etos.png Graphic file (type png)
  <use Images/etos.png>
 Package pdftex.def Info: Images/etos.png used on input line 54.
@@ -1131,8 +1182,8 @@ Overfull \hbox (107.80124pt too wide) in paragraph at lines 54--55
 [][]
  []
 
-[52] [53 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/etos.png>]
-[54] [55] [56] <Images/AABBray.png, id=266, 442.2924pt x 388.8126pt>
+[53] [54 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/etos.png>]
+[55] [56] [57] <Images/AABBray.png, id=280, 442.2924pt x 388.8126pt>
 File: Images/AABBray.png Graphic file (type png)
 
 <use Images/AABBray.png>
@@ -1143,17 +1194,17 @@ Overfull \hbox (23.1251pt too wide) in paragraph at lines 166--167
 [][]
  []
 
-[57] [58 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/AABBray.png>]
-[59] <Images/sahbvh.png, id=277, 453.695pt x 349.305pt>
+[58] [59 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/AABBray.png>]
+[60] <Images/sahbvh.png, id=291, 453.695pt x 349.305pt>
 File: Images/sahbvh.png Graphic file (type png)
 
 <use Images/sahbvh.png>
 Package pdftex.def Info: Images/sahbvh.png used on input line 199.
 (pdftex.def)             Requested size: 419.16621pt x 322.72363pt.
-) [60 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/sahbvh.png>]
+) [61 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/sahbvh.png>]
 (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\drawinglines.tex
 Chapter 6.
-<Images/linesegment2.png, id=281, 1918.91907pt x 1148.03906pt>
+<Images/linesegment2.png, id=295, 1918.91907pt x 1148.03906pt>
 File: Images/linesegment2.png Graphic file (type png)
 
 <use Images/linesegment2.png>
@@ -1170,41 +1221,41 @@ Underfull \hbox (badness 1005) in paragraph at lines 23--27
 anti-aliasing
  []
 
-[61
+[62
 
 
 
-] <Images/gllines.png, id=285, 555.57562pt x 278.54062pt>
+] <Images/gllines.png, id=300, 555.57562pt x 278.54062pt>
 File: Images/gllines.png Graphic file (type png)
 
 <use Images/gllines.png>
 Package pdftex.def Info: Images/gllines.png used on input line 29.
 (pdftex.def)             Requested size: 419.16621pt x 210.1545pt.
- [62 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/linesegment2.png>
-] [63 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/gllines.png>] <I
-mages/miter.png, id=294, 613.0905pt x 452.1693pt>
+ [63 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/linesegment2.png>
+] [64 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/gllines.png>] <I
+mages/miter.png, id=308, 613.0905pt x 452.1693pt>
 File: Images/miter.png Graphic file (type png)
 
 <use Images/miter.png>
 Package pdftex.def Info: Images/miter.png used on input line 65.
 (pdftex.def)             Requested size: 293.41507pt x 216.40404pt.
- <Images/bevel.png, id=295, 612.1269pt x 414.5889pt>
+ <Images/bevel.png, id=309, 612.1269pt x 414.5889pt>
 File: Images/bevel.png Graphic file (type png)
 
 <use Images/bevel.png>
 Package pdftex.def Info: Images/bevel.png used on input line 72.
 (pdftex.def)             Requested size: 293.41507pt x 198.72205pt.
 
-<Images/joinartifact.png, id=296, 402.00188pt x 124.96687pt>
+<Images/joinartifact.png, id=310, 402.00188pt x 124.96687pt>
 File: Images/joinartifact.png Graphic file (type png)
 
 <use Images/joinartifact.png>
 Package pdftex.def Info: Images/joinartifact.png used on input line 78.
 (pdftex.def)             Requested size: 419.16621pt x 130.3019pt.
- [64 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/miter.png>] [65 <
+ [65 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/miter.png>] [66 <
 C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/bevel.png> <C:/Users/jd
 537/Documents/Thesis/test-repo/Thesis/Images/joinartifact.png>] <Images/lineren
-dering.png, id=305, 438.13687pt x 226.59656pt>
+dering.png, id=319, 438.13687pt x 226.59656pt>
 File: Images/linerendering.png Graphic file (type png)
 
 <use Images/linerendering.png>
@@ -1215,33 +1266,33 @@ Overfull \hbox (18.96957pt too wide) in paragraph at lines 99--100
 [][]
  []
 
-<Images/lineadjacency.png, id=306, 612.1269pt x 340.3917pt>
+<Images/lineadjacency.png, id=320, 612.1269pt x 340.3917pt>
 File: Images/lineadjacency.png Graphic file (type png)
 
 <use Images/lineadjacency.png>
 Package pdftex.def Info: Images/lineadjacency.png used on input line 105.
 (pdftex.def)             Requested size: 419.16621pt x 233.08899pt.
 
-<Images/linepolyex.png, id=307, 614.0541pt x 397.2441pt>
+<Images/linepolyex.png, id=321, 614.0541pt x 397.2441pt>
 File: Images/linepolyex.png Graphic file (type png)
 
 <use Images/linepolyex.png>
 Package pdftex.def Info: Images/linepolyex.png used on input line 110.
 (pdftex.def)             Requested size: 419.16621pt x 271.17104pt.
- [66 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/linerendering.png
->] [67 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/lineadjacency.p
-ng>] [68 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/linepolyex.pn
+ [67 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/linerendering.png
+>] [68 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/lineadjacency.p
+ng>] [69 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/linepolyex.pn
 g>]
-<Images/rotation.png, id=320, 322.95656pt x 275.52937pt>
+<Images/rotation.png, id=334, 322.95656pt x 275.52937pt>
 File: Images/rotation.png Graphic file (type png)
 
 <use Images/rotation.png>
 Package pdftex.def Info: Images/rotation.png used on input line 144.
 (pdftex.def)             Requested size: 209.5831pt x 178.80608pt.
-) [69 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/rotation.png>] [
-70]
+) [70 <C:/Users/jd537/Documents/Thesis/test-repo/Thesis/Images/rotation.png>] [
+71]
 Chapter 7.
-[71
+[72
 
 
 ]
@@ -1273,7 +1324,7 @@ Overfull \hbox (36.74304pt too wide) in paragraph at lines 78--78
 w . madewithmischief .$
  []
 
-[72
+[73
 
 ]
 Underfull \hbox (badness 1005) in paragraph at lines 78--78
@@ -1281,7 +1332,7 @@ $\OT1/pcr/m/n/12 printcnx . com / resources -[] and -[] support / addiational -
 []$
  []
 
-[73] (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\main.aux
+[74] (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\main.aux
 (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\superfluouscrap.aux)
 (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\introduction.aux)
 (C:\Users\jd537\Documents\Thesis\test-repo\Thesis\relatedwork.aux)
@@ -1292,10 +1343,10 @@ $\OT1/pcr/m/n/12 printcnx . com / resources -[] and -[] support / addiational -
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 15770 strings out of 493921
- 268439 string characters out of 3144877
+ 15808 strings out of 493921
+ 269201 string characters out of 3144877
  567407 words of memory out of 3000000
- 18722 multiletter control sequences out of 15000+200000
+ 18753 multiletter control sequences out of 15000+200000
  36300 words of font info for 85 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  39i,15n,49p,821b,1144s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1312,9 +1363,9 @@ lr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pf
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x
 86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (84 pages, 6010882 bytes).
+Output written on main.pdf (85 pages, 6108301 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
+ 397 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 
