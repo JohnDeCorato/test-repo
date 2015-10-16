@@ -54,27 +54,27 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A potential raw input detected by the sensor.}}}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Errors in spline generation from how strokes are sampled}}{46}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Errors in spline generation from how strokes are sampled}}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{46}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{46}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{46}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces An artifact in spline generation caused by oddly spaced sample points}}{46}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces An artifact in spline generation caused by oddly spaced sample points}}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Creating the subdivided polyline from the control points}}{48}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Creating the subdivided polyline from the control points}}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{48}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{48}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{48}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{48}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{48}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{49}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -82,30 +82,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Rough Diagram of Projecting Stroke onto Drawing Surface}}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces The ray from the eye $\mathbf {e}$ to a point on the screen $s$}}{54}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Clip space and NDC space}}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces An example of a ray checking and failing for intersection with a box}}{59}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces AABB Intersection}}{59}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.5}{\ignorespaces A comparison between the bounding volumes of a node using a naive implementation (left) and a surface area heuristic (right).}}{61}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Two line segments connected together, as per default GL\_LINES implementation. Note the gap from no join.}}{63}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Artifacts with GL\_LINES}}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces An example of the flaws of native line rendering in OpenGL using GL\_LINES.}}{64}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Flaws in GL\_LINES}}{64}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Diagram of a miter join with parameter labels}}{65}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Diagram of a bevel join with parameter labels}}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Left: An example of a miter join artifact from a sharp curve. Right: Artifact post-correction.}}{66}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Handling Miter artifacts}}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Left: A curve using default GL\_LINES. Right: Implemented system}}{67}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Left: A curve using default GL\_LINES. Right: Implemented system}}{68}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces The line adjacency data structure. Each instance of the geometry shader polygonalizes the line segment (p1, p2)}}{68}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Line Adjacency data structure}}{69}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Example polygonization of a line with miter joins.}}{69}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Example polygonization of a line with miter joins.}}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Even when rotating the drawing plane such that it is no longer visible, our lines remain visible.}}{70}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Even when rotating the drawing plane such that it is no longer visible, our lines remain visible.}}{71}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }

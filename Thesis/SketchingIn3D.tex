@@ -1,7 +1,7 @@
 \chapter{Sketching in 3D}
 
-In a 2-D sketching application on a graphical tablet, a user draws on a two dimensional plane that mirrors the surface of the input device.
-However, in a 3-D sketching application, the user draws curves on arbitrary three dimensional planes and objects.
+In a typical 2-D sketching application on a graphical tablet, a user draws on a two dimensional plane that mirrors the surface of the input device.
+However, in a 3-D sketching application, the user draws on arbitrary three dimensional planes and surfaces.
 The most basic example is a simple plane: a user can orient a plane in three dimensional space, and the draw on the tablet.
 The strokes on the tablet are then projected onto the plane, thereby creating a 3-D stroke.
 
@@ -27,45 +27,39 @@ A subset of this algorithm can be used to solve for the stroke projection onto a
 Ray casting is the use of rays, a line with an endpoint and a direction, to test for intersections with surface geometry.
 These computations are the fundamentals of ray tracing computer graphics algorithms, used to solve a variety of problems.
 
-A common use of ray casting is object selection in an interactive 3-D application.
+Ray casting is a commonly used solution for object selection in interactive 3-D applications.
 The mouse is clicked in pixel $(i,j)$, and the "picked" object is whatever is "seen" though the pixel.
-Using ray casting, a ray is created at pixel $(i,j)$ and sent in the virtual viewing direction.
+Using ray casting, a ray, defined by a point of origin and a direction of movement, is created at pixel $(i,j)$ and sent in the virtual viewing direction.
 If it intersects, then the object at the point of intersection is selected.
-Through this example, we can see a method of using ray casting in order to project a stroke into the virtual space.
+We can use a similar approach to project our strokes from the screen onto the surfaces of objects.
 The ray casting algorithm is utilized as follows:
-\begin{itemize}
+\begin{enumerate}
 \item The user draws a stroke on a 2-D plane, giving a set of sample points
 \item An imaginary plane is created in the virtual space representing the image plane.
 \item Rays are cast into the three dimensional scene from the imaginary plane based on the sample positions.
 \item The intersections with scene geometry represent the new 3-D positions of the stroke
-\end{itemize}
+\end{enumerate}
 Once we intersect all of the sample points with the scene geometry, we can use the spline techniques described in the previous chapter to create a 3-D curve approximating the appearance of the projected 2D stroke.
 
 \subsection{Generating the Ray}
 
-A ray is mathematically defined as an origin point and a movement direction, usually represented as a parametric line.
-The ray is generated in the same way view rays are created in ray tracing; assuming we have an eye $\mathbf{e}$ and a point on the screen plane $\mathbf{s}$, the line is defined by:
-\begin{equation}
-p(t) = \mathbf{e} + t(\mathbf{s} - \mathbf{e})
-\end{equation}
-Given a value $t$, we can determine any point that lies along the line, with $p(0) = \mathbf{e} \text{ and } p(1) = \mathbf{s}$.
-For positive values of $t$, if $t_1 < t_2$, then $t_1$ is closer to the eye than $t_2$, and if $t < 0$, then the point is behind the ray.
-\begin{figure}
-\includegraphics{etos}
-\caption{The ray from the eye $\mathbf{e}$ to a point on the screen $s$}
-\end{figure}
+OpenGL uses a projection matrix to project the 3D scene to the 2D computer monitor.
+First, the matrix transforms points from view space to clip space, the space that defines whether points are visible to the user.
+Then the matrix transforms these points to normalized device coordinates (NDC), which causes any visible point to be contained in a box with lower bound (-1,-1,-1) and upper bound (1,1,1). (Figure~\ref{fig:projmatrix})
+We want to create rays that match this behavior of OpenGL perfectly, otherwise the user will not be able to draw properly on the surfaces of objects.
+The easiest way to accomplish this is to invert the calculations OpenGL uses in order to calculate two points in world space that we can use to generate the view ray.
 
-Computing a ray means solving for $s$ using the relative coordinate axis of the camera, the aspect ratio of the display, and a pixel position $(i,j)$.
-$s$ is calculated as follows:
-\begin{itemize}
-\item Moving from the eye to the view plane by using a defined distance for the near plane ($w_s$) and the forward view direction ($\mathbf{w}$) of the camera
-\item Calculate the a $u_sv_s$ coordinate on the view plane based on the pixel $(i,j$).
-\item Move $u_s$ units in the camera's right direction ($\mathbf{u}$), and $v_s$ units in the up direction ($\mathbf{v}$).
-\end{itemize}
-This process can be expressed as:
-\begin{equation}
-\mathbf{s} = \mathbf{e} + u_s\mathbf{u} +v_s\mathbf{v}+w_s\mathbf{w}.
-\end{equation}
+When the user clicks on the screen, we take the screen point and normalize to a point between (-1,-1) and (1,1).
+This represents the X-Y position of the screen point in NDC.
+We then create two 3D points $p_0$ and $p_1$ with the XY values of the NDC screen point and z values -1 and 1 respectively to represent the upper and lower bounds of the clip space.
+By multiplying these two points by the inverse of the view-projection matrix, we can get two points in world space.
+$p_0$, the point with original z value -1, is the origin of the ray, and the ray direction is equal to $p_1 - p_0$.
+
+\begin{figure}
+\label{fig:projmatrix}
+\fbox{\includegraphics[width=0.98\textwidth]{proj}}
+\caption[Clip space and NDC space]{First, the projection matrix transforms points from view space to clip space, the space that defines whether points are visible to the user. Then the matrix transforms these points to normalized device coordinates (NDC), which causes any visible point to be contained in a box with lower bound (-1,-1,-1) and upper bound (1,1,1). We can use the inverse of this calculation to calculate a world space ray given an input pixel.}
+\end{figure}
 
 
 \subsection{Ray-Triangle Intersection}
@@ -148,7 +142,7 @@ An acceleration structure must be used in order to give sub-linear time for ray 
 In a naive implementation, the ray caster would iterate over all triangles in the scene to check for intersections, giving $O(N)$ performance.
 For sufficiently large values of $N$, this would be very slow, thus a "divide and conquer" algorithmic approach is used, creating an ordered data structure to speed up the intersection process.
 
-While many approaches exist, this project implements a simple bounding volume hierarchy (BVH) tree (Rubin \& Whitted, 1980).
+While many approaches exist, we implement a simple bounding volume hierarchy (BVH) tree (Rubin \& Whitted, 1980).
 
 \subsection{Bounding Boxes}
 
@@ -164,7 +158,7 @@ If the largest $t_min$ is smaller than the smallest $t_max$, then some portion o
 
 \begin{figure}
 \includegraphics{AABBray}
-\caption{An example of a ray checking and failing for intersection with a box}
+\caption[AABB Intersection]{When checking if a ray intersects a bounding box, the ray is intersected through pairs of parallel planes defined by the upper and lower bounds of the bounding box. After calculating the pairs of intersection values, the largest of the smaller number of the pairs is compared to the smallest of the larger number. If the largest min is greater than the smallest max, the ray intersects the box.}
 \end{figure}
 
 \subsection{BVH Tree}
@@ -199,3 +193,9 @@ This is an exceptionally slow heuristic, so while providing the fastest solution
 \includegraphics[width=\textwidth]{sahbvh}
 \caption{A comparison between the bounding volumes of a node using a naive implementation (left) and a surface area heuristic (right).}
 \end{figure}
+
+\section{Summary}
+
+Using ray casting, we are able to project our sketch strokes from the two dimensional input surface to the three dimensional model environment.
+Acceleration structures allow the use of highly complex models with high polygonal count while maintaining a relatively fast runtime.
+With this, we are able to sketch on three dimensional objects. 

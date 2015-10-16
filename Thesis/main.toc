@@ -104,7 +104,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.1}Generating Splines From the Sample Data}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Algorithm}{47}
+\contentsline {subsection}{\numberline {4.2.2}Algorithm}{48}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Summary}{50}
 \defcounter {refsection}{0}\relax 
@@ -114,22 +114,28 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.1.1}Generating the Ray}{53}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Ray-Triangle Intersection}{55}
+\contentsline {subsection}{\numberline {5.1.2}Ray-Triangle Intersection}{54}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.2}Acceleration Structures}{57}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.1}Bounding Boxes}{58}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}BVH Tree}{59}
+\contentsline {subsection}{\numberline {5.2.2}BVH Tree}{58}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Basic BVH Algorithm}{60}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Summary}{61}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Curve Rendering}{62}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.1}Problems with Native Curve Renderering}{62}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Creating Joins From the Curve Definition}{64}
+\contentsline {section}{\numberline {6.2}Creating Joins From the Curve Definition}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Implementation}{66}
+\contentsline {subsection}{\numberline {6.2.1}Curves with Variable Width}{67}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusion}{72}
+\contentsline {section}{\numberline {6.3}Implementation}{67}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.4}Summary}{72}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Conclusion}{73}
