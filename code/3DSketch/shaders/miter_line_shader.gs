@@ -231,7 +231,7 @@ void main()
 	
 
 	//
-	// TRIANGULIZATION CODE: See Chapter 5, Line Rendering, for more details
+        // TRIANGULIZATION CODE: See Chapter 6, Curve Rendering, for more details
 	//
 
 	// First half of the line segment

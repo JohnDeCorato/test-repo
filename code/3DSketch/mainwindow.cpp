@@ -1,11 +1,16 @@
 #include "mainwindow.h"
+//#include "planewidget.h"
 
 #include <QtWidgets>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
+    mPlaneWindow = new PlaneWindow(this);
+
     buildMenus();
     buildWidgets();
+
+
 
     setWindowTitle(tr("3D Sketch"));
 }
@@ -36,6 +41,9 @@ void MainWindow::buildMenus()
     QAction *modelAction = sketchMenu->addAction(tr("Load OBJ File for Sketch Surface"));
     connect(modelAction, SIGNAL(triggered()), this, SLOT(openModelFile()));
 
+    QAction *planeAction = sketchMenu->addAction(tr("Change Drawing Plane"));
+    connect(planeAction, SIGNAL(triggered()), this, SLOT(openPlaneEditor()));
+
 }
 
 void MainWindow::buildWidgets()
@@ -49,6 +57,15 @@ void MainWindow::buildWidgets()
     frameLayout->addWidget(mSketchWidget);
 
     setCentralWidget(frame);
+}
+
+void MainWindow::openPlaneEditor()
+{
+    QPoint pos = mPlaneWindow->pos();
+    pos.setX(0);
+    pos.setY(0);
+    mPlaneWindow->move(pos);
+    mPlaneWindow->show();
 }
 
 void MainWindow::saveSketch()
@@ -69,3 +86,7 @@ void MainWindow::openModelFile()
     mSketchWidget->loadModel(fileName);
 }
 
+void MainWindow::updatePlane()
+{
+    mSketchWidget->setPlane(mPlaneWindow->getPlane());
+}

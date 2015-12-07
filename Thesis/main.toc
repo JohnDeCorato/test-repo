@@ -110,32 +110,46 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Sketching in 3D}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Ray Casting}{51}
+\contentsline {section}{\numberline {5.1}Ray Casting}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Generating the Ray}{53}
+\contentsline {subsection}{\numberline {5.1.1}Generating the Ray}{54}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Ray-Triangle Intersection}{54}
+\contentsline {subsection}{\numberline {5.1.2}Ray-Triangle Intersection}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Acceleration Structures}{57}
+\contentsline {section}{\numberline {5.2}Acceleration Structures}{59}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Bounding Boxes}{58}
+\contentsline {subsection}{\numberline {5.2.1}Bounding Boxes}{59}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}BVH Tree}{58}
+\contentsline {subsection}{\numberline {5.2.2}BVH Tree}{60}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Basic BVH Algorithm}{60}
+\contentsline {section}{\numberline {5.3}Summary}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Summary}{61}
+\contentsline {chapter}{\numberline {6}Curve Rendering}{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Curve Rendering}{62}
+\contentsline {section}{\numberline {6.1}Problems with Native Curve Renderering}{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Problems with Native Curve Renderering}{62}
+\contentsline {section}{\numberline {6.2}Creating Joins From the Curve Definition}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Creating Joins From the Curve Definition}{63}
+\contentsline {subsection}{\numberline {6.2.1}Curved Lines with Variable Width}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.1}Curves with Variable Width}{67}
+\contentsline {section}{\numberline {6.3}Implementation}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Implementation}{67}
+\contentsline {section}{\numberline {6.4}Color}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Summary}{72}
+\contentsline {section}{\numberline {6.5}Summary}{76}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusion}{73}
+\contentsline {chapter}{\numberline {7}Conclusion}{77}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Extensions}{78}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.1}Color}{78}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.2}Improving Sketching on Non-Planar Geometry}{78}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Future Work}{79}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.1}Generating Geometry}{80}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.2}Simulating Physical Sketching}{80}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}Summary of Contributions}{81}

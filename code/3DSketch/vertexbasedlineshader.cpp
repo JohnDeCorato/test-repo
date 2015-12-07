@@ -66,6 +66,11 @@ void VertexBasedLineShader::bindBuffers(QVector<QVector3D> verts)
     bindBufferData(indexBuf, indices);
 }
 
+void VertexBasedLineShader::bindBuffers(QVector<QVector3D> verts, QVector<GLushort> inds)
+{
+
+}
+
 void VertexBasedLineShader::render()
 {
     bind();

@@ -41,6 +41,11 @@ void GLLinesShader::bindBuffers(QVector<QVector3D> verts)
     numIndices = indices.size();
 }
 
+void GLLinesShader::bindBuffers(QVector<QVector3D> verts, QVector<GLushort> inds)
+{
+
+}
+
 void GLLinesShader::render()
 {
     bind();

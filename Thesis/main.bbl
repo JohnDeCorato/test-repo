@@ -96,6 +96,32 @@
   \field{year}{2011}
 \endentry
 
+\entry{haptics}{online}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Culbertson}{C.}%
+     {Heather}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Delgado}{D.}%
+     {Juan Jose~Lopez}{J.~J.~L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {UPenn Haptics Group}%
+  }
+  \strng{namehash}{CHDJJL1}
+  \strng{fullhash}{CHDJJL1}
+  \field{sortinit}{C}
+  \field{title}{The Penn Haptic Texture Toolkit}
+  \verb{url}
+  \verb http://haptics.seas.upenn.edu/index.php/Research/ThePennHapticTextureTo
+  \verb olkit
+  \endverb
+\endentry
+
 \entry{hyve3d}{online}{}
   \name{author}{3}{}{%
     {{}%
@@ -187,6 +213,23 @@
   \field{year}{2000}
 \endentry
 
+\entry{ray1}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Grantham}{G.}%
+     {Brad}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GB1}
+  \strng{fullhash}{GB1}
+  \field{sortinit}{G}
+  \field{title}{Bringing a 1987 Ray Tracer Up to Date}
+  \verb{url}
+  \verb http://plunk.org/~grantham/ray1/
+  \endverb
+\endentry
+
 \entry{touchtech}{online}{}
   \list{organization}{1}{%
     {EIZO Global}%
@@ -253,6 +296,27 @@
   \endverb
 \endentry
 
+\entry{sah}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {MacDonald}{M.}%
+     {J.~David}{J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Booth}{B.}%
+     {Kellogg~S.}{K.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MJDBKS1}
+  \strng{fullhash}{MJDBKS1}
+  \field{sortinit}{M}
+  \field{title}{Heuristics for Ray Tracing Using Space Subdivision}
+  \field{journaltitle}{The Visual Computer}
+  \field{year}{1990}
+\endentry
+
 \entry{gigapixel}{online}{}
   \name{author}{1}{}{%
     {{}%
@@ -312,6 +376,26 @@
   }
   \field{sortinit}{M}
   \field{title}{MSPaint}
+\endentry
+
+\entry{hypergraph}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Owen}{O.}%
+     {G.~Scott}{G.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {ACM SIGGRAPH Education Comittee}%
+  }
+  \strng{namehash}{OGS1}
+  \strng{fullhash}{OGS1}
+  \field{sortinit}{O}
+  \field{title}{HyperGraph}
+  \verb{url}
+  \verb https://www.siggraph.org/education/materials/HyperGraph/hypergraph.htm
+  \endverb
 \endentry
 
 \entry{coreal}{online}{}
@@ -389,6 +473,27 @@
   \verb www.printcnx.com/resources-and-support/addiational-resources/raster-ima
   \verb ges-vs-vector-graphics/
   \endverb
+\endentry
+
+\entry{bvh}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Rubin}{R.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Whitted}{W.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{RSWT1}
+  \strng{fullhash}{RSWT1}
+  \field{sortinit}{R}
+  \field{title}{A 3D representation for fast rendering of complex scenes}
+  \field{journaltitle}{Proceedings of SIGGRAPH}
+  \field{year}{1980}
 \endentry
 
 \entry{sketchbook}{online}{}

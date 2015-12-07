@@ -1,0 +1,86 @@
+\chapter{Conclusion}
+
+In the architecture world, more focus is being put on 3D digital representations of buildings.
+However, the design phase remains in two dimensions.
+The focus of this thesis was to create the foundation of a user interface for simple three dimensional sketching.
+This includes utilizing different input devices, converting the sketch data from 2D to 3D, and rendering high quality 3D curves.
+In this final chapter, I will review the progress made towards this goal as well as places the research can go from here.
+
+While many have approached this topic, we decided that the best approach was to incorporate sketching on a two dimensional screen, as this most closely mimics current techniques.
+We also choose to incorporate touch technology, as it allows us to separate sketching and world manipulation by providing a second modality to the user input.
+In Chapter 4, we discussed the conversion of our pixelized input to resolution independent spline curves, as well as techniques to generate curves that matched the intent of the original input over the raw data.
+In Chapter 5, we showed how to move from the 2D screen space to a 3D environment using ray casting, and how to use acceleration structures to speed up the process on complex environments.
+In Chapter 6, we provided a technique to render high quality curves free of common artifacts in native graphics libraries.
+
+Overall, this research creates a basis for creating a specialized user interface for 3D sketching.
+While the current implementation is very bare bones, a new user interface can easily be made as all of the tools have been provided.
+
+\section{Extensions}
+
+This thesis lays the groundwork for 3D sketching. There are some natural extensions that would improve the current results.
+
+\subsection{Color}
+
+In ~\ref{sec:3dcolor}, we discussed how it is not possible to use colored stokes in our system because of Z-fighting artifacts.
+Being able to sketch in color without worrying about z-fighting would involve a four dimensional representation of the sketch space, where the forth dimension represents draw order.
+
+One possible approach is to create a voxel structure in the sketch space, and store the sketch in that.
+The voxels can store the color that is on "top".
+Work would need to be done in order to use a voxel grid with high resolution at interactive rates.
+
+\subsection{Improving Sketching on Non-Planar Geometry}
+
+Thus far, we have shown sketching on planar surfaces and relatively smooth geometry.
+However, our system has issues with sketching around hard corners.
+This is because of both the input system as well as our spline interpolation.
+
+First, we will discuss the input related issues.
+Assume we have two planes intersecting at a 90 degree angle, with the angle facing away from the camera.
+In this scenario, drawing a straight line across the two planes results in a series of ray intersection points on the two planes, with likely none of them lying on their intersection. 
+Using these points to calculate a spline will result in a section of the curve passing through the sketch geometry at the area of the planes' intersection.
+
+These issues are partially a result of where we choose to interpolate the spline.
+Currently, we calculate the spline after we have intersected our input with the scene geometry.
+By calculating the spline in 2D space and then projecting it onto the sketch geometry, it might be possible to avoid some of these artifacts.
+However, this exponentially increases the number of ray cast options.
+On complex, high polygonal environments where these types of issues would likely arise, the performance of our application drops.
+Improving the performance of the ray intersection algorithm will allow for the spline to be calculated before the ray cast.
+
+An alternate approach would be to "push" the stroke onto the surface geometry using collision detection.
+However, major performance improvements would be necessary for working with complex models. 
+
+\section{Future Work}
+
+This thesis provides a groundwork on which future projects in 3D sketching can be built upon.
+There are a number of areas for future work on this topic.
+
+\subsection{Generating Geometry}
+In Chapter 1, we discussed a push in the architecture world towards sustainable building design.
+Currently, once a 3D model is made from a building design, it is analyzed for it's energy consumption.
+Ideally, we would want models as early into the design phase as possible so architects are able to better design sustainable buildings.
+
+While he have presented a method for digitizing the early phase design of a building, we have not presented a solution for running an energy analysis on the created sketch.
+Doing this would require generating a 3D model from the sketch.
+As a first step, perhaps we can generate polygon data from a single plane of sketching.
+Other sketching modes can also be implemented to create simple geometry, such as a mode designed to sketch polygons instead of curves using closed splines, where the first and last point of the spline are connected.
+
+\subsection{Simulating Physical Sketching}
+
+Currently, actually using our application to a sketch is not comparable to a traditional drafting environment.
+Aside from the complexities of transitioning from 2D space to 3D space, many architects claimed that their were uneasy sketching with our application because drawing with an active pen lacked the tactical feedback provided by using a traditional sketching implement on a piece of paper.
+Work has been done in using haptic feedback to simulate the friction of writing on surfaces \autocite{haptics}.
+However, the current toolkit is for an arc ball input device.
+A first step could be extending the work to planar surfaces, with haptic technology integrated into the active pen.
+
+\section{Summary of Contributions}
+
+This research contributed to the field of computer graphics by creating a basic toolset to do three dimensional sketching.
+This is a new area that has begun to emerge due to new input devices allowing different methods of interacting with a computer.
+
+In summary, the work described in this thesis made the following contributions:
+\begin{itemize}
+\item {\textbf{Explored methods of converting rasterized input data to high-quality, resolution independent Bezier curves.} Due to the varying speeds a user can sketch, our algorithm needs to be able to handle input data of unknown spacing. As a result, we use our user input as control points to generate the spline. We have found that even though this might produce curves slightly different from the original input, users are pleased with the results.}
+\item{\textbf{Created an interface to convert 2D pen and touch data to 3D sketches.} We use a modified version of the QT library for our user interface framework. Our version fixes the broken touch and pen support in the native QT library. We utilize modern ray tracing algorithms and data structures to project our 2D sketch onto a 3D environment.}
+\item{\textbf{Provided a low overhead solution to rendering high quality 3D curves.} This solves common issues with using OpenGL to render curves as opposed to line polygons.}
+\end{itemize}
+These contributions provide a basis for creating a 3D sketching environment for architectural design.

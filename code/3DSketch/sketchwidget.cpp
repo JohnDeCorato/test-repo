@@ -24,7 +24,7 @@ SketchWidget::SketchWidget(QWidget *parent) :
     mLayer = mLayer1;
     stroking = false;
 
-    mLineWidth = 0.02f;
+    mLineWidth = 0.2f;
 
     const float zNear = 1.0f, zFar = 100.0f, fov =  60.0f;
     mCamera = new Camera(QVector3D(0,0,-2), QVector3D(0,0,-3), 0, 0, fov, zNear, zFar);
@@ -44,6 +44,8 @@ void SketchWidget::mousePressEvent(QMouseEvent *e)
     setFocus();
     // Save mouse press position
     mousePressPosition = QVector2D(e->localPos());
+    //mLineWidth = 0.02f;
+    qDebug() << mLineWidth;
     bool intersect = manager.stroke(mousePressPosition.x(), mousePressPosition.y(), mCamera, mLineWidth, rayCaster, triangles);
 //    QVector3D d = rayCaster.generateRayDirection(mousePressPosition, (float)this->width(),
 //                                                 (float)this->height(), projection, mCamera);
@@ -194,7 +196,6 @@ void SketchWidget::tabletPressEvent(QTabletEvent *e)
 {
     setFocus();
     currPos = QVector2D(e->pos());
-
     bool intersect = manager.stroke(currPos.x(), currPos.y(), mCamera, mLineWidth, rayCaster, triangles);
 
     qDebug() << "Beginning Stroke";
@@ -380,6 +381,7 @@ void SketchWidget::initializeGL()
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_MULTISAMPLE);
     glEnable(GL_LINE_SMOOTH);
+    glDisable(GL_CULL_FACE);
 
     timer.start(12, this);
 }
@@ -418,14 +420,34 @@ void SketchWidget::initShaders()
 
 }
 
+void SketchWidget::setPlane(QVector<QVector3D> points)
+{
+    triangles = points;
+    qDebug() << points.length();
+    geomShader->bindBuffers(triangles);
+}
+
 void SketchWidget::initGeometry()
 {
-    triangles.append(QVector3D(2,2,-5));
-    triangles.append(QVector3D(-2,2,-5));
-    triangles.append(QVector3D(0,-2,-5));
-    triangles.append(QVector3D(0,-2,-5));
-    triangles.append(QVector3D(-2,2,-5));
-    triangles.append(QVector3D(-2,-2,-5));
+
+//    triangles.append(QVector3D(2,2,-5));
+//    triangles.append(QVector3D(-2,2,-5));
+//    triangles.append(QVector3D(2,-2,-5));
+//    triangles.append(QVector3D(-2,2,-5));
+//    triangles.append(QVector3D(2,-2,-5));
+//    triangles.append(QVector3D(-2,-2,-5));
+//    triangles.append(QVector3D(2,2,-9));
+//    triangles.append(QVector3D(-2,2,-9));
+//    triangles.append(QVector3D(2,-2,-9));
+//    triangles.append(QVector3D(-2,2,-9));
+//    triangles.append(QVector3D(2,-2,-9));
+//    triangles.append(QVector3D(-2,-2,-9));
+//    triangles.append(QVector3D(2,-2,-5));
+//    triangles.append(QVector3D(-2,-2,-5));
+//    triangles.append(QVector3D(2,-2,-9));
+//    triangles.append(QVector3D(-2,-2,-5));
+//    triangles.append(QVector3D(2,-2,-9));
+//    triangles.append(QVector3D(-2,-2,-9));
 
     geomShader->bindBuffers(triangles);
 }
@@ -465,7 +487,7 @@ void SketchWidget::paintGL()
     //currentShader->setUniformValue("color", QVector4D(0,0,0,1));
     currentShader->setUniformValue("aspect", aspect);
 
-    //currentShader->setUniformValue("thickness", 0.2f);
+    //currentShader->setUniformValue("thickness", .1f);
     currentShader->setUniformValue("miter", 1);
     currentShader->setUniformValue("join_type", 0);
 

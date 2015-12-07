@@ -40,11 +40,14 @@ void LineShader::bindBuffers(QVector<QVector3D> verts)
     indices.append(verts.size()-1);
     numIndices = indices.size();
 
-
-
     // Bind buffers
     bindBufferData(positionBuf, verts);
     bindBufferData(indexBuf, indices);
+}
+
+void LineShader::bindBuffers(QVector<QVector3D> verts, QVector<GLushort> inds)
+{
+
 }
 
 void LineShader::render()

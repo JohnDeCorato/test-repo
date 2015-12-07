@@ -12,6 +12,7 @@ public:
     virtual void init();
     virtual void render();
     virtual void bindBuffers(QVector<QVector3D> verts);
+    virtual void bindBuffers(QVector<QVector3D> verts, QVector<GLushort> inds);
 
 private:
     QOpenGLBuffer positionBuf;

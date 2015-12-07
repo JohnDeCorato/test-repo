@@ -37,6 +37,8 @@ public:
     void loadSketch(QString fileName);
     void loadModel(QString fileName);
 
+    void setPlane(QVector<QVector3D> points);
+
 protected:
     // Mouse / Keyboard Event Functions
     void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
@@ -85,6 +87,7 @@ private:
     Camera *mCamera;
     RayCaster rayCaster;
     QVector<QVector3D> triangles;
+    QVector<GLushort> indices;
 
     SketchManager manager;
 
@@ -109,6 +112,6 @@ private:
 
 };
 
-inline void SketchWidget::setLineWidth(float w) { mLineWidth = w; }
+//inline void SketchWidget::setLineWidth(float w) { mLineWidth = w; }
 
 #endif // SKETCHWIDGET_H

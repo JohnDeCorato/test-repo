@@ -42,11 +42,23 @@ void SinglePassWireframeShader::bindBuffers(QVector<QVector3D> verts)
     numIndices = indices.size();
 }
 
+void SinglePassWireframeShader::bindBuffers(QVector<QVector3D> verts, QVector<GLushort> inds)
+{
+    bind();
+    // Bind buffers
+    bindBufferData(positionBuf, verts);
+    bindBufferData(indexBuf, inds);
+
+    numIndices = inds.size();
+    qDebug() << numIndices;
+}
+
 void SinglePassWireframeShader::render()
 {
     bind();
 
     bindAttributeBuffer(positionBuf, "position", GL_FLOAT, 3, sizeof(QVector3D));
     indexBuf.bind();
-    glDrawElements(GL_TRIANGLES, numIndices, GL_UNSIGNED_SHORT, 0);
+    glDrawElements(GL_TRIANGLES, numIndices*3, GL_UNSIGNED_SHORT, 0);
+
 }

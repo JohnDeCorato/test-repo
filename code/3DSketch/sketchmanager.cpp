@@ -2,7 +2,6 @@
 
 SketchManager::SketchManager()
 {
-
 }
 
 // Function for saving the sketch to a file
@@ -210,7 +209,7 @@ bool SketchManager::stroke(float mouseX, float mouseY, Camera *mCamera, float li
     }
     else
     {
-        activeLayer->createNewStroke(lineWidth);
+        activeLayer->createNewStroke(Qt::black, lineWidth);
         activeLayer->addPointToActiveStroke(*intersect);
         return true;
     }

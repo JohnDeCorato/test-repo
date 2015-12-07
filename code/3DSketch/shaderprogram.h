@@ -20,6 +20,7 @@ public:
 
     virtual void init() = 0;
     virtual void bindBuffers(QVector<QVector3D> verts) = 0;
+    virtual void bindBuffers(QVector<QVector3D> verts, QVector<GLushort> inds) = 0;
     virtual void render() = 0;
 };
 

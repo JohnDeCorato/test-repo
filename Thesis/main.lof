@@ -80,32 +80,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Ray Tracing in Computer Graphics}}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Rough Diagram of Projecting Stroke onto Drawing Surface}}{52}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Projecting a Stroke onto the Sketching Surface}}{53}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Clip space and NDC space}}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces AABB Intersection}}{59}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Generating the Ray}}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces A comparison between the bounding volumes of a node using a naive implementation (left) and a surface area heuristic (right).}}{61}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces AABB Intersection}}{61}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces BVH Tree}}{62}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces SAH Comparison}}{64}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Artifacts with GL\_LINES}}{63}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Artifacts with GL\_LINES}}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Flaws in GL\_LINES}}{64}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Flaws in GL\_LINES}}{67}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Diagram of a miter join with parameter labels}}{65}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Round Join Diagram}}{68}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Diagram of a bevel join with parameter labels}}{66}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Miter Join Diagram}}{69}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Handling Miter artifacts}}{66}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Bevel Join Diagram}}{69}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Left: A curve using default GL\_LINES. Right: Implemented system}}{68}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Handling Miter artifacts}}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Line Adjacency data structure}}{69}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Left: A curve using default GL\_LINES. Right: Implemented system}}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Example polygonization of a line with miter joins.}}{70}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Line Adjacency data structure}}{72}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Even when rotating the drawing plane such that it is no longer visible, our lines remain visible.}}{71}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Example polygonization of a line with miter joins.}}{73}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Even when rotating the drawing plane such that it is no longer visible, our lines remain visible.}}{75}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Overlapping Colored Objects in 2D Vector Graphics}}{76}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
