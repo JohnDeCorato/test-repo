@@ -257,8 +257,20 @@ void SketchWidget::touchUpdateEvent(QTouchEvent *e)
         {
             float dx = gesture_it->values["drag_dx"];
             float dy = gesture_it->values["drag_dy"];
-            qDebug() << dx << " " << dy;
-            mCamera->rotate(dx, dy);
+
+            if (gesture_it->n == 1)
+                mCamera->rotate(dx, dy);
+
+            if (gesture_it->n == 2)
+                mCamera->translate(dx, dy);
+        }
+
+        if (gesture_it->gesture_id == "n-scale")
+        {
+            float dx = gesture_it->values["scale_dsx"];
+
+            if (gesture_it->n == 2)
+                mCamera->zoom(dx);
         }
     }
 }

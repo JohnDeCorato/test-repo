@@ -31,7 +31,10 @@ SOURCES += main.cpp\
     gestureengine.cpp \
     touchapplication.cpp \
     touchinputfilter.cpp \
-    objloader.cpp
+    objloader.cpp \
+    embreeloader.cpp \
+    planewidget.cpp \
+    planewindow.cpp
 
 HEADERS  += \
     stroke.h \
@@ -54,7 +57,10 @@ HEADERS  += \
     gestureengine.h \
     touchapplication.h \
     touchinputfilter.h \
-    objloader.h
+    objloader.h \
+    embreeloader.h \
+    planewidget.h \
+    planewindow.h
 
 RESOURCES += \
     resources.qrc
