@@ -36,7 +36,7 @@ Stroke::~Stroke()
 void Stroke::endStroke()
 {
     buildSpline(points);
-    //curve = points;
+      //curve = points;
 //    qDebug() << curve.size();
 
 //    arrayBuf.bind();

@@ -45,6 +45,7 @@ private:
     Layer* activeLayer;
     std::vector<tinyobj::shape_t> geometry;
 
+    int dummy;
 };
 
 inline vector<string> split(const string &s, char delim)
